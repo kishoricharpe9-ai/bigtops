@@ -167,7 +167,7 @@ const shuffledSizes = seededShuffle(partnerLogoSizes);
  * nudges each within its cell. Even coverage (no gaps / clusters) that still
  * reads as random. Cells are shuffled with the daily seed so it varies per day.
  */
-const PARTNER_COLS = 9;
+const PARTNER_COLS = 10;
 const PARTNER_ROWS = 4;
 
 function buildPartnerPlacements(count) {
@@ -270,23 +270,23 @@ export function HomeSections() {
               </Link>
             </Reveal>
 
-            <Reveal delay={0.08} className="mt-4 sm:mt-6">
+            <Reveal delay={0.08} className="mt-6 sm:mt-8">
               <div className="mx-auto inline-flex items-stretch divide-x divide-white/15 px-1 py-1">
-                <div className="flex w-20 flex-col items-center px-2 sm:w-24">
-                  <span className="text-sm font-semibold text-white sm:text-base">2+</span>
-                  <span className="mt-0.5 text-[8px] tracking-[0.18em] uppercase text-white/60 sm:text-[10px]">
+                <div className="flex w-28 flex-col items-center px-3 sm:w-36">
+                  <span className="text-2xl font-bold tracking-tight text-white sm:text-3xl">2+</span>
+                  <span className="mt-1.5 text-[9px] tracking-[0.2em] uppercase text-white/60 sm:text-[11px]">
                     Experience
                   </span>
                 </div>
-                <div className="flex w-20 flex-col items-center px-2 sm:w-24">
-                  <span className="text-sm font-semibold text-white sm:text-base">50+</span>
-                  <span className="mt-0.5 text-[8px] tracking-[0.18em] uppercase text-white/60 sm:text-[10px]">
+                <div className="flex w-28 flex-col items-center px-3 sm:w-36">
+                  <span className="text-2xl font-bold tracking-tight text-white sm:text-3xl">50+</span>
+                  <span className="mt-1.5 text-[9px] tracking-[0.2em] uppercase text-white/60 sm:text-[11px]">
                     Clients
                   </span>
                 </div>
-                <div className="flex w-20 flex-col items-center px-2 sm:w-24">
-                  <span className="text-sm font-semibold text-white sm:text-base">8x</span>
-                  <span className="mt-0.5 text-[8px] tracking-[0.18em] uppercase text-white/60 sm:text-[10px]">
+                <div className="flex w-28 flex-col items-center px-3 sm:w-36">
+                  <span className="text-2xl font-bold tracking-tight text-white sm:text-3xl">8x</span>
+                  <span className="mt-1.5 text-[9px] tracking-[0.2em] uppercase text-white/60 sm:text-[11px]">
                     ROI
                   </span>
                 </div>
@@ -294,10 +294,10 @@ export function HomeSections() {
 
               <div className="mt-3 sm:mt-5 overflow-hidden py-2 [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
                 <div
-                  className="flex items-center gap-1 sm:gap-2 md:gap-3 lg:gap-4"
+                  className="flex items-center gap-0"
                   style={{
                     width: 'max-content',
-                    animation: 'scroll-right 100s linear infinite',
+                    animation: 'scroll-right 55s linear infinite',
                   }}
                 >
                   {[...clientLogos, ...clientLogos].map((logo, idx) => (
@@ -310,7 +310,7 @@ export function HomeSections() {
                         alt={logo.replace('/clients-logos/', '').replace(/[-.]/g, ' ')}
                         loading="lazy"
                         decoding="async"
-                        className="h-36 w-48 object-contain sm:h-36 sm:w-56 md:h-44 md:w-64 lg:h-52 lg:w-72 xl:h-60 xl:w-80"
+                        className="h-28 w-auto object-contain sm:h-36 md:h-44 lg:h-52 xl:h-60"
                       />
                     </div>
                   ))}
@@ -740,7 +740,7 @@ export function HomeSections() {
       </section>
 
       {/* Brands / Partners Section */}
-      <section className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden py-10 sm:py-20 lg:py-24">
+      <section className="relative flex min-h-[60svh] flex-col justify-center overflow-hidden py-10 sm:py-20 lg:py-24">
         <div
           className="pointer-events-none absolute inset-0 opacity-50"
           style={{
@@ -774,7 +774,7 @@ export function HomeSections() {
           {/* Mobile: fills remaining viewport as a 4-col grid (10 stretched rows).
                sm+: reverts to the scattered floating layout. */}
           <style>{partnerPlacementCss}</style>
-          <div className="relative grid flex-1 grid-cols-4 content-center items-stretch gap-x-2 gap-y-2 [grid-auto-rows:minmax(0,1fr)] sm:mt-10 sm:block sm:h-[600px] sm:flex-none sm:gap-x-4 sm:gap-y-8 lg:h-[660px] xl:h-[720px]">
+          <div className="relative grid flex-1 grid-cols-4 content-center items-stretch gap-x-2 gap-y-2 [grid-auto-rows:minmax(0,1fr)] sm:mt-10 sm:block sm:h-[400px] sm:flex-none sm:gap-x-4 sm:gap-y-8 lg:h-[450px] xl:h-[500px]">
             {clientLogos.map((logoPath, idx) => {
               const name = logoPath.split('/').pop()?.replace('.png', '') || `Client ${idx}`;
               const size = shuffledSizes[idx % shuffledSizes.length];
