@@ -159,6 +159,7 @@ export function HowWeWorkTimeline() {
               <div className="relative h-[520px] w-full overflow-hidden rounded-[28px] border border-white/[0.12] bg-black/90 shadow-[0_25px_60px_rgba(0,0,0,0.9)] backdrop-blur-2xl">
                 
                 {/* Fade-in Image Reel */}
+                {/* Crossfade Images */}
                 {processSteps.map((step, index) => {
                   const isActive = activeIndex === index;
                   return (
@@ -251,6 +252,9 @@ export function HowWeWorkTimeline() {
                     className={`sticky group relative flex min-h-[280px] flex-col justify-between overflow-hidden rounded-[20px] border p-6 transition-all duration-500 sm:min-h-[320px] sm:p-8 backdrop-blur-xl hover:border-[#12ced6]/50 ${
                       isActive
                         ? 'border-[#12ced6]/30 bg-[#06101c]/95 shadow-xl'
+                    className={`sticky group relative flex min-h-[280px] flex-col justify-between overflow-hidden rounded-[20px] border p-6 transition-all duration-500 sm:min-h-[320px] sm:p-8 backdrop-blur-xl hover:border-[#12ced6]/60 hover:shadow-[0_12px_30px_rgba(18,206,214,0.18)] ${
+                      isActive
+                        ? 'border-white/20 bg-[#0a0a0a]/95 shadow-xl'
                         : 'border-white/[0.08] bg-black/95 shadow-[0_-5px_20px_rgba(0,0,0,0.5)]'
                     }`}
                     style={{
@@ -263,6 +267,7 @@ export function HowWeWorkTimeline() {
                     <div
                       className={`absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#12ced6] to-transparent transition-opacity duration-500 ${
                         isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-70'
+                        isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
                       }`}
                     />
 
@@ -324,6 +329,35 @@ export function HowWeWorkTimeline() {
                     priority={index === 0}
                   />
                 ))}
+                {processSteps.map((step, index) => {
+                  const isActive = activeIndex === index;
+                  return (
+                    <motion.div
+                      key={index}
+                      initial={false}
+                      animate={{
+                        opacity: isActive ? 1 : 0,
+                        filter: isActive ? 'blur(0px)' : 'blur(12px)',
+                        scale: isActive ? 1 : 1.1,
+                        zIndex: isActive ? 10 : 0,
+                      }}
+                      transition={{
+                        duration: 1.2,
+                        ease: [0.22, 1, 0.36, 1],
+                      }}
+                      className="absolute inset-0"
+                    >
+                      <Image
+                        src={stepImages[index] ?? step.image}
+                        alt={step.imageAlt}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 1024px) 100vw"
+                        priority={index === 0}
+                      />
+                    </motion.div>
+                  );
+                })}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none" />
                 
                 {/* HUD Bottom Info Bar */}
@@ -354,6 +388,9 @@ export function HowWeWorkTimeline() {
                       className={`sticky group relative flex min-h-[220px] flex-col justify-between overflow-hidden rounded-[20px] border p-6 transition-all duration-500 backdrop-blur-xl sm:p-8 hover:border-[#12ced6]/50 ${
                         isActive
                           ? 'border-[#12ced6]/30 bg-[#06101c]/95 shadow-xl'
+                      className={`sticky group relative flex min-h-[220px] flex-col justify-between overflow-hidden rounded-[20px] border p-6 transition-all duration-500 backdrop-blur-xl sm:p-8 hover:border-[#12ced6]/60 hover:shadow-[0_12px_30px_rgba(18,206,214,0.18)] ${
+                        isActive
+                          ? 'border-white/20 bg-[#0a0a0a]/95 shadow-xl'
                           : 'border-white/[0.08] bg-black/95 shadow-[0_-5px_20px_rgba(0,0,0,0.5)]'
                       }`}
                       style={{
@@ -366,6 +403,7 @@ export function HowWeWorkTimeline() {
                       <div
                         className={`absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#12ced6] to-transparent transition-opacity duration-500 ${
                           isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-70'
+                          isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
                         }`}
                       />
 
