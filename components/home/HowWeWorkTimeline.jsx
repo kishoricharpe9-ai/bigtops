@@ -77,8 +77,10 @@ export function HowWeWorkTimeline() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
-    const visibleCards = new Set();
-    const observer = new IntersectionObserver(
+    const visibleDesktop = new Set();
+    const visibleMobile = new Set();
+
+    const desktopObserver = new IntersectionObserver(
       entries => {
         let changed = false;
         entries.forEach(entry => {
@@ -86,96 +88,106 @@ export function HowWeWorkTimeline() {
           if (idxStr !== null) {
             const idx = Number(idxStr);
             if (entry.isIntersecting) {
-              visibleCards.add(idx);
+              visibleDesktop.add(idx);
               changed = true;
             } else {
-              visibleCards.delete(idx);
+              visibleDesktop.delete(idx);
               changed = true;
             }
           }
         });
-        
-        if (changed && visibleCards.size > 0) {
-          const maxIdx = Math.max(...Array.from(visibleCards));
+        if (changed && visibleDesktop.size > 0) {
+          const maxIdx = Math.max(...Array.from(visibleDesktop));
           setActiveIndex(maxIdx);
         }
       },
       {
-        rootMargin: '-20% 0px -20% 0px',
+        rootMargin: '-25% 0px -25% 0px',
         threshold: 0,
-      },
+      }
     );
 
-    const currentRefs = cardRefs.current.filter(Boolean);
-    currentRefs.forEach(card => observer.observe(card));
-    
-    return () => observer.disconnect();
+    const mobileObserver = new IntersectionObserver(
+      entries => {
+        let changed = false;
+        entries.forEach(entry => {
+          const idxStr = entry.target.getAttribute('data-index');
+          if (idxStr !== null) {
+            const idx = Number(idxStr);
+            if (entry.isIntersecting) {
+              visibleMobile.add(idx);
+              changed = true;
+            } else {
+              visibleMobile.delete(idx);
+              changed = true;
+            }
+          }
+        });
+        if (changed && visibleMobile.size > 0) {
+          const maxIdx = Math.max(...Array.from(visibleMobile));
+          setActiveIndex(maxIdx);
+        }
+      },
+      {
+        rootMargin: '-25% 0px -25% 0px',
+        threshold: 0,
+      }
+    );
+
+    const desktopCards = cardRefs.current.slice(0, 4).filter(Boolean);
+    desktopCards.forEach(card => desktopObserver.observe(card));
+
+    const mobileCards = cardRefs.current.slice(4, 8).filter(Boolean);
+    mobileCards.forEach(card => mobileObserver.observe(card));
+
+    return () => {
+      desktopObserver.disconnect();
+      mobileObserver.disconnect();
+    };
   }, []);
 
-  // Target Y offset for reel item centering (Hill Climb Racing vehicle selector track)
-  // Frame height = 520px, Item height = 340px, Gap = 20px -> Step = 360px
-  // Center Y for index 0 = (520 - 340)/2 = 90px
-  const targetReelY = 90 - activeIndex * 360;
 
   return (
     <section ref={sectionRef} className="relative py-16 sm:py-20 lg:py-28">
       <Container>
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-24">
           
-          {/* LEFT SIDE — Sticky Vehicle Selection Track (Image reel) */}
+          {/* LEFT SIDE — Sticky Image Reel (Fade-in layout) */}
           <div className="hidden lg:block lg:order-1">
             <div className="sticky top-[calc(50vh-260px)]">
               {/* Outer HUD Stage Frame */}
-              <div className="relative h-[520px] w-full overflow-hidden rounded-[28px] border border-white/[0.12] bg-black/90 shadow-[0_25px_60px_rgba(0,0,0,0.9)] backdrop-blur-2xl px-4">
+              <div className="relative h-[520px] w-full overflow-hidden rounded-[28px] border border-white/[0.12] bg-black/90 shadow-[0_25px_60px_rgba(0,0,0,0.9)] backdrop-blur-2xl">
                 
-                {/* Top & Bottom gradient fade overlays */}
-                <div className="pointer-events-none absolute inset-x-0 top-0 z-20 h-16 bg-gradient-to-b from-black via-black/80 to-transparent" />
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-24 bg-gradient-to-t from-black via-black/90 to-transparent" />
-
-                {/* Physics Scroll Track (Hill Climb Racing vehicle reel) */}
-                <motion.div
-                  animate={{ y: targetReelY }}
-                  transition={{
-                    type: 'spring',
-                    stiffness: 75,
-                    damping: 18,
-                    mass: 0.8,
-                  }}
-                  className="flex flex-col gap-[20px]"
-                >
-                  {processSteps.map((step, index) => {
-                    const isActive = activeIndex === index;
-                    return (
-                      <motion.div
-                        key={step.step}
-                        animate={{
-                          scale: isActive ? 1 : 0.86,
-                          opacity: isActive ? 1 : 0.4,
-                          filter: isActive ? 'blur(0px)' : 'blur(2px)',
-                        }}
-                        transition={{
-                          duration: 0.4,
-                          ease: [0.25, 1, 0.5, 1],
-                        }}
-                        className={`relative h-[340px] w-full shrink-0 overflow-hidden rounded-[24px] border transition-all duration-500 ${
-                          isActive
-                            ? 'border-white/20 bg-card shadow-[0_0_35px_rgba(255,255,255,0.05)]'
-                            : 'border-white/10 bg-card/60'
-                        }`}
-                      >
-                        <Image
-                          src={stepImages[index] ?? step.image}
-                          alt={step.imageAlt}
-                          fill
-                          className="object-cover"
-                          sizes="(min-width: 1024px) 50vw, 100vw"
-                          priority={index === 0}
-                        />
-                        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
-                      </motion.div>
-                    );
-                  })}
-                </motion.div>
+                {/* Fade-in Image Reel */}
+                {processSteps.map((step, index) => {
+                  const isActive = activeIndex === index;
+                  return (
+                    <motion.div
+                      key={step.step}
+                      initial={{ opacity: 0, scale: 1.05 }}
+                      animate={{
+                        opacity: isActive ? 1 : 0,
+                        scale: isActive ? 1 : 1.05,
+                      }}
+                      transition={{
+                        duration: 0.8,
+                        ease: [0.16, 1, 0.3, 1],
+                      }}
+                      className="absolute inset-0 h-full w-full overflow-hidden"
+                      style={{ pointerEvents: isActive ? 'auto' : 'none' }}
+                    >
+                      <Image
+                        src={stepImages[stepImages.length - 1 - index] ?? step.image}
+                        alt={step.imageAlt}
+                        fill
+                        className="object-cover"
+                        sizes="(min-width: 1024px) 50vw, 100vw"
+                        priority={index === 0}
+                      />
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
+                    </motion.div>
+                  );
+                })}
 
                 {/* HUD Bottom Info Bar */}
                 <div className="absolute bottom-4 inset-x-4 z-30 overflow-hidden rounded-[18px] border border-white/15 bg-black/80 px-6 py-3.5 backdrop-blur-xl flex items-center justify-between">
@@ -236,9 +248,9 @@ export function HowWeWorkTimeline() {
                       cardRefs.current[index] = el;
                     }}
                     data-index={index}
-                    className={`sticky group relative flex min-h-[280px] flex-col justify-between overflow-hidden rounded-[20px] border p-6 transition-all duration-500 sm:min-h-[320px] sm:p-8 backdrop-blur-xl ${
+                    className={`sticky group relative flex min-h-[280px] flex-col justify-between overflow-hidden rounded-[20px] border p-6 transition-all duration-500 sm:min-h-[320px] sm:p-8 backdrop-blur-xl hover:border-[#12ced6]/50 ${
                       isActive
-                        ? 'border-white/20 bg-[#06101c]/95 shadow-xl'
+                        ? 'border-[#12ced6]/30 bg-[#06101c]/95 shadow-xl'
                         : 'border-white/[0.08] bg-black/95 shadow-[0_-5px_20px_rgba(0,0,0,0.5)]'
                     }`}
                     style={{
@@ -247,10 +259,10 @@ export function HowWeWorkTimeline() {
                       zIndex: 10 + index
                     }}
                   >
-                    {/* Glowing top border on active */}
+                    {/* Glowing top border on active/hover */}
                     <div
-                      className={`absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-white/40 to-transparent transition-opacity duration-500 ${
-                        isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-60'
+                      className={`absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#12ced6] to-transparent transition-opacity duration-500 ${
+                        isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-70'
                       }`}
                     />
 
@@ -258,8 +270,8 @@ export function HowWeWorkTimeline() {
                       <div
                         className={`flex h-14 w-14 items-center justify-center rounded-2xl border transition-all duration-300 ${
                           isActive
-                            ? 'border-white/30 bg-white/10 shadow-[0_0_15px_rgba(255,255,255,0.1)]'
-                            : 'border-white/10 bg-white/[0.06]'
+                            ? 'border-[#12ced6]/40 bg-[#12ced6]/15 shadow-[0_0_15px_rgba(18,206,214,0.3)]'
+                            : 'border-white/10 bg-white/[0.06] group-hover:border-[#12ced6]/30'
                         }`}
                       >
                         <CardIcon index={index} />
@@ -283,7 +295,7 @@ export function HowWeWorkTimeline() {
                       </h3>
                       <div
                         className={`my-4 h-px w-full transition-colors ${
-                          isActive ? 'bg-white/30' : 'bg-white/10'
+                          isActive ? 'bg-[#12ced6]/30' : 'bg-white/10'
                         }`}
                       />
                       <p className="text-sm leading-relaxed text-muted sm:text-base">
@@ -302,7 +314,7 @@ export function HowWeWorkTimeline() {
                 {processSteps.map((step, index) => (
                   <Image
                     key={index}
-                    src={stepImages[index] ?? step.image}
+                    src={stepImages[stepImages.length - 1 - index] ?? step.image}
                     alt={step.imageAlt}
                     fill
                     className={`object-cover transition-opacity duration-700 ease-in-out ${
@@ -339,9 +351,9 @@ export function HowWeWorkTimeline() {
                         cardRefs.current[processSteps.length + index] = el;
                       }}
                       data-index={index}
-                      className={`sticky group relative flex min-h-[220px] flex-col justify-between overflow-hidden rounded-[20px] border p-6 transition-all duration-500 backdrop-blur-xl sm:p-8 ${
+                      className={`sticky group relative flex min-h-[220px] flex-col justify-between overflow-hidden rounded-[20px] border p-6 transition-all duration-500 backdrop-blur-xl sm:p-8 hover:border-[#12ced6]/50 ${
                         isActive
-                          ? 'border-white/20 bg-[#06101c]/95 shadow-xl'
+                          ? 'border-[#12ced6]/30 bg-[#06101c]/95 shadow-xl'
                           : 'border-white/[0.08] bg-black/95 shadow-[0_-5px_20px_rgba(0,0,0,0.5)]'
                       }`}
                       style={{
@@ -350,10 +362,10 @@ export function HowWeWorkTimeline() {
                         zIndex: 10 + index
                       }}
                     >
-                      {/* Glowing top border on active */}
+                      {/* Glowing top border on active/hover */}
                       <div
-                        className={`absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-white/40 to-transparent transition-opacity duration-500 ${
-                          isActive ? 'opacity-100' : 'opacity-0'
+                        className={`absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#12ced6] to-transparent transition-opacity duration-500 ${
+                          isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-70'
                         }`}
                       />
 
@@ -361,8 +373,8 @@ export function HowWeWorkTimeline() {
                         <div
                           className={`flex h-12 w-12 items-center justify-center rounded-xl border transition-all duration-300 ${
                             isActive
-                              ? 'border-white/30 bg-white/10'
-                              : 'border-white/10 bg-white/[0.06]'
+                              ? 'border-[#12ced6]/40 bg-[#12ced6]/15 shadow-[0_0_15px_rgba(18,206,214,0.3)]'
+                              : 'border-white/10 bg-white/[0.06] group-hover:border-[#12ced6]/30'
                           }`}
                         >
                           <CardIcon index={index} />
@@ -386,7 +398,7 @@ export function HowWeWorkTimeline() {
                         </h3>
                         <div
                           className={`my-4 h-px w-full transition-colors ${
-                            isActive ? 'bg-white/30' : 'bg-white/10'
+                            isActive ? 'bg-[#12ced6]/30' : 'bg-white/10'
                           }`}
                         />
                         <p className="text-sm leading-relaxed text-muted sm:text-base">
