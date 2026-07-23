@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "bigtopsocial": {
+      "command": "npm",
+      "args": ["run", "mcp"]
+    }
+  }
+}

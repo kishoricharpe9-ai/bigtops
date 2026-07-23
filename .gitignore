@@ -1,0 +1,32 @@
+.next
+node_modules
+out
+.env*.local
+npm-debug.log*
+.aider*
+
+# AI Agent and IDE folders
+.agent/
+.planning/
+.gemini/
+.cline/
+.cursor/
+.cursorrules
+.claude/
+.codex/
+tsconfig.tsbuildinfo
+
+# AI Agent Markdown artifacts
+task.md
+implementation_plan.md
+walkthrough.md
+analysis_results.md
+research_notes.md
+experiment_results.md
+PROJECT.md
+ROADMAP.md
+PLAN.md
+SPEC.md
+UI-SPEC.md
+AI-SPEC.md
+EVAL-REVIEW.md

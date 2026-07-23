@@ -1,0 +1,6 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "skills": {
+    "paths": ["/home/shobhit_003/Bigtopsocial_official_final/.agent/get-shit-done"]
+  }
+}

@@ -1,0 +1,255 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Design audit — bigtopsocial.framer.media (readonly pass)
+  Background: #000000
+  Primary text: #FFFFFF
+  Secondary/muted: ~#888888–#CCCCCC
+  Accent (stars, highlights): warm orange ~#FF8C33 / #FF8C00
+  Surfaces/cards: ~#121212–#1A1A1A (elevated from pure black)
+  Hero: soft radial mesh (orange/amber/yellow) with heavy blur
+  Typography: geometric sans → Inter (weights 400–800)
+  Motion: scroll fade/slide reveals, card hovers, FAQ accordion
+*/
+
+:root {
+  --background: #000003fe;
+  --foreground: #ffffff;
+  --muted: #b0b0b0;
+  --foreground-soft: #cccccc;
+  --card: #0a0a0a;
+  --surface: #0d0d0b;
+  --surface-elevated: #0d0d0b;
+  --border-subtle: #262626;
+  --accent: #ff8c33;
+  --accent-soft: rgba(255, 140, 51, 0.35);
+}
+
+html.lenis {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes reels-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.reels-track {
+  contain: layout paint style;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 800px;
+}
+
+.neon-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.neon-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+
+  background: #bfb6a40d;
+
+  box-shadow: 0 0 3px rgba(0, 245, 255, 0.1), 0 0 7px rgba(0, 245, 255, 0.08),
+    0 0 12px rgba(176, 38, 255, 0.08);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.neon-card:hover {
+  box-shadow: 0 0 4px rgba(0, 245, 255, 0.55), 0 0 7px rgba(0, 245, 255, 0.35),
+    0 0 15px rgba(176, 38, 255, 0.25);
+}
+
+.neon-card::before {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+
+  border-radius: inherit;
+  padding: 1.5px;
+
+  background: linear-gradient(
+    90deg,
+    rgba(0, 245, 255, 0.5),
+    rgba(176, 38, 255, 0.5),
+    rgba(1, 132, 197, 0.5),
+    rgba(106, 92, 255, 0.5),
+    rgba(0, 245, 255, 0.5)
+  );
+
+  background-size: 300% 300%;
+
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+
+  animation: neon-border-glow 5s linear infinite;
+
+  pointer-events: none;
+}
+
+.neon-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes neon-border-glow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Glassmorphism Utilities */
+.glass-blur-light {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.04) 40%,
+    transparent 100%
+  );
+  backdrop-filter: blur(15px) saturate(150%);
+  -webkit-backdrop-filter: blur(15px) saturate(150%);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.glass-blur-medium {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.06) 40%,
+    transparent 100%
+  );
+  backdrop-filter: blur(25px) saturate(200%);
+  -webkit-backdrop-filter: blur(25px) saturate(200%);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.glass-blur-strong {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 180px;
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.08) 40%,
+    transparent 100%
+  );
+  backdrop-filter: blur(35px) saturate(220%);
+  -webkit-backdrop-filter: blur(35px) saturate(220%);
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   Mobile-only optimizations (no effect on desktop / large tablets)
+   ────────────────────────────────────────────────────────────────────────── */
+
+/* Stop iOS Safari from auto-inflating text on orientation change. No-op on
+   desktop. */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Remove the grey tap flash and the 300ms double-tap delay on controls.
+   These properties are inert on non-touch (desktop) pointers. */
+body {
+  -webkit-tap-highlight-color: transparent;
+}
+a,
+button,
+[role='button'],
+input,
+label,
+select,
+textarea {
+  touch-action: manipulation;
+}
+
+/* Hard guard against horizontal scroll on phones/small tablets only. The
+   desktop sticky panels live at lg+ and are untouched by this. */
+@media (max-width: 1023px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* iOS zooms the page when a focused field has font-size < 16px. Enforce 16px
+   on phones only so inputs no longer trigger an accidental zoom; desktop keeps
+   its original sizing. */
+@media (max-width: 639px) {
+  input:not([type='checkbox']):not([type='radio']):not([type='range']),
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}
