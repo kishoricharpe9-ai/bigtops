@@ -33,7 +33,7 @@ export function Footer() {
       </Container>
 
       {/* Giant Wordmark */}
-      <div className="relative z-10 w-[95vw] mx-auto flex flex-col items-center justify-center mb-15 overflow-visible pt-4 pb-8">
+      <div className="relative z-10 w-[95vw] mx-auto flex flex-col items-center justify-center mb-20 overflow-visible pt-4 pb-8">
         <h1 className="font-sans text-[18vw] font-black leading-[0.9] tracking-[-0.09em] text-white select-none text-center lowercase whitespace-nowrap">
           bigtopsocial
         </h1>
