@@ -555,7 +555,7 @@ export function HomeSections() {
             {projectTeasers.slice(0, 3).map((p, idx) => (
               <article
                 key={p.slug}
-                className="sticky group relative flex flex-col lg:flex-row min-h-[350px] overflow-hidden rounded-[24px] sm:rounded-[32px] border border-white/[0.08] bg-black/95 shadow-[0_-5px_20px_rgba(0,0,0,0.5)] p-6 sm:p-8 lg:p-10 transition-all duration-500 backdrop-blur-xl hover:border-[#12ced6]/60 hover:shadow-[0_12px_30px_rgba(18,206,214,0.18)] gap-8 lg:gap-12 w-full"
+                className="sticky group relative flex flex-col lg:flex-row min-h-[280px] overflow-hidden rounded-[24px] sm:rounded-[32px] border border-white/[0.08] bg-black/95 shadow-[0_-5px_20px_rgba(0,0,0,0.5)] p-5 sm:p-6 lg:p-8 transition-all duration-500 backdrop-blur-xl hover:border-[#12ced6]/60 hover:shadow-[0_12px_30px_rgba(18,206,214,0.18)] gap-5 lg:gap-8 w-full"
                 style={{
                   top: `calc(15vh + ${idx * 20}px)`,
                   marginTop: idx === 0 ? '0' : '50vh',
@@ -567,23 +567,31 @@ export function HomeSections() {
 
                 {/* Left Side: Content */}
                 <div className="flex-1 flex flex-col justify-center">
-                  <div className="flex items-center gap-3 mb-4">
+                  <div className="flex items-center gap-3 mb-3">
                     <span className="inline-block h-2 w-2 rounded-full bg-[#12ced6] animate-pulse" />
                     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#12ced6]">
                       {p.category || p.year || '2025'}
                     </p>
                   </div>
-                  <h3 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white mb-4">
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-white mb-3">
                     {p.title}
                   </h3>
-                  <p className="text-base sm:text-lg leading-relaxed text-white/70 mb-8 max-w-xl">
-                    {p.description || "Building immersive digital experiences with scalable modern architecture and refined visual systems."}
-                  </p>
+                  <div className="flex flex-col gap-3 text-sm sm:text-base leading-relaxed text-white/70 mb-5 max-w-xl">
+                    <p>
+                      When Atharva Oceana partnered with BigTop Social, it had the advantage of a prime location and premium residences but lacked the market visibility and brand presence needed to attract the right buyers.
+                    </p>
+                    <p>
+                      We developed a strategic branding roadmap through impactful storytelling, compelling creatives, and value-driven digital campaigns that positioned Atharva Oceana as a trusted premium residential destination.
+                    </p>
+                    <p>
+                      With consistent execution across digital platforms, the project gained strong market recognition, increased buyer confidence, and witnessed a significant rise in inquiries and sales, transforming it into one of the most sought-after residential projects in the area.
+                    </p>
+                  </div>
                   
                   <div>
                     <Link
                       href={`/project/${p.slug}`}
-                      className="inline-flex items-center gap-2 rounded-full bg-white/10 px-6 py-3 text-sm font-medium text-white transition hover:bg-[#12ced6] hover:text-black"
+                      className="inline-flex items-center gap-2 rounded-full bg-white/10 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#12ced6] hover:text-black"
                     >
                       View Case Study
                       <span>→</span>
