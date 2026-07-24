@@ -5,13 +5,8 @@ import { FaqAccordion } from '@/components/faq/FaqAccordion';
 import { Reveal } from '@/components/motion/Reveal';
 import { BlurTextReveal } from '@/components/motion/BlurTextReveal';
 import { HowWeWorkTimeline } from '@/components/home/HowWeWorkTimeline';
-import { ReelsCarousel } from '@/components/home/ReelsCarousel';
-import { PostStageSlider } from '@/components/home/PostStageSlider';
+import { CreationsSection } from '@/components/home/CreationsSection';
 import { MobileTestimonials } from '@/components/home/MobileTestimonials';
-import dynamic from 'next/dynamic';
-const MobileContentReel = dynamic(() =>
-  import('@/components/home/MobileContentReel').then(m => m.MobileContentReel),
-);
 import { services, testimonials } from '@/lib/content/home';
 import { projectTeasers } from '@/lib/content/projects';
 
@@ -467,67 +462,7 @@ export function HomeSections() {
 
       <HowWeWorkTimeline />
 
-      <section className="pt-16 sm:pt-20 lg:pt-24 pb-0">
-        <Container>
-          <Reveal className="mb-8 flex flex-col items-center text-center">
-            {/* Badge */}
-            <div
-              className="
-          mb-10
-          relative
-          inline-flex
-          overflow-hidden
-          rounded-full
-                    bg-black/70
-          px-6 py-2
-          text-xs
-          uppercase
-          tracking-[0.2em]
-          text-foreground/90
-          backdrop-blur-md
-          transition
-          hover:border-white/20
-          hover:bg-black/80
-
-          before:absolute
-          before:left-[12%]
-          before:right-[12%]
-          before:top-0
-          before:h-px
-          before:bg-gradient-to-r
-          before:from-transparent
-          before:via-[#12ced6]/60
-          before:to-transparent
-          before:content-['']
-        "
-            >
-              Creations
-            </div>
-
-            {/* Heading */}
-            <BlurTextReveal
-              as="h2"
-              text="Posts that stop the scroll"
-              className="max-w-3xl text-4xl tracking-tight text-foreground sm:text-5xl"
-            />
-
-            {/* Description */}
-            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted">
-              A curated pair of motion sections featuring cinematic reels and high-converting social
-              content built to capture attention instantly.
-            </p>
-          </Reveal>
-        </Container>
-      </section>
-
-      {/* Desktop: two carousels */}
-      <div className="hidden lg:block">
-        <ReelsCarousel />
-        <PostStageSlider />
-      </div>
-
-      {/* Mobile: combined 3D cylinder */}
-      <MobileContentReel />
+      <CreationsSection />
 
       <section className="py-16 sm:py-20 lg:py-24">
         <Container>
