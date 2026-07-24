@@ -208,7 +208,7 @@ function Card({ item, index, total, scrollX, active, onOpen, onJump }) {
               alt={item.id}
               fill
               sizes="(max-width:640px) 56vw, 230px"
-              className="object-contain p-1 relative z-10 transition-transform duration-700"
+              className="object-contain relative z-10 transition-transform duration-700"
               loading={Math.abs(index) < 2 ? 'eager' : 'lazy'}
               decoding="async"
               draggable={false}
