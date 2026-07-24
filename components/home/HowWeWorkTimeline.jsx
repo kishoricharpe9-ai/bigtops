@@ -128,54 +128,37 @@ export function HowWeWorkTimeline() {
               {/* Outer HUD Stage Frame */}
               <div className="relative h-[520px] w-full overflow-hidden rounded-[28px] border border-white/[0.12] bg-black/90 shadow-[0_25px_60px_rgba(0,0,0,0.9)] backdrop-blur-2xl px-4">
                 
-                {/* Top & Bottom gradient fade overlays */}
-                <div className="pointer-events-none absolute inset-x-0 top-0 z-20 h-16 bg-gradient-to-b from-black via-black/80 to-transparent" />
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-24 bg-gradient-to-t from-black via-black/90 to-transparent" />
-
-                {/* Physics Scroll Track (Hill Climb Racing vehicle reel) */}
-                <motion.div
-                  animate={{ y: targetReelY }}
-                  transition={{
-                    type: 'spring',
-                    stiffness: 75,
-                    damping: 18,
-                    mass: 0.8,
-                  }}
-                  className="flex flex-col gap-[20px]"
-                >
-                  {processSteps.map((step, index) => {
-                    const isActive = activeIndex === index;
-                    return (
-                      <motion.div
-                        key={step.step}
-                        animate={{
-                          scale: isActive ? 1 : 0.86,
-                          opacity: isActive ? 1 : 0.4,
-                          filter: isActive ? 'blur(0px)' : 'blur(2px)',
-                        }}
-                        transition={{
-                          duration: 0.4,
-                          ease: [0.25, 1, 0.5, 1],
-                        }}
-                        className={`relative h-[340px] w-full shrink-0 overflow-hidden rounded-[24px] border transition-all duration-500 ${
-                          isActive
-                            ? 'border-white/20 bg-card shadow-[0_0_35px_rgba(255,255,255,0.05)]'
-                            : 'border-white/10 bg-card/60'
-                        }`}
-                      >
-                        <Image
-                          src={stepImages[index] ?? step.image}
-                          alt={step.imageAlt}
-                          fill
-                          className="object-cover"
-                          sizes="(min-width: 1024px) 50vw, 100vw"
-                          priority={index === 0}
-                        />
-                        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
-                      </motion.div>
-                    );
-                  })}
-                </motion.div>
+                {/* Crossfade Images */}
+                {processSteps.map((step, index) => {
+                  const isActive = activeIndex === index;
+                  return (
+                    <motion.div
+                      key={step.step}
+                      initial={false}
+                      animate={{
+                        opacity: isActive ? 1 : 0,
+                        filter: isActive ? 'blur(0px)' : 'blur(12px)',
+                        scale: isActive ? 1 : 1.1,
+                        zIndex: isActive ? 10 : 0,
+                      }}
+                      transition={{
+                        duration: 1.2,
+                        ease: [0.22, 1, 0.36, 1],
+                      }}
+                      className="absolute inset-0"
+                    >
+                      <Image
+                        src={stepImages[index] ?? step.image}
+                        alt={step.imageAlt}
+                        fill
+                        className="object-cover"
+                        sizes="(min-width: 1024px) 50vw, 100vw"
+                        priority={index === 0}
+                      />
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
+                    </motion.div>
+                  );
+                })}
 
                 {/* HUD Bottom Info Bar */}
                 <div className="absolute bottom-4 inset-x-4 z-30 overflow-hidden rounded-[18px] border border-white/15 bg-black/80 px-6 py-3.5 backdrop-blur-xl flex items-center justify-between">
@@ -236,9 +219,9 @@ export function HowWeWorkTimeline() {
                       cardRefs.current[index] = el;
                     }}
                     data-index={index}
-                    className={`sticky group relative flex min-h-[280px] flex-col justify-between overflow-hidden rounded-[20px] border p-6 transition-all duration-500 sm:min-h-[320px] sm:p-8 backdrop-blur-xl ${
+                    className={`sticky group relative flex min-h-[280px] flex-col justify-between overflow-hidden rounded-[20px] border p-6 transition-all duration-500 sm:min-h-[320px] sm:p-8 backdrop-blur-xl hover:border-[#12ced6]/60 hover:shadow-[0_12px_30px_rgba(18,206,214,0.18)] ${
                       isActive
-                        ? 'border-white/20 bg-[#06101c]/95 shadow-xl'
+                        ? 'border-white/20 bg-[#0a0a0a]/95 shadow-xl'
                         : 'border-white/[0.08] bg-black/95 shadow-[0_-5px_20px_rgba(0,0,0,0.5)]'
                     }`}
                     style={{
@@ -249,8 +232,8 @@ export function HowWeWorkTimeline() {
                   >
                     {/* Glowing top border on active */}
                     <div
-                      className={`absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-white/40 to-transparent transition-opacity duration-500 ${
-                        isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-60'
+                      className={`absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#12ced6] to-transparent transition-opacity duration-500 ${
+                        isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
                       }`}
                     />
 
@@ -299,19 +282,35 @@ export function HowWeWorkTimeline() {
             <div className="lg:hidden mt-12 relative w-full px-1 sm:px-4">
               {/* Sticky Image Reel */}
               <div className="sticky top-[8vh] z-0 h-[280px] w-full overflow-hidden rounded-[24px] border border-white/[0.12] bg-black/90 shadow-xl">
-                {processSteps.map((step, index) => (
-                  <Image
-                    key={index}
-                    src={stepImages[index] ?? step.image}
-                    alt={step.imageAlt}
-                    fill
-                    className={`object-cover transition-opacity duration-700 ease-in-out ${
-                      activeIndex === index ? 'opacity-100' : 'opacity-0'
-                    }`}
-                    sizes="(max-width: 1024px) 100vw"
-                    priority={index === 0}
-                  />
-                ))}
+                {processSteps.map((step, index) => {
+                  const isActive = activeIndex === index;
+                  return (
+                    <motion.div
+                      key={index}
+                      initial={false}
+                      animate={{
+                        opacity: isActive ? 1 : 0,
+                        filter: isActive ? 'blur(0px)' : 'blur(12px)',
+                        scale: isActive ? 1 : 1.1,
+                        zIndex: isActive ? 10 : 0,
+                      }}
+                      transition={{
+                        duration: 1.2,
+                        ease: [0.22, 1, 0.36, 1],
+                      }}
+                      className="absolute inset-0"
+                    >
+                      <Image
+                        src={stepImages[index] ?? step.image}
+                        alt={step.imageAlt}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 1024px) 100vw"
+                        priority={index === 0}
+                      />
+                    </motion.div>
+                  );
+                })}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none" />
                 
                 {/* HUD Bottom Info Bar */}
@@ -339,9 +338,9 @@ export function HowWeWorkTimeline() {
                         cardRefs.current[processSteps.length + index] = el;
                       }}
                       data-index={index}
-                      className={`sticky group relative flex min-h-[220px] flex-col justify-between overflow-hidden rounded-[20px] border p-6 transition-all duration-500 backdrop-blur-xl sm:p-8 ${
+                      className={`sticky group relative flex min-h-[220px] flex-col justify-between overflow-hidden rounded-[20px] border p-6 transition-all duration-500 backdrop-blur-xl sm:p-8 hover:border-[#12ced6]/60 hover:shadow-[0_12px_30px_rgba(18,206,214,0.18)] ${
                         isActive
-                          ? 'border-white/20 bg-[#06101c]/95 shadow-xl'
+                          ? 'border-white/20 bg-[#0a0a0a]/95 shadow-xl'
                           : 'border-white/[0.08] bg-black/95 shadow-[0_-5px_20px_rgba(0,0,0,0.5)]'
                       }`}
                       style={{
@@ -352,8 +351,8 @@ export function HowWeWorkTimeline() {
                     >
                       {/* Glowing top border on active */}
                       <div
-                        className={`absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-white/40 to-transparent transition-opacity duration-500 ${
-                          isActive ? 'opacity-100' : 'opacity-0'
+                        className={`absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#12ced6] to-transparent transition-opacity duration-500 ${
+                          isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
                         }`}
                       />
 

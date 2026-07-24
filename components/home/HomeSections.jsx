@@ -5,13 +5,8 @@ import { FaqAccordion } from '@/components/faq/FaqAccordion';
 import { Reveal } from '@/components/motion/Reveal';
 import { BlurTextReveal } from '@/components/motion/BlurTextReveal';
 import { HowWeWorkTimeline } from '@/components/home/HowWeWorkTimeline';
-import { ReelsCarousel } from '@/components/home/ReelsCarousel';
-import { PostStageSlider } from '@/components/home/PostStageSlider';
+import { CreationsSection } from '@/components/home/CreationsSection';
 import { MobileTestimonials } from '@/components/home/MobileTestimonials';
-import dynamic from 'next/dynamic';
-const MobileContentReel = dynamic(() =>
-  import('@/components/home/MobileContentReel').then(m => m.MobileContentReel),
-);
 import { services, testimonials } from '@/lib/content/home';
 import { projectTeasers } from '@/lib/content/projects';
 
@@ -167,7 +162,7 @@ const shuffledSizes = seededShuffle(partnerLogoSizes);
  * nudges each within its cell. Even coverage (no gaps / clusters) that still
  * reads as random. Cells are shuffled with the daily seed so it varies per day.
  */
-const PARTNER_COLS = 9;
+const PARTNER_COLS = 10;
 const PARTNER_ROWS = 4;
 
 function buildPartnerPlacements(count) {
@@ -270,23 +265,23 @@ export function HomeSections() {
               </Link>
             </Reveal>
 
-            <Reveal delay={0.08} className="mt-4 sm:mt-6">
+            <Reveal delay={0.08} className="mt-6 sm:mt-8">
               <div className="mx-auto inline-flex items-stretch divide-x divide-white/15 px-1 py-1">
-                <div className="flex w-20 flex-col items-center px-2 sm:w-24">
-                  <span className="text-sm font-semibold text-white sm:text-base">2+</span>
-                  <span className="mt-0.5 text-[8px] tracking-[0.18em] uppercase text-white/60 sm:text-[10px]">
+                <div className="flex w-28 flex-col items-center px-3 sm:w-36">
+                  <span className="text-2xl font-bold tracking-tight text-white sm:text-3xl">2+</span>
+                  <span className="mt-1.5 text-[9px] tracking-[0.2em] uppercase text-white/60 sm:text-[11px]">
                     Experience
                   </span>
                 </div>
-                <div className="flex w-20 flex-col items-center px-2 sm:w-24">
-                  <span className="text-sm font-semibold text-white sm:text-base">50+</span>
-                  <span className="mt-0.5 text-[8px] tracking-[0.18em] uppercase text-white/60 sm:text-[10px]">
+                <div className="flex w-28 flex-col items-center px-3 sm:w-36">
+                  <span className="text-2xl font-bold tracking-tight text-white sm:text-3xl">50+</span>
+                  <span className="mt-1.5 text-[9px] tracking-[0.2em] uppercase text-white/60 sm:text-[11px]">
                     Clients
                   </span>
                 </div>
-                <div className="flex w-20 flex-col items-center px-2 sm:w-24">
-                  <span className="text-sm font-semibold text-white sm:text-base">8x</span>
-                  <span className="mt-0.5 text-[8px] tracking-[0.18em] uppercase text-white/60 sm:text-[10px]">
+                <div className="flex w-28 flex-col items-center px-3 sm:w-36">
+                  <span className="text-2xl font-bold tracking-tight text-white sm:text-3xl">8x</span>
+                  <span className="mt-1.5 text-[9px] tracking-[0.2em] uppercase text-white/60 sm:text-[11px]">
                     ROI
                   </span>
                 </div>
@@ -294,10 +289,10 @@ export function HomeSections() {
 
               <div className="mt-3 sm:mt-5 overflow-hidden py-2 [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
                 <div
-                  className="flex items-center gap-1 sm:gap-2 md:gap-3 lg:gap-4"
+                  className="flex items-center gap-0"
                   style={{
                     width: 'max-content',
-                    animation: 'scroll-right 100s linear infinite',
+                    animation: 'scroll-right 55s linear infinite',
                   }}
                 >
                   {[...clientLogos, ...clientLogos].map((logo, idx) => (
@@ -310,7 +305,7 @@ export function HomeSections() {
                         alt={logo.replace('/clients-logos/', '').replace(/[-.]/g, ' ')}
                         loading="lazy"
                         decoding="async"
-                        className="h-36 w-48 object-contain sm:h-36 sm:w-56 md:h-44 md:w-64 lg:h-52 lg:w-72 xl:h-60 xl:w-80"
+                        className="h-28 w-auto object-contain sm:h-36 md:h-44 lg:h-52 xl:h-60"
                       />
                     </div>
                   ))}
@@ -422,7 +417,7 @@ export function HomeSections() {
           <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((svc, idx) => (
               <Reveal key={svc.title} delay={idx * 0.04}>
-                <div className="group relative flex min-h-[290px] flex-col justify-between overflow-hidden rounded-[20px] border border-white/[0.08] bg-card p-6 sm:p-8 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-[#12ced6]/60 hover:bg-gradient-to-b hover:from-card hover:to-[#091518] hover:shadow-[0_12px_30px_rgba(18,206,214,0.18)]">
+                <div className="group relative flex min-h-[290px] flex-col justify-between overflow-hidden rounded-[20px] border border-white/[0.08] bg-black/95 shadow-[0_-5px_20px_rgba(0,0,0,0.5)] p-6 sm:p-8 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-[#12ced6]/60 hover:bg-[#0a0a0a]/95 hover:shadow-[0_12px_30px_rgba(18,206,214,0.18)]">
                   {/* Glowing top border accent on hover */}
                   <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#12ced6] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
@@ -467,254 +462,82 @@ export function HomeSections() {
 
       <HowWeWorkTimeline />
 
-      <section className="pt-16 sm:pt-20 lg:pt-24 pb-0">
-        <Container>
-          <Reveal className="mb-8 flex flex-col items-center text-center">
-            {/* Badge */}
-            <div
-              className="
-          mb-10
-          relative
-          inline-flex
-          overflow-hidden
-          rounded-full
-                    bg-black/70
-          px-6 py-2
-          text-xs
-          uppercase
-          tracking-[0.2em]
-          text-foreground/90
-          backdrop-blur-md
-          transition
-          hover:border-white/20
-          hover:bg-black/80
-
-          before:absolute
-          before:left-[12%]
-          before:right-[12%]
-          before:top-0
-          before:h-px
-          before:bg-gradient-to-r
-          before:from-transparent
-          before:via-[#12ced6]/60
-          before:to-transparent
-          before:content-['']
-        "
-            >
-              Creations
-            </div>
-
-            {/* Heading */}
-            <BlurTextReveal
-              as="h2"
-              text="Posts that stop the scroll"
-              className="max-w-3xl text-4xl tracking-tight text-foreground sm:text-5xl"
-            />
-
-            {/* Description */}
-            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted">
-              A curated pair of motion sections featuring cinematic reels and high-converting social
-              content built to capture attention instantly.
-            </p>
-          </Reveal>
-        </Container>
-      </section>
-
-      {/* Desktop: two carousels */}
-      <div className="hidden lg:block">
-        <ReelsCarousel />
-        <PostStageSlider />
-      </div>
-
-      {/* Mobile: combined 3D cylinder */}
-      <MobileContentReel />
+      <CreationsSection />
 
       <section className="py-16 sm:py-20 lg:py-24">
         <Container>
           {/* Heading */}
           <div className="flex justify-center text-center">
-            <Reveal className="mb-10 sm:mb-14 max-w-2xl flex flex-col items-center px-4 sm:px-0">
+            <Reveal className="mb-2 sm:mb-14 max-w-2xl flex flex-col items-center px-4 sm:px-0">
               <div className="relative inline-flex overflow-hidden rounded-full border border-white/10 bg-white/[0.03] px-4 sm:px-6 py-1.5 sm:py-2 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.24em] text-white/70 backdrop-blur-md transition-colors duration-300 before:absolute before:left-[12%] before:right-[12%] before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#40ffbb]/40 before:to-transparent before:content-['']">
-                Portfolio
+                Case Studies
               </div>
 
               <BlurTextReveal
                 as="h2"
-                text="The selected projects"
+                text="Our Case Studies"
                 className="mt-6 sm:mt-10 text-4xl sm:text-5xl tracking-tight text-white"
               />
 
               <p className="mt-4 sm:mt-6 text-sm sm:text-base leading-relaxed text-white/60">
-                Discover our selected projects, highlighting partnerships with forward-thinking
-                clients in various sectors.
+                Explore our latest case studies and see how we've helped forward-thinking clients scale their digital presence.
               </p>
             </Reveal>
           </div>
 
-          {/* Bento Grid */}
-          <div className="mt-12 sm:mt-16 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-12 lg:gap-5 lg:auto-rows-[320px]">
-            {projectTeasers.slice(0, 5).map((p, idx) => {
-              // Bento Layout Pattern
-              const layouts = [
-                'col-span-2 min-h-[180px] sm:min-h-[220px] lg:col-span-8 lg:row-span-2', // hero — full width
-                'col-span-1 aspect-square lg:aspect-auto lg:col-span-4', // mobile: square / desktop: small
-                'col-span-1 aspect-square lg:aspect-auto lg:col-span-4 lg:row-span-2', // mobile: square / desktop: tall
-                'col-span-1 aspect-square lg:aspect-auto lg:col-span-4', // mobile: square / desktop: small
-                'col-span-1 aspect-square lg:aspect-auto lg:col-span-8', // mobile: square / desktop: wide
-              ];
-
-              return (
-                <Reveal key={p.slug} delay={idx * 0.05} className={layouts[idx]}>
-                  <Link
-                    href={`/project/${p.slug}`}
-                    className="
-                group
-                relative
-                flex
-                h-full
-                lg:min-h-[320px]
-                overflow-hidden
-                rounded-[20px] sm:rounded-[28px]
-                border
-                border-white/10
-                bg-card
-                transition-all
-                duration-500
-                will-change-transform
-                hover:-translate-y-1
-                hover:border-white/20
-              "
-                  >
-                    {/* Image */}
-                    <div className="relative h-full w-full overflow-hidden">
-                      <Image
-                        src={p.image}
-                        alt={p.alt}
-                        fill
-                        loading="lazy"
-                        className="
-                    object-cover
-                    transition-transform
-                    duration-700
-                    ease-out
-                    group-hover:scale-[1.03]
-                  "
-                        sizes="(min-width: 1024px) 66vw, 50vw"
-                      />
-
-                      {/* Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
-                      {/* Top Tags */}
-                      <div className="absolute left-5 top-5 z-20 flex gap-2">
-                        <span className="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-[11px] uppercase tracking-wide text-white backdrop-blur-md">
-                          SaaS
-                        </span>
-
-                        <span className="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-[11px] uppercase tracking-wide text-white backdrop-blur-md">
-                          Branding
-                        </span>
-                      </div>
-
-                      {/* Bottom Content */}
-                      <div className="absolute bottom-0 left-0 z-20 w-full p-4 sm:p-6 lg:p-8">
-                        <div className="flex items-end justify-between gap-3 lg:gap-4">
-                          <div>
-                            <p className="mb-1 text-xs text-white/60 lg:mb-3 lg:text-sm">
-                              {p.year}
-                            </p>
-
-                            <h3 className="text-base font-medium tracking-tight text-white sm:text-lg lg:text-3xl">
-                              {p.title}
-                            </h3>
-
-                            <p className="mt-3 hidden max-w-md text-sm leading-relaxed text-white/70 lg:block">
-                              Building immersive digital experiences with scalable modern
-                              architecture and refined visual systems.
-                            </p>
-                          </div>
-
-                          {/* Arrow */}
-                          <div
-                            className="
-                        flex
-                        h-8 w-8 shrink-0
-                        lg:h-12 lg:w-12
-                        items-center
-                        justify-center
-                        rounded-full
-                        border
-                        border-white/10
-                        bg-white/10
-                        text-white
-                        backdrop-blur-md
-                        transition-transform
-                        duration-300
-                        group-hover:translate-x-1
-                      "
-                          >
-                            →
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
-                </Reveal>
-              );
-            })}
-
-            {/* Stats Card */}
-            <Reveal className="col-span-1 aspect-square lg:aspect-auto lg:col-span-4">
-              <div
-                className="
-            relative
-            flex
-            h-full
-            flex-col
-            justify-between
-            overflow-hidden
-            rounded-[20px] sm:rounded-[28px]
-            border
-            border-white/10
-            bg-card
-            p-5 sm:p-8
-            lg:min-h-[320px]
-          "
+          {/* Vertical Sticky Portfolio Cards */}
+          <div className="mt-3 sm:mt-16 flex flex-col pb-[20vh] max-w-7xl mx-auto w-full px-4 sm:px-0">
+            {projectTeasers.slice(0, 3).map((p, idx) => (
+              <article
+                key={p.slug}
+                className="sticky group relative flex flex-col lg:flex-row min-h-[350px] overflow-hidden rounded-[24px] sm:rounded-[32px] border border-white/[0.08] bg-black/95 shadow-[0_-5px_20px_rgba(0,0,0,0.5)] p-6 sm:p-8 lg:p-10 transition-all duration-500 backdrop-blur-xl hover:border-[#12ced6]/60 hover:shadow-[0_12px_30px_rgba(18,206,214,0.18)] gap-8 lg:gap-12 w-full"
+                style={{
+                  top: `calc(15vh + ${idx * 20}px)`,
+                  marginTop: idx === 0 ? '0' : '50vh',
+                  zIndex: 10 + idx
+                }}
               >
-                {/* Background Video */}
-                <video
-                  className="absolute inset-0 z-0 h-full w-full object-cover object-center"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                  aria-hidden
-                >
-                  <source
-                    src="https://res.cloudinary.com/diqnwnz6x/video/upload/v1779957986/herovideo2_qdgibs.mp4"
-                    type="video/mp4"
-                  />
-                </video>
+                {/* Glowing top border */}
+                <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#12ced6] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-                <div className="relative z-10">
-                  <p className="text-xs sm:text-sm uppercase tracking-[0.2em] text-white/50">
-                    Projects Delivered
-                  </p>
-
-                  <h3 className="mt-4 sm:mt-6 text-4xl sm:text-6xl font-semibold tracking-tight text-white">
-                    48+
+                {/* Left Side: Content */}
+                <div className="flex-1 flex flex-col justify-center">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="inline-block h-2 w-2 rounded-full bg-[#12ced6] animate-pulse" />
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#12ced6]">
+                      {p.category || p.year || '2025'}
+                    </p>
+                  </div>
+                  <h3 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white mb-4">
+                    {p.title}
                   </h3>
+                  <p className="text-base sm:text-lg leading-relaxed text-white/70 mb-8 max-w-xl">
+                    {p.description || "Building immersive digital experiences with scalable modern architecture and refined visual systems."}
+                  </p>
+                  
+                  <div>
+                    <Link
+                      href={`/project/${p.slug}`}
+                      className="inline-flex items-center gap-2 rounded-full bg-white/10 px-6 py-3 text-sm font-medium text-white transition hover:bg-[#12ced6] hover:text-black"
+                    >
+                      View Case Study
+                      <span>→</span>
+                    </Link>
+                  </div>
                 </div>
 
-                <p className="relative z-10 max-w-xs text-xs sm:text-sm leading-relaxed text-white/70">
-                  Helping brands craft scalable, high-performing digital products.
-                </p>
-
-                {/* Ambient Glow */}
-                <div className="absolute -bottom-20 -right-20 h-48 w-48 rounded-full bg-[#12ced6]/20 blur-3xl" />
-              </div>
-            </Reveal>
+                {/* Right Side: Placeholder Image */}
+                <div className="flex-1 relative w-full min-h-[250px] lg:min-h-full rounded-[20px] overflow-hidden border border-white/10 bg-white/5 flex items-center justify-center">
+                  {/* Using regular img tag to avoid Next.js domain config issues for arbitrary placeholders */}
+                  <img
+                    src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop"
+                    alt="Placeholder"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none" />
+                </div>
+              </article>
+            ))}
           </div>
         </Container>
       </section>
@@ -852,7 +675,7 @@ export function HomeSections() {
       </section>
 
       {/* Brands / Partners Section */}
-      <section className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden py-10 sm:py-20 lg:py-24">
+      <section className="relative flex min-h-[60svh] flex-col justify-center overflow-hidden py-10 sm:py-20 lg:py-24">
         <div
           className="pointer-events-none absolute inset-0 opacity-50"
           style={{
@@ -886,7 +709,7 @@ export function HomeSections() {
           {/* Mobile: fills remaining viewport as a 4-col grid (10 stretched rows).
                sm+: reverts to the scattered floating layout. */}
           <style>{partnerPlacementCss}</style>
-          <div className="relative grid flex-1 grid-cols-4 content-center items-stretch gap-x-2 gap-y-2 [grid-auto-rows:minmax(0,1fr)] sm:mt-10 sm:block sm:h-[600px] sm:flex-none sm:gap-x-4 sm:gap-y-8 lg:h-[660px] xl:h-[720px]">
+          <div className="relative grid flex-1 grid-cols-4 content-center items-stretch gap-x-2 gap-y-2 [grid-auto-rows:minmax(0,1fr)] sm:mt-10 sm:block sm:h-[400px] sm:flex-none sm:gap-x-4 sm:gap-y-8 lg:h-[450px] xl:h-[500px]">
             {clientLogos.map((logoPath, idx) => {
               const name = logoPath.split('/').pop()?.replace('.png', '') || `Client ${idx}`;
               const size = shuffledSizes[idx % shuffledSizes.length];
@@ -916,8 +739,8 @@ export function HomeSections() {
       <section className="relative py-14 sm:py-20 lg:py-24">
         <Container>
           <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
-            {/* Left: heading */}
-            <Reveal className="flex flex-col items-start">
+            {/* Left: heading & FAQ */}
+            <Reveal className="flex flex-col items-start w-full">
               <div className="relative inline-flex overflow-hidden rounded-full border border-white/10 bg-black/70 px-5 py-1.5 text-xs uppercase tracking-[0.2em] text-foreground/90 backdrop-blur-md before:absolute before:left-[12%] before:right-[12%] before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#12ced6]/60 before:to-transparent before:content-[‘’]">
                 FAQ
               </div>
@@ -934,14 +757,75 @@ export function HomeSections() {
                 className="mt-1 text-4xl tracking-tight text-foreground sm:text-5xl lg:text-6xl"
               />
 
-              <p className="mt-6 max-w-xs text-sm leading-relaxed text-muted">
+              <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted">
                 Have questions? Find clear, concise answers to the most common inquiries below.
               </p>
+              
+              <div className="mt-10 w-full">
+                <FaqAccordion />
+              </div>
             </Reveal>
 
-            {/* Right: accordion */}
-            <Reveal delay={0.05}>
-              <FaqAccordion />
+            {/* Right: Contact Form */}
+            <Reveal delay={0.05} className="flex w-full items-center justify-center lg:justify-end">
+              <form className="flex w-full max-w-lg flex-col gap-4 rounded-2xl border border-white/10 bg-[#0e0e11]/80 p-6 shadow-2xl backdrop-blur-sm sm:p-8">
+                <h3 className="mb-2 text-2xl font-medium text-foreground">Contact Us</h3>
+                
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-xs text-foreground/70" htmlFor="name">Name *</label>
+                  <input type="text" id="name" required className="w-full rounded-lg border border-white/10 bg-black/50 px-4 py-2.5 text-sm text-foreground placeholder-white/20 transition-colors focus:border-[#12ced6]/60 focus:outline-none" placeholder="Your Name" />
+                </div>
+
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-xs text-foreground/70" htmlFor="email">Email *</label>
+                  <input type="email" id="email" required className="w-full rounded-lg border border-white/10 bg-black/50 px-4 py-2.5 text-sm text-foreground placeholder-white/20 transition-colors focus:border-[#12ced6]/60 focus:outline-none" placeholder="you@example.com" />
+                </div>
+
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-xs text-foreground/70" htmlFor="phone">Phone no *</label>
+                  <input type="tel" id="phone" required className="w-full rounded-lg border border-white/10 bg-black/50 px-4 py-2.5 text-sm text-foreground placeholder-white/20 transition-colors focus:border-[#12ced6]/60 focus:outline-none" placeholder="+91 98765 43210" />
+                </div>
+
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-xs text-foreground/70" htmlFor="category">What's the type of your company? *</label>
+                  <select id="category" required className="w-full rounded-lg border border-white/10 bg-black/50 px-4 py-2.5 text-sm text-foreground transition-colors focus:border-[#12ced6]/60 focus:outline-none [&>option]:bg-[#0e0e11]">
+                    <option value="">Select a category</option>
+                    <option value="ecommerce">E-commerce</option>
+                    <option value="service">Service Business</option>
+                    <option value="saas">SaaS / Technology</option>
+                    <option value="local">Local Business</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-xs text-foreground/70" htmlFor="social">Clients Social Links *</label>
+                  <select id="social" required className="w-full rounded-lg border border-white/10 bg-black/50 px-4 py-2.5 text-sm text-foreground transition-colors focus:border-[#12ced6]/60 focus:outline-none [&>option]:bg-[#0e0e11]">
+                    <option value="">Select primary platform</option>
+                    <option value="instagram">Instagram</option>
+                    <option value="facebook">Facebook</option>
+                    <option value="linkedin">LinkedIn</option>
+                    <option value="twitter">X (Twitter)</option>
+                    <option value="other">Other / Multiple</option>
+                  </select>
+
+                </div>
+
+
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-xs text-foreground/70" htmlFor="phone">Enter link of above selected social media platform *</label>
+                  <input type="tel" id="phone" required className="w-full rounded-lg border border-white/10 bg-black/50 px-4 py-2.5 text-sm text-foreground placeholder-white/20 transition-colors focus:border-[#12ced6]/60 focus:outline-none" placeholder="+91 98765 43210" />
+                </div>
+
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-xs text-foreground/70" htmlFor="comments">Comments</label>
+                  <textarea id="comments" rows="3" className="w-full resize-none rounded-lg border border-white/10 bg-black/50 px-4 py-2.5 text-sm text-foreground placeholder-white/20 transition-colors focus:border-[#12ced6]/60 focus:outline-none" placeholder="Tell us more about your needs..."></textarea>
+                </div>
+
+                <button type="submit" className="mt-2 w-full rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition-colors hover:bg-white/90">
+                  Submit Request
+                </button>
+              </form>
             </Reveal>
           </div>
         </Container>
