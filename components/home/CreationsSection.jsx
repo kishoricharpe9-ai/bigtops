@@ -503,12 +503,12 @@ function CreationCard({ item, onSelect, heightClass = 'h-[380px]' }) {
             className="object-cover blur-xl opacity-40 scale-125 pointer-events-none"
             aria-hidden
           />
-          {/* Main image - object-contain ensures 100% of image dimensions & text are visible without cropping */}
+          {/* Main image */}
           <Image
             src={item.src}
             alt={item.alt}
             fill
-            className="object-contain p-1 sm:p-2 transition-transform duration-700 ease-out group-hover:scale-105 relative z-10"
+            className="object-contain transition-transform duration-700 ease-out group-hover:scale-105 relative z-10"
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
           />
         </figure>
@@ -599,7 +599,7 @@ export function CreationsSection() {
         </header>
 
         {/* DESKTOP VIEW: 4-Column Grid (hidden on mobile, visible lg:block) */}
-        <div className="hidden lg:block relative rounded-[36px] border border-white/10 bg-[#0c0c0e] p-8 lg:p-10 shadow-2xl backdrop-blur-xl overflow-hidden">
+        <div className="hidden lg:block relative mx-auto max-w-6xl rounded-[36px] border border-white/10 bg-[#0c0c0e] p-8 lg:p-10 shadow-2xl backdrop-blur-xl overflow-hidden">
           {/* Ambient Blue Glow Background Accents */}
           <div className="pointer-events-none absolute -top-40 left-1/4 h-96 w-96 rounded-full bg-[#12ced6]/15 blur-[130px]" />
           <div className="pointer-events-none absolute -bottom-40 right-1/4 h-96 w-96 rounded-full bg-[#38bdf8]/15 blur-[130px]" />
@@ -614,26 +614,26 @@ export function CreationsSection() {
           <div className="grid grid-cols-4 gap-6">
             {/* COLUMN 1 */}
             <div className="flex flex-col gap-6">
-              <CreationCard item={creationsData.col1.top} onSelect={setSelectedItem} heightClass="h-[380px]" />
-              <CreationCard item={creationsData.col1.bottom} onSelect={setSelectedItem} heightClass="h-[220px]" />
+              <CreationCard item={creationsData.col1.top} onSelect={setSelectedItem} heightClass="aspect-[9/16]" />
+              <CreationCard item={creationsData.col1.bottom} onSelect={setSelectedItem} heightClass="aspect-[4/5]" />
             </div>
 
             {/* COLUMN 2 */}
             <div className="flex flex-col gap-6">
-              <CreationCard item={creationsData.col2.top} onSelect={setSelectedItem} heightClass="h-[220px]" />
-              <CreationCard item={creationsData.col2.bottom} onSelect={setSelectedItem} heightClass="h-[380px]" />
+              <CreationCard item={creationsData.col2.top} onSelect={setSelectedItem} heightClass="aspect-[4/5]" />
+              <CreationCard item={creationsData.col2.bottom} onSelect={setSelectedItem} heightClass="aspect-[9/16]" />
             </div>
 
             {/* COLUMN 3 */}
             <div className="flex flex-col gap-6">
-              <CreationCard item={creationsData.col3.top} onSelect={setSelectedItem} heightClass="h-[380px]" />
-              <CreationCard item={creationsData.col3.bottom} onSelect={setSelectedItem} heightClass="h-[220px]" />
+              <CreationCard item={creationsData.col3.top} onSelect={setSelectedItem} heightClass="aspect-[9/16]" />
+              <CreationCard item={creationsData.col3.bottom} onSelect={setSelectedItem} heightClass="aspect-[4/5]" />
             </div>
 
             {/* COLUMN 4 */}
             <div className="flex flex-col gap-6">
-              <CreationCard item={creationsData.col4.top} onSelect={setSelectedItem} heightClass="h-[220px]" />
-              <CreationCard item={creationsData.col4.bottom} onSelect={setSelectedItem} heightClass="h-[380px]" />
+              <CreationCard item={creationsData.col4.top} onSelect={setSelectedItem} heightClass="aspect-[4/5]" />
+              <CreationCard item={creationsData.col4.bottom} onSelect={setSelectedItem} heightClass="aspect-[9/16]" />
             </div>
           </div>
 
