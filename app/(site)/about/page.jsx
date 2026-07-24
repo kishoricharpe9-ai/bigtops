@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { Container } from '@/components/layout/Container';
 import { Reveal } from '@/components/motion/Reveal';
 import { BlurTextReveal } from '@/components/motion/BlurTextReveal';
@@ -71,18 +72,47 @@ export default function AboutPage() {
             </p>
           </Reveal>
 
-          <Reveal delay={0.1} className="mt-14">
-            <div className="group relative overflow-hidden rounded-[24px] bg-white/[0.02]">
-              <Image
-                src="https://res.cloudinary.com/diqnwnz6x/image/upload/v1779963938/Relaxed-Team-Portrait-Rumble-Melbourne_m5ykm7.jpg"
-                alt="The Bigtopsocial team"
-                width={1600}
-                height={900}
-                priority
-                className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
-              />
+          <Reveal delay={0.1} className="mt-14 mx-auto w-full max-w-6xl">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 sm:gap-8 lg:gap-10">
+              {[
+                { tag: 'CEO', desc: 'Leading the vision and strategy for the company.', image: '/Team images/Sarang Thakre.jpeg' },
+                { tag: 'CTO', desc: 'Driving technical innovation and architecture.', image: '/Team images/Mayur.jpeg' },
+                { tag: 'CTO', desc: 'Overseeing technology infrastructure and operations.', image: '' },
+              ].map((item, idx) => (
+                <div key={idx} className="group relative overflow-hidden rounded-[24px] bg-white/[0.02] aspect-square sm:aspect-[3/4]">
+                  {item.image ? (
+                    <Image
+                      src={item.image}
+                      alt={`${item.tag} portrait`}
+                      fill
+                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+                    />
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center bg-white/[0.02]">
+                      <span className="text-sm font-medium text-muted/50">Image Placeholder</span>
+                    </div>
+                  )}
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-10" />
+                  <div className="absolute bottom-0 left-0 p-6 flex flex-col items-start w-full z-20">
+                    <Badge>{item.tag}</Badge>
+                    <p className="mt-4 text-sm text-foreground/80">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
 
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+            <div className="mt-12 flex justify-center">
+              <Link
+                href="/services"
+                className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-white px-8 py-3.5 text-sm font-medium text-black transition-transform duration-300 ease-out hover:scale-105"
+              >
+                <span className="relative z-10 flex items-center gap-2">
+                  Learn more
+                  <svg className="h-4 w-4 transition-transform duration-300 ease-out group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </span>
+              </Link>
             </div>
           </Reveal>
         </Container>
