@@ -249,9 +249,6 @@ export function HowWeWorkTimeline() {
                       cardRefs.current[index] = el;
                     }}
                     data-index={index}
-                    className={`sticky group relative flex min-h-[280px] flex-col justify-between overflow-hidden rounded-[20px] border p-6 transition-all duration-500 sm:min-h-[320px] sm:p-8 backdrop-blur-xl hover:border-[#12ced6]/50 ${
-                      isActive
-                        ? 'border-[#12ced6]/30 bg-[#06101c]/95 shadow-xl'
                     className={`sticky group relative flex min-h-[280px] flex-col justify-between overflow-hidden rounded-[20px] border p-6 transition-all duration-500 sm:min-h-[320px] sm:p-8 backdrop-blur-xl hover:border-[#12ced6]/60 hover:shadow-[0_12px_30px_rgba(18,206,214,0.18)] ${
                       isActive
                         ? 'border-white/20 bg-[#0a0a0a]/95 shadow-xl'
@@ -266,7 +263,6 @@ export function HowWeWorkTimeline() {
                     {/* Glowing top border on active/hover */}
                     <div
                       className={`absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#12ced6] to-transparent transition-opacity duration-500 ${
-                        isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-70'
                         isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
                       }`}
                     />
@@ -385,9 +381,6 @@ export function HowWeWorkTimeline() {
                         cardRefs.current[processSteps.length + index] = el;
                       }}
                       data-index={index}
-                      className={`sticky group relative flex min-h-[220px] flex-col justify-between overflow-hidden rounded-[20px] border p-6 transition-all duration-500 backdrop-blur-xl sm:p-8 hover:border-[#12ced6]/50 ${
-                        isActive
-                          ? 'border-[#12ced6]/30 bg-[#06101c]/95 shadow-xl'
                       className={`sticky group relative flex min-h-[220px] flex-col justify-between overflow-hidden rounded-[20px] border p-6 transition-all duration-500 backdrop-blur-xl sm:p-8 hover:border-[#12ced6]/60 hover:shadow-[0_12px_30px_rgba(18,206,214,0.18)] ${
                         isActive
                           ? 'border-white/20 bg-[#0a0a0a]/95 shadow-xl'
@@ -402,7 +395,6 @@ export function HowWeWorkTimeline() {
                       {/* Glowing top border on active/hover */}
                       <div
                         className={`absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#12ced6] to-transparent transition-opacity duration-500 ${
-                          isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-70'
                           isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
                         }`}
                       />

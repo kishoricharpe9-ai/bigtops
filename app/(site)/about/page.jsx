@@ -2,8 +2,10 @@ import Image from 'next/image';
 import { Container } from '@/components/layout/Container';
 import { Reveal } from '@/components/motion/Reveal';
 import { BlurTextReveal } from '@/components/motion/BlurTextReveal';
-import { aboutTeam, awards, industries } from '@/lib/content/about';
+import { aboutTeam, awards, industries, videoTestimonials } from '@/lib/content/about';
 import { stats, testimonials } from '@/lib/content/home';
+import VideoTestimonials from '@/components/about/VideoTestimonials';
+
 
 export const metadata = {
   title: 'About Us',
@@ -181,6 +183,9 @@ export default function AboutPage() {
           </Reveal>
         </Container>
       </section>
+
+      {/* ── VIDEO TESTIMONIALS ── */}
+      <VideoTestimonials testimonials={videoTestimonials} />
 
       {/* ── CLIENT FEEDBACK ── */}
       <section className="border-t border-white/[0.06] py-16 sm:py-24">
