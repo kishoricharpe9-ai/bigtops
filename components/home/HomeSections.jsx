@@ -5,13 +5,8 @@ import { FaqAccordion } from '@/components/faq/FaqAccordion';
 import { Reveal } from '@/components/motion/Reveal';
 import { BlurTextReveal } from '@/components/motion/BlurTextReveal';
 import { HowWeWorkTimeline } from '@/components/home/HowWeWorkTimeline';
-import { ReelsCarousel } from '@/components/home/ReelsCarousel';
-import { PostStageSlider } from '@/components/home/PostStageSlider';
+import { CreationsSection } from '@/components/home/CreationsSection';
 import { MobileTestimonials } from '@/components/home/MobileTestimonials';
-import dynamic from 'next/dynamic';
-const MobileContentReel = dynamic(() =>
-  import('@/components/home/MobileContentReel').then(m => m.MobileContentReel),
-);
 import { services, testimonials } from '@/lib/content/home';
 import { projectTeasers } from '@/lib/content/projects';
 
@@ -467,67 +462,7 @@ export function HomeSections() {
 
       <HowWeWorkTimeline />
 
-      <section className="pt-16 sm:pt-20 lg:pt-24 pb-0">
-        <Container>
-          <Reveal className="mb-8 flex flex-col items-center text-center">
-            {/* Badge */}
-            <div
-              className="
-          mb-10
-          relative
-          inline-flex
-          overflow-hidden
-          rounded-full
-                    bg-black/70
-          px-6 py-2
-          text-xs
-          uppercase
-          tracking-[0.2em]
-          text-foreground/90
-          backdrop-blur-md
-          transition
-          hover:border-white/20
-          hover:bg-black/80
-
-          before:absolute
-          before:left-[12%]
-          before:right-[12%]
-          before:top-0
-          before:h-px
-          before:bg-gradient-to-r
-          before:from-transparent
-          before:via-[#12ced6]/60
-          before:to-transparent
-          before:content-['']
-        "
-            >
-              Creations
-            </div>
-
-            {/* Heading */}
-            <BlurTextReveal
-              as="h2"
-              text="Posts that stop the scroll"
-              className="max-w-3xl text-4xl tracking-tight text-foreground sm:text-5xl"
-            />
-
-            {/* Description */}
-            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted">
-              A curated pair of motion sections featuring cinematic reels and high-converting social
-              content built to capture attention instantly.
-            </p>
-          </Reveal>
-        </Container>
-      </section>
-
-      {/* Desktop: two carousels */}
-      <div className="hidden lg:block">
-        <ReelsCarousel />
-        <PostStageSlider />
-      </div>
-
-      {/* Mobile: combined 3D cylinder */}
-      <MobileContentReel />
+      <CreationsSection />
 
       <section className="py-16 sm:py-20 lg:py-24">
         <Container>
@@ -555,7 +490,7 @@ export function HomeSections() {
             {projectTeasers.slice(0, 3).map((p, idx) => (
               <article
                 key={p.slug}
-                className="sticky group relative flex flex-col lg:flex-row min-h-[350px] overflow-hidden rounded-[24px] sm:rounded-[32px] border border-white/[0.08] bg-black/95 shadow-[0_-5px_20px_rgba(0,0,0,0.5)] p-6 sm:p-8 lg:p-10 transition-all duration-500 backdrop-blur-xl hover:border-[#12ced6]/60 hover:shadow-[0_12px_30px_rgba(18,206,214,0.18)] gap-8 lg:gap-12 w-full"
+                className="sticky group relative flex flex-col lg:flex-row min-h-[280px] overflow-hidden rounded-[24px] sm:rounded-[32px] border border-white/[0.08] bg-black/95 shadow-[0_-5px_20px_rgba(0,0,0,0.5)] p-5 sm:p-6 lg:p-8 transition-all duration-500 backdrop-blur-xl hover:border-[#12ced6]/60 hover:shadow-[0_12px_30px_rgba(18,206,214,0.18)] gap-5 lg:gap-8 w-full"
                 style={{
                   top: `calc(15vh + ${idx * 20}px)`,
                   marginTop: idx === 0 ? '0' : '50vh',
@@ -567,23 +502,31 @@ export function HomeSections() {
 
                 {/* Left Side: Content */}
                 <div className="flex-1 flex flex-col justify-center">
-                  <div className="flex items-center gap-3 mb-4">
+                  <div className="flex items-center gap-3 mb-3">
                     <span className="inline-block h-2 w-2 rounded-full bg-[#12ced6] animate-pulse" />
                     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#12ced6]">
                       {p.category || p.year || '2025'}
                     </p>
                   </div>
-                  <h3 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white mb-4">
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-white mb-3">
                     {p.title}
                   </h3>
-                  <p className="text-base sm:text-lg leading-relaxed text-white/70 mb-8 max-w-xl">
-                    {p.description || "Building immersive digital experiences with scalable modern architecture and refined visual systems."}
-                  </p>
+                  <div className="flex flex-col gap-3 text-sm sm:text-base leading-relaxed text-white/70 mb-5 max-w-xl">
+                    <p>
+                      When Atharva Oceana partnered with BigTop Social, it had the advantage of a prime location and premium residences but lacked the market visibility and brand presence needed to attract the right buyers.
+                    </p>
+                    <p>
+                      We developed a strategic branding roadmap through impactful storytelling, compelling creatives, and value-driven digital campaigns that positioned Atharva Oceana as a trusted premium residential destination.
+                    </p>
+                    <p>
+                      With consistent execution across digital platforms, the project gained strong market recognition, increased buyer confidence, and witnessed a significant rise in inquiries and sales, transforming it into one of the most sought-after residential projects in the area.
+                    </p>
+                  </div>
                   
                   <div>
                     <Link
                       href={`/project/${p.slug}`}
-                      className="inline-flex items-center gap-2 rounded-full bg-white/10 px-6 py-3 text-sm font-medium text-white transition hover:bg-[#12ced6] hover:text-black"
+                      className="inline-flex items-center gap-2 rounded-full bg-white/10 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#12ced6] hover:text-black"
                     >
                       View Case Study
                       <span>→</span>

@@ -1,7 +1,9 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { Container } from '@/components/layout/Container';
 import { Reveal } from '@/components/motion/Reveal';
 import { BlurTextReveal } from '@/components/motion/BlurTextReveal';
+import { Testimonial3DCard } from '@/components/about/Testimonial3DCard';
 import { aboutTeam, awards, industries, videoTestimonials } from '@/lib/content/about';
 import { stats, testimonials } from '@/lib/content/home';
 import VideoTestimonials from '@/components/about/VideoTestimonials';
@@ -15,18 +17,6 @@ function Badge({ children }) {
   return (
     <div className="relative inline-flex overflow-hidden rounded-full border border-white/10 bg-black/70 px-6 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-foreground/90 backdrop-blur-md before:absolute before:left-[12%] before:right-[12%] before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#12ced6]/60 before:to-transparent before:content-['']">
       {children}
-    </div>
-  );
-}
-
-function Stars() {
-  return (
-    <div className="flex gap-1 text-accent">
-      {Array.from({ length: 5 }).map((_, i) => (
-        <svg key={i} width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-        </svg>
-      ))}
     </div>
   );
 }
@@ -73,18 +63,47 @@ export default function AboutPage() {
             </p>
           </Reveal>
 
-          <Reveal delay={0.1} className="mt-14">
-            <div className="group relative overflow-hidden rounded-[24px] bg-white/[0.02]">
-              <Image
-                src="https://res.cloudinary.com/diqnwnz6x/image/upload/v1779963938/Relaxed-Team-Portrait-Rumble-Melbourne_m5ykm7.jpg"
-                alt="The Bigtopsocial team"
-                width={1600}
-                height={900}
-                priority
-                className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
-              />
+          <Reveal delay={0.1} className="mt-14 mx-auto w-full max-w-6xl">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 sm:gap-8 lg:gap-10">
+              {[
+                { tag: 'CEO', desc: 'Leading the vision and strategy for the company.', image: '/Team images/Sarang Thakre.jpeg' },
+                { tag: 'CTO', desc: 'Driving technical innovation and architecture.', image: '/Team images/Mayur.jpeg' },
+                { tag: 'CTO', desc: 'Overseeing technology infrastructure and operations.', image: '' },
+              ].map((item, idx) => (
+                <div key={idx} className="group relative overflow-hidden rounded-[24px] bg-white/[0.02] aspect-square sm:aspect-[3/4]">
+                  {item.image ? (
+                    <Image
+                      src={item.image}
+                      alt={`${item.tag} portrait`}
+                      fill
+                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+                    />
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center bg-white/[0.02]">
+                      <span className="text-sm font-medium text-muted/50">Image Placeholder</span>
+                    </div>
+                  )}
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-10" />
+                  <div className="absolute bottom-0 left-0 p-6 flex flex-col items-start w-full z-20">
+                    <Badge>{item.tag}</Badge>
+                    <p className="mt-4 text-sm text-foreground/80">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
 
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+            <div className="mt-12 flex justify-center">
+              <Link
+                href="/services"
+                className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-white px-8 py-3.5 text-sm font-medium text-black transition-transform duration-300 ease-out hover:scale-105"
+              >
+                <span className="relative z-10 flex items-center gap-2">
+                  Learn more
+                  <svg className="h-4 w-4 transition-transform duration-300 ease-out group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </span>
+              </Link>
             </div>
           </Reveal>
         </Container>
@@ -187,9 +206,12 @@ export default function AboutPage() {
       {/* ── VIDEO TESTIMONIALS ── */}
       <VideoTestimonials testimonials={videoTestimonials} />
 
-      {/* ── CLIENT FEEDBACK ── */}
-      <section className="border-t border-white/[0.06] py-16 sm:py-24">
-        <Container>
+      {/* ── CLIENT FEEDBACK (3D ANIMATED TESTIMONIALS) ── */}
+      <section className="relative overflow-hidden border-t border-white/[0.06] py-16 sm:py-24">
+        {/* Background ambient lighting */}
+        <div className="pointer-events-none absolute -top-40 left-1/2 h-96 w-[600px] -translate-x-1/2 rounded-full bg-[#12ced6]/10 blur-[120px]" />
+
+        <Container className="relative z-10">
           <Reveal className="flex flex-col items-start">
             <Badge>Testimonial</Badge>
             <BlurTextReveal
@@ -204,70 +226,16 @@ export default function AboutPage() {
             </p>
           </Reveal>
 
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {testimonials.map((t, idx) => {
               const featured = idx === 1 || idx === 4;
-              if (featured) {
-                return (
-                  <Reveal key={t.name} delay={idx * 0.04}>
-                    <div className="relative flex h-full min-h-[280px] flex-col justify-between overflow-hidden rounded-[18px] p-6">
-                      <video
-                        className="absolute inset-0 h-full w-full object-cover object-center"
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        preload="metadata"
-                        aria-hidden
-                      >
-                        <source
-                          src="https://res.cloudinary.com/diqnwnz6x/video/upload/v1779957986/herovideo2_qdgibs.mp4"
-                          type="video/mp4"
-                        />
-                      </video>
-                      <div className="relative z-10 flex flex-col justify-between h-full gap-6">
-                        <div>
-                          <Stars />
-                          <p className="mt-5 text-sm leading-relaxed text-white">
-                            &ldquo;{t.quote}&rdquo;
-                          </p>
-                        </div>
-                        <div className="flex items-center gap-3">
-                          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/10 text-sm font-semibold text-white">
-                            {t.name.charAt(0)}
-                          </div>
-                          <div className="text-sm">
-                            <div className="font-semibold text-white">{t.name}</div>
-                            <div className="text-white/50">{t.role}</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </Reveal>
-                );
-              }
               return (
-                <Reveal key={t.name} delay={idx * 0.04}>
-                  <div className="h-full rounded-[18px] bg-card">
-                    <figure className="flex h-full min-h-[280px] flex-col justify-between p-6">
-                      <div>
-                        <Stars />
-                        <blockquote className="mt-5 text-sm leading-relaxed text-foreground/90">
-                          &ldquo;{t.quote}&rdquo;
-                        </blockquote>
-                      </div>
-                      <figcaption className="mt-6 flex items-center gap-3">
-                        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/10 text-sm font-semibold text-foreground">
-                          {t.name.charAt(0)}
-                        </div>
-                        <div className="text-sm">
-                          <div className="font-semibold text-foreground">{t.name}</div>
-                          <div className="text-muted">{t.role}</div>
-                        </div>
-                      </figcaption>
-                    </figure>
-                  </div>
-                </Reveal>
+                <Testimonial3DCard
+                  key={t.name}
+                  testimonial={t}
+                  index={idx}
+                  isFeatured={featured}
+                />
               );
             })}
           </div>
@@ -288,7 +256,7 @@ export default function AboutPage() {
               {industries.map(industry => (
                 <span
                   key={industry}
-                  className="rounded-full bg-white/[0.03] px-5 py-2 text-sm text-foreground/80 transition-colors hover:text-foreground"
+                  className="rounded-full bg-white/[0.03] px-5 py-2 text-sm text-foreground/80 transition-colors hover:text-foreground hover:bg-white/[0.08]"
                 >
                   {industry}
                 </span>
@@ -305,39 +273,44 @@ export default function AboutPage() {
             <Badge>Team Members</Badge>
             <BlurTextReveal
               as="h2"
-              text="Minds behind Bigtopsocial"
-              className="mt-8 text-3xl font-medium tracking-tight text-foreground sm:text-4xl lg:text-5xl"
+              text="The minds behind"
+              className="mt-8 max-w-3xl text-3xl font-medium tracking-tight text-foreground sm:text-4xl lg:text-5xl"
+            />
+
+            <BlurTextReveal
+              as="h2"
+              text="Bigtopsocial."
+              delay={0.2}
+              className="mt-1 max-w-3xl text-3xl font-medium tracking-tight text-foreground sm:text-4xl lg:text-5xl"
             />
 
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted">
-              Our team blends strategy, creativity, and performance to build marketing that drives
-              real growth.
+              We&rsquo;re a multi-disciplinary collective of strategists, directors, designers, and
+              performance marketers united by a single goal: turning ambitious brands into market
+              leaders.
             </p>
           </Reveal>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {aboutTeam.map((m, idx) => (
-              <Reveal key={`${m.name}-${idx}`} delay={idx * 0.04}>
-                <div className="group flex h-full flex-col overflow-hidden rounded-[18px] bg-card">
-                  <div className="relative aspect-square overflow-hidden">
-                    {m.image ? (
-                      <Image
-                        src={m.image}
-                        alt={m.name}
-                        fill
-                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-                        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                      />
-                    ) : (
-                      <div className="flex h-full w-full items-center justify-center bg-white/[0.04] text-5xl font-semibold text-foreground/40">
-                        {m.name.charAt(0)}
-                      </div>
-                    )}
+              <Reveal key={m.name} delay={idx * 0.05}>
+                <div className="group relative flex flex-col overflow-hidden rounded-[24px] bg-white/[0.02] p-4 transition-transform duration-500 hover:-translate-y-1">
+                  <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[18px] bg-white/[0.05]">
+                    <Image
+                      src={m.image}
+                      alt={m.name}
+                      width={600}
+                      height={750}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    />
+
                     <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   </div>
-                  <div className="p-5">
-                    <h3 className="text-base font-semibold text-foreground">{m.name}</h3>
-                    <p className="mt-1 text-sm text-muted">{m.role}</p>
+
+                  <div className="flex flex-col p-4 pt-5">
+                    <span className="text-lg font-medium text-foreground">{m.name}</span>
+                    <span className="mt-1 text-sm text-muted">{m.role}</span>
                   </div>
                 </div>
               </Reveal>
