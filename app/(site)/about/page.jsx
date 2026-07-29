@@ -147,37 +147,54 @@ export default function AboutPage() {
               <h2 className="mt-6 text-3xl font-medium tracking-tight text-foreground sm:text-4xl">Our Vision & Mission</h2>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-              {/* Vision */}
-              <div className="group relative overflow-hidden rounded-[24px] bg-white/[0.02] border border-white/[0.05] p-8 sm:p-12 transition-colors hover:bg-white/[0.04]">
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#12ced6]/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                <div className="relative z-10 flex flex-col items-start">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/[0.05] border border-white/10 mb-6">
-                    <svg className="h-7 w-7 text-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-2xl font-semibold tracking-tight text-foreground mb-4">Our Vision</h3>
-                  <p className="text-base leading-relaxed text-muted/90">
-                    To be the global catalyst for brand transformation, shaping the future of digital marketing by creating unforgettable experiences that connect people, purpose, and lasting value.
-                  </p>
-                </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+              {/* Left Section: Team Group Photo */}
+              <div className="relative group/photo overflow-hidden rounded-[24px] border border-white/[0.08] bg-[#050505] min-h-[300px] sm:min-h-[400px] lg:min-h-full shadow-2xl">
+                {/* Subtle ambient lighting on hover */}
+                <div className="pointer-events-none absolute -inset-px rounded-[24px] bg-gradient-to-br from-[#12ced6]/10 to-transparent opacity-0 transition-opacity duration-500 group-hover/photo:opacity-100" />
+                <Image
+                  src="/team-group.jpg"
+                  alt="BigTopSocial Creative Team"
+                  fill
+                  className="object-cover transition-transform duration-750 ease-out group-hover/photo:scale-[1.03]"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
               </div>
 
-              {/* Mission */}
-              <div className="group relative overflow-hidden rounded-[24px] bg-white/[0.02] border border-white/[0.05] p-8 sm:p-12 transition-colors hover:bg-white/[0.04]">
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#12ced6]/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                <div className="relative z-10 flex flex-col items-start">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/[0.05] border border-white/10 mb-6">
-                    <svg className="h-7 w-7 text-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
+              {/* Right Section: Vision and Mission cards stacked */}
+              <div className="flex flex-col gap-6 lg:gap-8 justify-between">
+                {/* Vision */}
+                <div className="group relative flex-1 overflow-hidden rounded-[24px] bg-white/[0.02] border border-white/[0.05] p-8 sm:p-10 transition-colors hover:bg-white/[0.04]">
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#12ced6]/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                  <div className="relative z-10 flex flex-col items-start">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/[0.05] border border-white/10 mb-6">
+                      <svg className="h-7 w-7 text-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-2xl font-semibold tracking-tight text-foreground mb-4">Our Vision</h3>
+                    <p className="text-base leading-relaxed text-muted/90">
+                      To be the global catalyst for brand transformation, shaping the future of digital marketing by creating unforgettable experiences that connect people, purpose, and lasting value.
+                    </p>
                   </div>
-                  <h3 className="text-2xl font-semibold tracking-tight text-foreground mb-4">Our Mission</h3>
-                  <p className="text-base leading-relaxed text-muted/90">
-                    To empower brands with innovative strategies, creative brilliance, and data-driven performance, delivering scalable growth and meaningful engagement at every touchpoint.
-                  </p>
+                </div>
+
+                {/* Mission */}
+                <div className="group relative flex-1 overflow-hidden rounded-[24px] bg-white/[0.02] border border-white/[0.05] p-8 sm:p-10 transition-colors hover:bg-white/[0.04]">
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#12ced6]/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                  <div className="relative z-10 flex flex-col items-start">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/[0.05] border border-white/10 mb-6">
+                      <svg className="h-7 w-7 text-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-2xl font-semibold tracking-tight text-foreground mb-4">Our Mission</h3>
+                    <p className="text-base leading-relaxed text-muted/90">
+                      To empower brands with innovative strategies, creative brilliance, and data-driven performance, delivering scalable growth and meaningful engagement at every touchpoint.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
