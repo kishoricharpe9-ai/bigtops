@@ -9,6 +9,51 @@ export const metadata = {
   title: 'Our Services',
 };
 
+const bentoConfig = {
+  'digital-marketing': {
+    colSpan: 'md:col-span-2 lg:col-span-2',
+    rowSpan: 'md:row-span-2 lg:row-span-2',
+    minHeight: 'min-h-[350px] sm:min-h-[400px] lg:min-h-[500px]',
+    icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />,
+    showBody: true
+  },
+  'performance-marketing': {
+    colSpan: 'md:col-span-1 lg:col-span-1',
+    rowSpan: 'md:row-span-1 lg:row-span-1',
+    minHeight: 'min-h-[200px] lg:min-h-[240px]',
+    icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />,
+    showBody: false
+  },
+  'seo': {
+    colSpan: 'md:col-span-1 lg:col-span-1',
+    rowSpan: 'md:row-span-1 lg:row-span-1',
+    minHeight: 'min-h-[200px] lg:min-h-[240px]',
+    icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />,
+    showBody: false
+  },
+  'web-development': {
+    colSpan: 'md:col-span-2 lg:col-span-2',
+    rowSpan: 'md:row-span-1 lg:row-span-1',
+    minHeight: 'min-h-[200px] lg:min-h-[240px]',
+    icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />,
+    showBody: false
+  },
+  'branding': {
+    colSpan: 'md:col-span-1 lg:col-span-1',
+    rowSpan: 'md:row-span-1 lg:row-span-1',
+    minHeight: 'min-h-[200px] lg:min-h-[240px]',
+    icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />,
+    showBody: false
+  },
+  'influencer-marketing': {
+    colSpan: 'md:col-span-1 lg:col-span-1',
+    rowSpan: 'md:row-span-1 lg:row-span-1',
+    minHeight: 'min-h-[200px] lg:min-h-[240px]',
+    icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />,
+    showBody: false
+  }
+};
+
 export default function ServicesIndexPage() {
   const services = getAllServices();
 
@@ -59,36 +104,61 @@ export default function ServicesIndexPage() {
         </Container>
       </div>
 
-      <Container className="relative z-10 -mt-[34vh] sm:-mt-[34vh]">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((s, idx) => (
-            <Reveal key={s.slug} delay={idx * 0.06}>
-              <Link
-                href={`/services/${s.slug}`}
-                className="group block h-full overflow-hidden rounded-card bg-card transition"
-              >
-                <div className="relative aspect-[16/11] overflow-hidden">
-                  <Image
-                    src={s.bgImage}
-                    alt={s.title}
-                    fill
-                    loading="lazy"
-                    className="object-cover transition duration-700 motion-safe:group-hover:scale-[1.03]"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
+      <Container className="relative z-10 -mt-[34vh] sm:-mt-[20vh] max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          {services.map((s, idx) => {
+            const config = bentoConfig[s.slug] || bentoConfig['seo']; // fallback
+            
+            return (
+              <Reveal key={s.slug} delay={idx * 0.05} className={`${config.colSpan} ${config.rowSpan} h-full`}>
+                <Link
+                  href={`/services/${s.slug}`}
+                  className="group flex flex-col justify-between h-full w-full rounded-2xl bg-[#0e0f11] border border-white/[0.06] p-6 sm:p-8 transition-all duration-300 hover:bg-white/[0.04] hover:border-white/[0.12] overflow-hidden relative"
+                >
+                  {/* Background Image */}
+                  <div className="absolute inset-0 z-0">
+                    <Image
+                      src={s.bgImage}
+                      alt={s.title}
+                      fill
+                      className="object-cover opacity-40 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-50"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0e0f11] via-[#0e0f11]/80 to-[#0e0f11]/20" />
+                  </div>
 
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                </div>
-                <div className="flex flex-col gap-2 px-5 py-5">
-                  <span className="text-lg font-semibold text-foreground">{s.title}</span>
-                  <p className="text-sm leading-relaxed text-muted">{s.body}</p>
-                  <span className="mt-2 inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#12ced6]">
-                    Learn more →
-                  </span>
-                </div>
-              </Link>
-            </Reveal>
-          ))}
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#12ced6]/0 to-[#12ced6]/0 opacity-0 group-hover:from-[#12ced6]/10 group-hover:to-transparent group-hover:opacity-100 transition-all duration-500 pointer-events-none z-0" />
+                  
+                  {/* Top Icon */}
+                  <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full border border-white/[0.1] bg-black/40 backdrop-blur-sm text-white/90 group-hover:text-[#12ced6] group-hover:border-[#12ced6]/30 transition-colors duration-300">
+                    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      {config.icon}
+                    </svg>
+                  </div>
+                  
+                  {/* Bottom Content */}
+                  <div className={`relative z-10 flex flex-col items-start ${config.minHeight} justify-end`}>
+                    <h3 className="text-xl sm:text-2xl font-semibold text-foreground tracking-tight group-hover:text-white transition-colors duration-300">
+                      {s.title}
+                    </h3>
+                    
+                    {config.showBody && (
+                      <p className="mt-3 text-sm sm:text-base leading-relaxed text-muted max-w-md">
+                        {s.body}
+                      </p>
+                    )}
+                    
+                    <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-[#12ced6] group-hover:text-[#25e9f3] transition-colors">
+                      Learn more 
+                      <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </span>
+                  </div>
+                </Link>
+              </Reveal>
+            );
+          })}
         </div>
       </Container>
     </section>
