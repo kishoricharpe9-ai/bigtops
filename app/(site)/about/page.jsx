@@ -148,8 +148,8 @@ export default function AboutPage() {
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
-              {/* Left Section: Team Group Photo */}
-              <div className="relative group/photo overflow-hidden rounded-[24px] border border-white/[0.08] bg-[#050505] min-h-[300px] sm:min-h-[400px] lg:min-h-full shadow-2xl">
+              {/* Team Group Photo (Right on Desktop) */}
+              <div className="relative group/photo overflow-hidden rounded-[24px] border border-white/[0.08] bg-[#050505] min-h-[300px] sm:min-h-[400px] lg:min-h-full shadow-2xl lg:order-2">
                 {/* Subtle ambient lighting on hover */}
                 <div className="pointer-events-none absolute -inset-px rounded-[24px] bg-gradient-to-br from-[#12ced6]/10 to-transparent opacity-0 transition-opacity duration-500 group-hover/photo:opacity-100" />
                 <Image
@@ -162,14 +162,17 @@ export default function AboutPage() {
                 />
               </div>
 
-              {/* Right Section: Vision and Mission cards stacked */}
-              <div className="flex flex-col gap-6 lg:gap-8 justify-between">
+              {/* Vision and Mission cards stacked (Left on Desktop) */}
+              <div className="flex flex-col gap-6 lg:gap-8 justify-between lg:order-1">
                 {/* Vision */}
-                <div className="group relative flex-1 overflow-hidden rounded-[24px] bg-white/[0.02] border border-white/[0.05] p-8 sm:p-10 transition-colors hover:bg-white/[0.04]">
+                <div className="group relative flex-1 overflow-hidden rounded-[24px] bg-white/[0.02] border border-white/[0.05] p-8 sm:p-10 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-[#12ced6]/60 hover:bg-[#0a0a0a]/95 hover:shadow-[0_12px_30px_rgba(18,206,214,0.18)]">
+                  {/* Glowing top border accent on hover */}
+                  <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#12ced6] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                  
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#12ced6]/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                   <div className="relative z-10 flex flex-col items-start">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/[0.05] border border-white/10 mb-6">
-                      <svg className="h-7 w-7 text-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/[0.05] border border-white/10 mb-6 transition-all duration-300 group-hover:scale-110 group-hover:border-[#12ced6]/40 group-hover:bg-[#12ced6]/15 group-hover:shadow-[0_0_15px_rgba(18,206,214,0.3)]">
+                      <svg className="h-7 w-7 text-foreground transition-colors duration-300 group-hover:text-[#12ced6]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                       </svg>
@@ -182,11 +185,14 @@ export default function AboutPage() {
                 </div>
 
                 {/* Mission */}
-                <div className="group relative flex-1 overflow-hidden rounded-[24px] bg-white/[0.02] border border-white/[0.05] p-8 sm:p-10 transition-colors hover:bg-white/[0.04]">
+                <div className="group relative flex-1 overflow-hidden rounded-[24px] bg-white/[0.02] border border-white/[0.05] p-8 sm:p-10 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-[#12ced6]/60 hover:bg-[#0a0a0a]/95 hover:shadow-[0_12px_30px_rgba(18,206,214,0.18)]">
+                  {/* Glowing top border accent on hover */}
+                  <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#12ced6] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                  
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#12ced6]/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                   <div className="relative z-10 flex flex-col items-start">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/[0.05] border border-white/10 mb-6">
-                      <svg className="h-7 w-7 text-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/[0.05] border border-white/10 mb-6 transition-all duration-300 group-hover:scale-110 group-hover:border-[#12ced6]/40 group-hover:bg-[#12ced6]/15 group-hover:shadow-[0_0_15px_rgba(18,206,214,0.3)]">
+                      <svg className="h-7 w-7 text-foreground transition-colors duration-300 group-hover:text-[#12ced6]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
                       </svg>
                     </div>
