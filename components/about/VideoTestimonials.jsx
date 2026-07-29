@@ -232,7 +232,7 @@ function TestimonialCard({
 }
 
 /* ─── Main Video Testimonials Section ─── */
-export default function VideoTestimonials({ testimonials }) {
+export function VideoTestimonials({ testimonials }) {
   const [selectedTestimonial, setSelectedTestimonial] = useState(null);
   const [autoplayIndex, setAutoplayIndex] = useState(0);
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -413,3 +413,4 @@ export default function VideoTestimonials({ testimonials }) {
   );
 }
 
+export default VideoTestimonials;

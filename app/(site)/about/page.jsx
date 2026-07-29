@@ -6,7 +6,7 @@ import { BlurTextReveal } from '@/components/motion/BlurTextReveal';
 import { Testimonial3DCard } from '@/components/about/Testimonial3DCard';
 import { aboutTeam, awards, industries, videoTestimonials } from '@/lib/content/about';
 import { stats, testimonials } from '@/lib/content/home';
-import VideoTestimonials from '@/components/about/VideoTestimonials';
+import { VideoTestimonials } from '@/components/about/VideoTestimonials';
 
 
 export const metadata = {
@@ -62,149 +62,266 @@ export default function AboutPage() {
               A team of creators and marketers elevating brands with powerful content and campaigns.
             </p>
           </Reveal>
-
-          <Reveal delay={0.1} className="mt-14 mx-auto w-full max-w-6xl">
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 sm:gap-8 lg:gap-10">
-              {[
-                { tag: 'CEO', desc: 'Leading the vision and strategy for the company.', image: '/Team images/Sarang Thakre.jpeg' },
-                { tag: 'CTO', desc: 'Driving technical innovation and architecture.', image: '/Team images/Mayur.jpeg' },
-                { tag: 'CTO', desc: 'Overseeing technology infrastructure and operations.', image: '' },
-              ].map((item, idx) => (
-                <div key={idx} className="group relative overflow-hidden rounded-[24px] bg-white/[0.02] aspect-square sm:aspect-[3/4]">
-                  {item.image ? (
-                    <Image
-                      src={item.image}
-                      alt={`${item.tag} portrait`}
-                      fill
-                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
-                    />
-                  ) : (
-                    <div className="flex h-full w-full items-center justify-center bg-white/[0.02]">
-                      <span className="text-sm font-medium text-muted/50">Image Placeholder</span>
-                    </div>
-                  )}
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-10" />
-                  <div className="absolute bottom-0 left-0 p-6 flex flex-col items-start w-full z-20">
-                    <Badge>{item.tag}</Badge>
-                    <p className="mt-4 text-sm text-foreground/80">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-12 flex justify-center">
-              <Link
-                href="/services"
-                className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-white px-8 py-3.5 text-sm font-medium text-black transition-transform duration-300 ease-out hover:scale-105"
-              >
-                <span className="relative z-10 flex items-center gap-2">
-                  Learn more
-                  <svg className="h-4 w-4 transition-transform duration-300 ease-out group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </span>
-              </Link>
-            </div>
-          </Reveal>
         </Container>
 
         {/* fades hero into black below */}
         <div className="pointer-events-none absolute bottom-0 left-0 h-48 w-full bg-gradient-to-b from-transparent to-black" />
       </section>
 
-      {/* ── OUR STORY ── */}
-      <section className="relative py-16 sm:py-24">
-        {/* reinforces black at the very top of this section */}
-        <div className="pointer-events-none absolute top-0 left-0 h-24 w-full bg-gradient-to-b from-black to-transparent" />
-        <Container>
-          <Reveal className="flex flex-col items-start">
-            <Badge>Our Story</Badge>
-            <BlurTextReveal
-              as="h2"
-              text="Established in 2014, driven by"
-              className="mt-8 max-w-3xl text-3xl font-medium tracking-tight text-foreground sm:text-4xl lg:text-5xl"
-            />
+      <section className="relative overflow-hidden bg-black pb-16 sm:pb-24 pt-8">
+        <Container className="relative">
+          {/* ── OUR STORY ── */}
+          <div className="mt-8 sm:mt-12 relative mx-auto w-full">
+            {/* Subtle ambient lighting for the background */}
+            <div className="pointer-events-none absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 h-[500px] w-[500px] rounded-full bg-[#12ced6]/5 blur-[120px]" />
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10">
+              {/* Left Column: Text */}
+              <div className="flex flex-col items-start">
+                <Reveal>
+                  <Badge>Our Story</Badge>
+                </Reveal>
+                
+                <BlurTextReveal
+                  as="h2"
+                  text="Established in 2014, driven by"
+                  className="mt-8 text-3xl font-medium tracking-tight text-foreground sm:text-4xl lg:text-5xl"
+                />
 
-            <BlurTextReveal
-              as="h2"
-              text="creativity & innovation continuously."
-              delay={0.2}
-              className="mt-1 max-w-3xl text-3xl font-medium tracking-tight text-foreground sm:text-4xl lg:text-5xl"
-            />
-          </Reveal>
+                <BlurTextReveal
+                  as="h2"
+                  text="creativity & innovation continuously."
+                  delay={0.2}
+                  className="mt-1 text-3xl font-medium tracking-tight text-foreground sm:text-4xl lg:text-5xl"
+                />
+                
+                <Reveal delay={0.4} className="mt-8">
+                  <p className="text-base sm:text-lg font-medium leading-relaxed text-muted/90">
+                    At Bigtopsocial, we believe powerful marketing blends strategy, creativity, and
+                    performance. We craft campaigns that look great, connect deeply, and drive real
+                    growth.
+                  </p>
+                  <div className="mt-8 h-px w-32 bg-gradient-to-r from-[#12ced6]/40 to-transparent" />
+                </Reveal>
+              </div>
 
-          <div className="mt-12 grid grid-cols-1 gap-[3px] sm:grid-cols-2 lg:grid-cols-4">
-            {stats.map((s, idx) => (
-              <Reveal key={s.numeral} delay={idx * 0.05}>
-                <div className="h-full transform-gpu rounded-[18px] bg-card transition-transform duration-500 ease-out motion-safe:hover:scale-[1.02]">
-                  <div className="flex min-h-[280px] flex-col justify-between p-6 sm:p-7">
-                    <div className="flex items-start justify-between gap-4">
-                      <span className="text-sm text-foreground">{s.numeral}</span>
-                      <span className="text-right text-xs text-muted">{s.label}</span>
+              {/* Right Column: Stats Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                {stats.map((s, idx) => (
+                  <Reveal key={s.numeral} delay={0.3 + idx * 0.1}>
+                    <div className="group relative flex h-full min-h-[160px] flex-col justify-between overflow-hidden rounded-[16px] bg-[#050505] border border-white/[0.05] p-6 sm:p-7 transition-all duration-500 hover:bg-[#0a0a0a] hover:-translate-y-1 hover:border-white/[0.1] hover:shadow-[0_10px_40px_-10px_rgba(18,206,214,0.15)]">
+                      <div className="pointer-events-none absolute -inset-px rounded-[16px] bg-gradient-to-br from-[#12ced6]/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                      
+                      {/* Top Row: Icon Only */}
+                      <div className="relative z-10 flex items-start">
+                        <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/[0.03] border border-white/[0.05] text-[13px] font-bold text-[#12ced6]">
+                          {s.numeral}
+                        </span>
+                      </div>
+                      
+                      {/* Bottom Row: Value, Suffix, and Label */}
+                      <div className="relative z-10 mt-10 flex items-center justify-between gap-4">
+                        <div className="flex items-baseline gap-1">
+                          <span className="text-5xl sm:text-[64px] font-bold tracking-tighter text-white leading-none">
+                            {s.value}
+                          </span>
+                          <span className="text-2xl sm:text-3xl font-bold text-white">
+                            {s.suffix}
+                          </span>
+                        </div>
+                        <span className="text-right text-[11px] sm:text-xs font-bold uppercase tracking-[0.1em] text-white">
+                          {s.label}
+                        </span>
+                      </div>
                     </div>
-                    <div className="mt-12 flex items-end gap-1">
-                      <span className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-                        {s.value}
-                      </span>
-                      <span className="pb-1 text-lg font-semibold text-muted">{s.suffix}</span>
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
+                  </Reveal>
+                ))}
+              </div>
+            </div>
           </div>
 
-          <Reveal className="mt-16">
-            <p className="max-w-2xl text-lg font-medium leading-relaxed text-foreground/90">
-              At Bigtopsocial, we believe powerful marketing blends strategy, creativity, and
-              performance. We craft campaigns that look great, connect deeply, and drive real
-              growth.
-            </p>
-          </Reveal>
-        </Container>
-      </section>
-
-      {/* ── AWARDS & ACHIEVEMENTS ── */}
-      <section className="border-t border-white/[0.06] py-16 sm:py-24">
-        <Container>
-          <Reveal className="flex flex-col items-start">
-            <Badge>Awards</Badge>
-            <BlurTextReveal
-              as="h2"
-              text="Awards & Achievements"
-              className="mt-8 max-w-3xl text-3xl font-medium tracking-tight text-foreground sm:text-4xl lg:text-5xl"
-            />
-
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted">
-              We&rsquo;re honored to be recognized for our creativity, performance, and commitment
-              to delivering outstanding marketing results.
-            </p>
-          </Reveal>
-
-          <Reveal className="mt-12 overflow-hidden rounded-[18px]">
-            <div className="divide-y divide-white/[0.06]">
-              {awards.map(a => (
-                <div
-                  key={`${a.year}-${a.title}`}
-                  className="grid grid-cols-12 gap-4 px-5 py-5 text-sm transition-colors hover:bg-white/[0.02] sm:px-8 sm:py-6"
-                >
-                  <span className="col-span-3 text-muted sm:col-span-2">{a.year}</span>
-                  <span className="col-span-9 font-medium text-foreground sm:col-span-4">
-                    {a.title}
-                  </span>
-                  <span className="col-span-7 col-start-4 text-muted sm:col-span-4 sm:col-start-auto">
-                    {a.category}
-                  </span>
-                  <span className="col-span-5 text-right text-muted sm:col-span-2">{a.brand}</span>
+          {/* VISION & MISSION SECTION */}
+          <Reveal delay={0.1} className="mt-20 mx-auto w-full max-w-6xl">
+            <div className="mb-10 flex flex-col items-center text-center">
+              <Badge>Purpose</Badge>
+              <h2 className="mt-6 text-3xl font-medium tracking-tight text-foreground sm:text-4xl">Our Vision & Mission</h2>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+              {/* Vision */}
+              <div className="group relative overflow-hidden rounded-[24px] bg-white/[0.02] border border-white/[0.05] p-8 sm:p-12 transition-colors hover:bg-white/[0.04]">
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#12ced6]/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                <div className="relative z-10 flex flex-col items-start">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/[0.05] border border-white/10 mb-6">
+                    <svg className="h-7 w-7 text-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-semibold tracking-tight text-foreground mb-4">Our Vision</h3>
+                  <p className="text-base leading-relaxed text-muted/90">
+                    To be the global catalyst for brand transformation, shaping the future of digital marketing by creating unforgettable experiences that connect people, purpose, and lasting value.
+                  </p>
                 </div>
-              ))}
+              </div>
+
+              {/* Mission */}
+              <div className="group relative overflow-hidden rounded-[24px] bg-white/[0.02] border border-white/[0.05] p-8 sm:p-12 transition-colors hover:bg-white/[0.04]">
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#12ced6]/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                <div className="relative z-10 flex flex-col items-start">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/[0.05] border border-white/10 mb-6">
+                    <svg className="h-7 w-7 text-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-semibold tracking-tight text-foreground mb-4">Our Mission</h3>
+                  <p className="text-base leading-relaxed text-muted/90">
+                    To empower brands with innovative strategies, creative brilliance, and data-driven performance, delivering scalable growth and meaningful engagement at every touchpoint.
+                  </p>
+                </div>
+              </div>
             </div>
           </Reveal>
+
+          {/* ── AWARDS & ACHIEVEMENTS ── */}
+          <Reveal delay={0.15} className="mt-24 mx-auto w-full max-w-7xl">
+            <div className="flex flex-col items-start">
+              <Badge>Awards</Badge>
+              <BlurTextReveal
+                as="h2"
+                text="Awards & Achievements"
+                className="mt-8 max-w-3xl text-3xl font-medium tracking-tight text-foreground sm:text-4xl lg:text-5xl"
+              />
+
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted">
+                We&rsquo;re honored to be recognized for our creativity, performance, and commitment
+                to delivering outstanding marketing results.
+              </p>
+            </div>
+
+            <div className="mt-16 max-w-4xl relative">
+              <div className="flex flex-col relative pb-10">
+                {/* Vertical line spanning the timeline */}
+                <div className="absolute left-[50px] sm:left-[80px] top-10 bottom-4 w-px bg-white/10" />
+
+                {awards.map((a, idx) => (
+                  <Reveal key={`${a.year}-${a.title}`} delay={idx * 0.05}>
+                    <div className="group relative flex items-start py-8 sm:py-10 transition-colors duration-500 hover:bg-white/[0.02] rounded-2xl">
+                      {/* Glowing highlight on hover (background) */}
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-white/[0.02] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 rounded-2xl" />
+
+                      {/* Left side: Year */}
+                      <div className="w-[50px] sm:w-[80px] shrink-0 pt-[2px] text-left sm:text-right pr-4 sm:pr-8 relative z-10">
+                        <span className="text-sm sm:text-base font-medium tracking-widest text-muted/60 transition-colors duration-300 group-hover:text-[#12ced6]">
+                          {a.year}
+                        </span>
+                      </div>
+
+                      {/* Center: The Node */}
+                      <div className="absolute left-[50px] sm:left-[80px] top-[43px] sm:top-[45px] flex h-3 w-3 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white/20 bg-background transition-all duration-300 group-hover:border-[#12ced6] group-hover:bg-[#12ced6] group-hover:shadow-[0_0_15px_rgba(18,206,214,0.6)] z-20" />
+
+                      {/* Right side: Content */}
+                      <div className="flex-1 pl-8 sm:pl-12 relative z-10">
+                        <h3 className="text-2xl sm:text-[32px] font-medium tracking-tight text-foreground/90 transition-colors duration-300 group-hover:text-white leading-tight">
+                          {a.title}
+                        </h3>
+                        <p className="mt-3 text-[15px] sm:text-base text-muted/70">
+                          <span className="font-medium text-[#12ced6]/80 transition-colors duration-300 group-hover:text-[#12ced6]">{a.category}</span>
+                          <span className="mx-2 text-white/20">—</span>
+                          <span className="text-muted/60">for {a.brand}</span>
+                        </p>
+                      </div>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+
+          {/* PICTURES SECTION */}
+          <Reveal delay={0.2} className="mt-24 mx-auto w-full max-w-7xl">
+            <div className="mb-12 flex flex-col items-center text-center">
+              <Badge>Team Members</Badge>
+              <BlurTextReveal
+                as="h2"
+                text="The minds behind"
+                className="mt-8 max-w-3xl text-3xl font-medium tracking-tight text-foreground sm:text-4xl lg:text-5xl"
+              />
+              <BlurTextReveal
+                as="h2"
+                text="Bigtopsocial."
+                delay={0.2}
+                className="mt-1 max-w-3xl text-3xl font-medium tracking-tight text-foreground sm:text-4xl lg:text-5xl"
+              />
+              <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
+                We’re a multi-disciplinary collective of strategists, directors, designers, and performance marketers united by a single goal: turning ambitious brands into market leaders.
+              </p>
+            </div>
+            
+            <div className="flex flex-col gap-8 lg:gap-12 mt-12 w-full">
+              {/* Top Row: 3 Main Cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 lg:gap-8 w-full max-w-5xl mx-auto">
+                {[
+                  { tag: 'CEO', name: 'Vedansh Mamilwar', image: '', bio: 'Driving the long-term vision and strategy for Bigtopsocial.' },
+                  { tag: 'CTO', name: 'Sarang Thakre', image: '/Team images/Sarang Thakre.jpeg', bio: 'Architecting scalable tech solutions and leading engineering.' },
+                  { tag: 'COO', name: 'Mayur FulBandhe', image: '/Team images/Mayur.jpeg', bio: 'Optimizing daily operations and ensuring seamless execution.' },
+                ].map((item, idx) => (
+                  <div key={idx} className="group relative overflow-hidden rounded-[24px] bg-white/[0.02] aspect-[4/5] sm:aspect-[3/4]">
+                    <Image
+                      src={item.image || "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23444'%3E%3Crect width='24' height='24' fill='%23050505'/%3E%3Cpath d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/%3E%3C/svg%3E"}
+                      alt={`${item.name} portrait`}
+                      fill
+                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                    />
+                    
+                    {/* Shadow / Blur overlay for text readability */}
+                    <div className="pointer-events-none absolute -bottom-4 left-0 w-full h-3/5 bg-black/70 blur-2xl z-10" />
+                    <div className="pointer-events-none absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-10" />
+
+                    <div className="absolute bottom-0 left-0 p-6 sm:p-8 flex flex-col items-start w-full z-20">
+                      <Badge>{item.tag}</Badge>
+                      <p className="mt-4 text-xl sm:text-2xl font-semibold text-white tracking-tight">{item.name}</p>
+                      <p className="mt-2 text-sm sm:text-base text-white/90 line-clamp-3 leading-relaxed">{item.bio}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Bottom Row: Rest of the Team */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 w-full max-w-5xl mx-auto mt-6">
+                {Array.from({ length: 15 }).map((_, idx) => {
+                  const m = aboutTeam.slice(3)[idx] || { name: 'Join Our Team', role: 'Open Position', image: null };
+                  return (
+                  <div key={idx} className="group relative overflow-hidden rounded-[20px] bg-white/[0.02] aspect-[4/5] transition-all duration-500 hover:-translate-y-2 hover:bg-white/[0.04] hover:shadow-[0_10px_40px_-10px_rgba(18,206,214,0.15)] flex items-center justify-center">
+                    
+                    {/* Image Background */}
+                    <Image
+                      src={m.image || "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23444'%3E%3Crect width='24' height='24' fill='%23050505'/%3E%3Cpath d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/%3E%3C/svg%3E"}
+                      alt={m.name}
+                      fill
+                      loading="lazy"
+                      className="object-cover transition-transform duration-700 ease-out scale-[1.02] group-hover:scale-[1.07]"
+                    />
+
+                    {/* Hover subtle cyan gradient overlay */}
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-[#12ced6]/20 via-[#12ced6]/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 mix-blend-screen z-10" />
+                    
+                    {/* Heavy dark gradient for text readability at the bottom */}
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent z-10" />
+
+                    {/* Text Overlay (Bottom Left) */}
+                    <div className="absolute bottom-0 left-0 p-5 flex flex-col items-start w-full z-20 text-left">
+                      <span className="text-base sm:text-lg font-semibold text-foreground group-hover:text-white transition-colors duration-300 leading-tight">{m.name}</span>
+                      <span className="mt-1.5 text-[10px] sm:text-[11px] font-medium text-[#12ced6] uppercase tracking-[0.1em] sm:tracking-[0.15em]">{m.role}</span>
+                    </div>
+                  </div>
+                )})}
+              </div>
+            </div>
+
+          </Reveal>
         </Container>
       </section>
-
-      {/* ── VIDEO TESTIMONIALS ── */}
-      <VideoTestimonials testimonials={videoTestimonials} />
 
       {/* ── CLIENT FEEDBACK (3D ANIMATED TESTIMONIALS) ── */}
       <section className="relative overflow-hidden border-t border-white/[0.06] py-16 sm:py-24">
@@ -213,108 +330,77 @@ export default function AboutPage() {
 
         <Container className="relative z-10">
           <Reveal className="flex flex-col items-start">
-            <Badge>Testimonial</Badge>
+            <Badge>VIDEO STORIES</Badge>
             <BlurTextReveal
               as="h2"
-              text="Client Feedback"
+              text="Hear from our partners"
               className="mt-8 text-3xl font-medium tracking-tight text-foreground sm:text-4xl lg:text-5xl"
             />
 
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted">
-              Discover success stories from satisfied clients. Learn how we assisted them in
-              reaching their objectives and generating significant, enduring results.
+              Watch how we help forward-thinking brands scale, build premium identities, and generate
+              measurable growth through strategic video campaigns.
             </p>
           </Reveal>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {testimonials.map((t, idx) => {
-              const featured = idx === 1 || idx === 4;
-              return (
-                <Testimonial3DCard
-                  key={t.name}
-                  testimonial={t}
-                  index={idx}
-                  isFeatured={featured}
-                />
-              );
-            })}
-          </div>
+          <VideoTestimonials testimonials={videoTestimonials} />
         </Container>
       </section>
 
       {/* ── INDUSTRIES ── */}
-      <section className="border-t border-white/[0.06] py-16 sm:py-24">
-        <Container>
-          <Reveal>
+      <section className="relative overflow-hidden border-t border-white/[0.06] py-16 sm:py-24">
+        {/* Subtle ambient lighting for the background */}
+        <div className="pointer-events-none absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/3 h-[500px] w-[500px] rounded-full bg-[#12ced6]/5 blur-[120px]" />
+
+        <Container className="relative z-10">
+          <Reveal className="flex flex-col items-center text-center">
+            <Badge>Sectors</Badge>
             <BlurTextReveal
               as="h2"
-              text="Industries We Power."
-              className="text-2xl font-medium tracking-tight text-foreground sm:text-3xl"
+              text="Industries We Power"
+              className="mt-8 text-3xl font-medium tracking-tight text-foreground sm:text-4xl lg:text-5xl"
             />
-
-            <div className="mt-8 flex flex-wrap gap-3">
-              {industries.map(industry => (
-                <span
-                  key={industry}
-                  className="rounded-full bg-white/[0.03] px-5 py-2 text-sm text-foreground/80 transition-colors hover:text-foreground hover:bg-white/[0.08]"
-                >
-                  {industry}
-                </span>
-              ))}
-            </div>
-          </Reveal>
-        </Container>
-      </section>
-
-      {/* ── MINDS BEHIND BIGTOPSOCIAL ── */}
-      <section className="border-t border-white/[0.06] py-16 sm:py-24">
-        <Container>
-          <Reveal className="flex flex-col items-start">
-            <Badge>Team Members</Badge>
-            <BlurTextReveal
-              as="h2"
-              text="The minds behind"
-              className="mt-8 max-w-3xl text-3xl font-medium tracking-tight text-foreground sm:text-4xl lg:text-5xl"
-            />
-
-            <BlurTextReveal
-              as="h2"
-              text="Bigtopsocial."
-              delay={0.2}
-              className="mt-1 max-w-3xl text-3xl font-medium tracking-tight text-foreground sm:text-4xl lg:text-5xl"
-            />
-
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted">
-              We&rsquo;re a multi-disciplinary collective of strategists, directors, designers, and
-              performance marketers united by a single goal: turning ambitious brands into market
-              leaders.
+              We bring strategic growth and a premium aesthetic to a wide range of industries, 
+              connecting specialized brands with their ideal audiences.
             </p>
           </Reveal>
 
-          <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {aboutTeam.map((m, idx) => (
-              <Reveal key={m.name} delay={idx * 0.05}>
-                <div className="group relative flex flex-col overflow-hidden rounded-[24px] bg-white/[0.02] p-4 transition-transform duration-500 hover:-translate-y-1">
-                  <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[18px] bg-white/[0.05]">
-                    <Image
-                      src={m.image}
-                      alt={m.name}
-                      width={600}
-                      height={750}
-                      loading="lazy"
-                      className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                    />
+          <div className="relative mt-16 sm:mt-20 max-w-5xl mx-auto pt-10 pb-4 px-2 sm:px-4 overflow-hidden">
+            {/* Horizontal Root Line */}
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
+            
+            {/* Central Root Node */}
+            <div className="absolute top-[-5px] left-1/2 h-[11px] w-[11px] -translate-x-1/2 rounded-full border-2 border-[#12ced6] bg-background shadow-[0_0_20px_rgba(18,206,214,0.8)]" />
 
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                  </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6 relative">
+              {industries.map((industry, idx) => (
+                <Reveal 
+                  key={industry} 
+                  delay={idx * 0.05} 
+                  className="relative w-full"
+                  style={{ zIndex: 50 - idx }}
+                >
+                  <div className="relative group flex flex-col items-center pt-8">
+                    
+                    {/* Vertical hanging branch extending upwards */}
+                    <div className="absolute bottom-[calc(100%-31px)] left-1/2 w-px h-[2000px] -translate-x-1/2 bg-white/10 transition-colors duration-500 group-hover:bg-[#12ced6]/60 -z-10" />
+                    
+                    {/* The Node connecting the branch to the card */}
+                    <div className="absolute top-[26px] left-1/2 h-[11px] w-[11px] -translate-x-1/2 rounded-full border-2 border-white/20 bg-background transition-all duration-300 group-hover:border-[#12ced6] group-hover:bg-[#12ced6] group-hover:shadow-[0_0_15px_rgba(18,206,214,0.6)] z-20" />
+                    
+                    {/* The Card */}
+                    <div className="relative z-10 w-full rounded-[14px] bg-[#050505] border border-white/[0.05] p-3 sm:p-4 text-center transition-all duration-500 hover:bg-[#0a0a0a] hover:-translate-y-1 hover:border-[#12ced6]/40 hover:shadow-[0_10px_30px_-10px_rgba(18,206,214,0.15)] min-h-[64px] flex flex-col justify-center">
+                      <div className="pointer-events-none absolute -inset-px rounded-[14px] bg-gradient-to-br from-[#12ced6]/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                      <span className="relative z-10 text-[13px] sm:text-[15px] font-medium tracking-wide text-foreground/80 group-hover:text-white transition-colors duration-300">
+                        {industry}
+                      </span>
+                    </div>
 
-                  <div className="flex flex-col p-4 pt-5">
-                    <span className="text-lg font-medium text-foreground">{m.name}</span>
-                    <span className="mt-1 text-sm text-muted">{m.role}</span>
                   </div>
-                </div>
-              </Reveal>
-            ))}
+                </Reveal>
+              ))}
+            </div>
           </div>
         </Container>
       </section>

@@ -433,6 +433,10 @@ const creationsData = {
     top: ALL_CREATIONS.find(c => c.id === 'img-27'),
     bottom: ALL_CREATIONS.find(c => c.id === 'reel-4'),
   },
+  col5: {
+    top: ALL_CREATIONS.find(c => c.id === 'reel-5'),
+    bottom: ALL_CREATIONS.find(c => c.id === 'img-14'),
+  },
 };
 
 function CreationCard({ item, onSelect, heightClass = 'h-[380px]' }) {
@@ -598,8 +602,8 @@ export function CreationsSection() {
           </p>
         </header>
 
-        {/* DESKTOP VIEW: 4-Column Grid (hidden on mobile, visible lg:block) */}
-        <div className="hidden lg:block relative mx-auto max-w-6xl rounded-[36px] border border-white/10 bg-[#0c0c0e] p-8 lg:p-10 shadow-2xl backdrop-blur-xl overflow-hidden">
+        {/* DESKTOP VIEW: 5-Column Grid (hidden on mobile, visible lg:block) */}
+        <div className="hidden lg:block relative mx-auto max-w-7xl rounded-[36px] border border-white/10 bg-[#0c0c0e] p-8 lg:p-10 shadow-2xl backdrop-blur-xl overflow-hidden">
           {/* Ambient Blue Glow Background Accents */}
           <div className="pointer-events-none absolute -top-40 left-1/4 h-96 w-96 rounded-full bg-[#12ced6]/15 blur-[130px]" />
           <div className="pointer-events-none absolute -bottom-40 right-1/4 h-96 w-96 rounded-full bg-[#38bdf8]/15 blur-[130px]" />
@@ -610,30 +614,36 @@ export function CreationsSection() {
             Featured Showcase
           </div>
 
-          {/* 4-Column Grid Layout: ALL 4 COLUMNS END AT EXACT SAME HORIZONTAL LINE (600px)! */}
-          <div className="grid grid-cols-4 gap-6">
+          {/* 5-Column Grid Layout: ALL 5 COLUMNS END AT EXACT SAME HORIZONTAL LINE */}
+          <div className="grid grid-cols-5 gap-4 lg:gap-6">
             {/* COLUMN 1 */}
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-4 lg:gap-6">
               <CreationCard item={creationsData.col1.top} onSelect={setSelectedItem} heightClass="aspect-[9/16]" />
               <CreationCard item={creationsData.col1.bottom} onSelect={setSelectedItem} heightClass="aspect-[4/5]" />
             </div>
 
             {/* COLUMN 2 */}
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-4 lg:gap-6">
               <CreationCard item={creationsData.col2.top} onSelect={setSelectedItem} heightClass="aspect-[4/5]" />
               <CreationCard item={creationsData.col2.bottom} onSelect={setSelectedItem} heightClass="aspect-[9/16]" />
             </div>
 
             {/* COLUMN 3 */}
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-4 lg:gap-6">
               <CreationCard item={creationsData.col3.top} onSelect={setSelectedItem} heightClass="aspect-[9/16]" />
               <CreationCard item={creationsData.col3.bottom} onSelect={setSelectedItem} heightClass="aspect-[4/5]" />
             </div>
 
             {/* COLUMN 4 */}
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-4 lg:gap-6">
               <CreationCard item={creationsData.col4.top} onSelect={setSelectedItem} heightClass="aspect-[4/5]" />
               <CreationCard item={creationsData.col4.bottom} onSelect={setSelectedItem} heightClass="aspect-[9/16]" />
+            </div>
+
+            {/* COLUMN 5 */}
+            <div className="flex flex-col gap-4 lg:gap-6">
+              <CreationCard item={creationsData.col5.top} onSelect={setSelectedItem} heightClass="aspect-[9/16]" />
+              <CreationCard item={creationsData.col5.bottom} onSelect={setSelectedItem} heightClass="aspect-[4/5]" />
             </div>
           </div>
 
