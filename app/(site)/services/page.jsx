@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import { ServicesClient } from '@/components/services/ServicesClient';
 import { getAllServices } from '@/lib/content/services';
+import { ServiceTabbedView } from '@/components/services/ServiceTabbedView';
 
 export const metadata = {
   title: 'Our Services',

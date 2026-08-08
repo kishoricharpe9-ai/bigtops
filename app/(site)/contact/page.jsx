@@ -334,7 +334,7 @@ export default function ContactPage() {
       </section>
 
       {/* Form card overlapping the hero (desktop) */}
-      <section className="relative z-20 hidden -mt-[30vh] pb-24 lg:block">
+      <section className="relative z-20 hidden -mt-[15vh] pb-24 lg:block">
         <Container className="max-w-6xl">
           <Reveal>{formCard}</Reveal>
         </Container>

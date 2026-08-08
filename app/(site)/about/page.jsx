@@ -70,79 +70,62 @@ export default function AboutPage() {
 
       <section className="relative overflow-hidden bg-black pb-16 sm:pb-24 pt-8">
         <Container className="relative">
-          {/* ── OUR STORY ── */}
+          {/* ── WHO WE ARE ── */}
           <div className="mt-8 sm:mt-12 relative mx-auto w-full">
             {/* Subtle ambient lighting for the background */}
             <div className="pointer-events-none absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 h-[500px] w-[500px] rounded-full bg-[#12ced6]/5 blur-[120px]" />
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10">
-              {/* Left Column: Text */}
-              <div className="flex flex-col items-start">
-                <Reveal>
-                  <Badge>Our Story</Badge>
-                </Reveal>
-                
-                <BlurTextReveal
-                  as="h2"
-                  text="Established in 2014, driven by"
-                  className="mt-8 text-3xl font-medium tracking-tight text-foreground sm:text-4xl lg:text-5xl"
-                />
+            <div className="flex flex-col items-center text-center relative z-10 w-full max-w-4xl mx-auto">
+              <Reveal>
+                <Badge>Who We Are</Badge>
+              </Reveal>
 
-                <BlurTextReveal
-                  as="h2"
-                  text="creativity & innovation continuously."
-                  delay={0.2}
-                  className="mt-1 text-3xl font-medium tracking-tight text-foreground sm:text-4xl lg:text-5xl"
-                />
-                
-                <Reveal delay={0.4} className="mt-8">
-                  <p className="text-base sm:text-lg font-medium leading-relaxed text-muted/90">
-                    At Bigtopsocial, we believe powerful marketing blends strategy, creativity, and
-                    performance. We craft campaigns that look great, connect deeply, and drive real
-                    growth.
-                  </p>
-                  <div className="mt-8 h-px w-32 bg-gradient-to-r from-[#12ced6]/40 to-transparent" />
-                </Reveal>
-              </div>
+              <Reveal delay={0.2} className="mt-8">
+                <p className="text-2xl sm:text-3xl lg:text-4xl font-medium leading-relaxed tracking-tight text-foreground">
+                  At Bigtopsocial, we believe powerful marketing blends strategy, creativity, and
+                  performance. We craft campaigns that look great, connect deeply, and drive real
+                  growth.
+                </p>
+                <div className="mx-auto mt-10 h-px w-48 bg-gradient-to-r from-transparent via-[#12ced6]/60 to-transparent" />
+              </Reveal>
+            </div>
 
-              {/* Right Column: Stats Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                {stats.map((s, idx) => (
-                  <Reveal key={s.numeral} delay={0.3 + idx * 0.1}>
-                    <div className="group relative flex h-full min-h-[160px] flex-col justify-between overflow-hidden rounded-[16px] bg-[#050505] border border-white/[0.05] p-6 sm:p-7 transition-all duration-500 hover:bg-[#0a0a0a] hover:-translate-y-1 hover:border-white/[0.1] hover:shadow-[0_10px_40px_-10px_rgba(18,206,214,0.15)]">
-                      <div className="pointer-events-none absolute -inset-px rounded-[16px] bg-gradient-to-br from-[#12ced6]/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                      
-                      {/* Top Row: Icon Only */}
-                      <div className="relative z-10 flex items-start">
-                        <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/[0.03] border border-white/[0.05] text-[13px] font-bold text-[#12ced6]">
-                          {s.numeral}
-                        </span>
-                      </div>
-                      
-                      {/* Bottom Row: Value, Suffix, and Label */}
-                      <div className="relative z-10 mt-10 flex items-center justify-between gap-4">
-                        <div className="flex items-baseline gap-1">
-                          <span className="text-5xl sm:text-[64px] font-bold tracking-tighter text-white leading-none">
-                            {s.value}
-                          </span>
-                          <span className="text-2xl sm:text-3xl font-bold text-white">
-                            {s.suffix}
-                          </span>
-                        </div>
-                        <span className="text-right text-[11px] sm:text-xs font-bold uppercase tracking-[0.1em] text-white">
-                          {s.label}
-                        </span>
-                      </div>
+            <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 relative z-10 w-full max-w-7xl mx-auto">
+              {stats.map((s, idx) => (
+                <Reveal key={s.numeral} delay={0.3 + idx * 0.1}>
+                  <div className="group relative flex h-full min-h-[160px] flex-col justify-between overflow-hidden rounded-[16px] bg-[#050505] border border-white/[0.05] p-6 sm:p-7 transition-all duration-500 hover:bg-[#0a0a0a] hover:-translate-y-1 hover:border-white/[0.1] hover:shadow-[0_10px_40px_-10px_rgba(18,206,214,0.15)]">
+                    <div className="pointer-events-none absolute -inset-px rounded-[16px] bg-gradient-to-br from-[#12ced6]/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                    
+                    {/* Top Row: Icon Only */}
+                    <div className="relative z-10 flex items-start">
+                      <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/[0.03] border border-white/[0.05] text-[13px] font-bold text-[#12ced6]">
+                        {s.numeral}
+                      </span>
                     </div>
-                  </Reveal>
-                ))}
-              </div>
+                    
+                    {/* Bottom Row: Value, Suffix, and Label */}
+                    <div className="relative z-10 mt-10 flex items-center justify-between gap-4">
+                      <div className="flex items-baseline gap-1">
+                        <span className="text-5xl sm:text-[64px] font-bold tracking-tighter text-white leading-none">
+                          <AnimatedCounter value={s.value} />
+                        </span>
+                        <span className="text-2xl sm:text-3xl font-bold text-white">
+                          {s.suffix}
+                        </span>
+                      </div>
+                      <span className="text-right text-[11px] sm:text-xs font-bold uppercase tracking-[0.1em] text-white">
+                        {s.label}
+                      </span>
+                    </div>
+                  </div>
+                </Reveal>
+              ))}
             </div>
           </div>
 
           {/* VISION & MISSION SECTION */}
-          <Reveal delay={0.1} className="mt-20 mx-auto w-full max-w-6xl">
-            <div className="mb-10 flex flex-col items-center text-center">
+          <Reveal delay={0.1} className="mt-24 mx-auto w-full max-w-7xl">
+            <div className="mb-12 flex flex-col items-center text-center">
               <Badge>Purpose</Badge>
               <h2 className="mt-6 text-3xl font-medium tracking-tight text-foreground sm:text-4xl">Our Vision & Mission</h2>
             </div>
@@ -312,7 +295,7 @@ export default function AboutPage() {
 
               {/* Bottom Row: Rest of the Team */}
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 w-full max-w-5xl mx-auto mt-6">
-                {Array.from({ length: 15 }).map((_, idx) => {
+                {Array.from({ length: 10 }).map((_, idx) => {
                   const m = aboutTeam.slice(3)[idx] || { name: 'Join Our Team', role: 'Open Position', image: null };
                   return (
                   <div key={idx} className="group relative overflow-hidden rounded-[20px] bg-white/[0.02] aspect-[4/5] transition-all duration-500 hover:-translate-y-2 hover:bg-white/[0.04] hover:shadow-[0_10px_40px_-10px_rgba(18,206,214,0.15)] flex items-center justify-center">
@@ -370,63 +353,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* ── INDUSTRIES ── */}
-      <section className="relative overflow-hidden border-t border-white/[0.06] py-16 sm:py-24">
-        {/* Subtle ambient lighting for the background */}
-        <div className="pointer-events-none absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/3 h-[500px] w-[500px] rounded-full bg-[#12ced6]/5 blur-[120px]" />
 
-        <Container className="relative z-10">
-          <Reveal className="flex flex-col items-center text-center">
-            <Badge>Sectors</Badge>
-            <BlurTextReveal
-              as="h2"
-              text="Industries We Power"
-              className="mt-8 text-3xl font-medium tracking-tight text-foreground sm:text-4xl lg:text-5xl"
-            />
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted">
-              We bring strategic growth and a premium aesthetic to a wide range of industries, 
-              connecting specialized brands with their ideal audiences.
-            </p>
-          </Reveal>
-
-          <div className="relative mt-16 sm:mt-20 max-w-5xl mx-auto pt-10 pb-4 px-2 sm:px-4 overflow-hidden">
-            {/* Horizontal Root Line */}
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
-            
-            {/* Central Root Node */}
-            <div className="absolute top-[-5px] left-1/2 h-[11px] w-[11px] -translate-x-1/2 rounded-full border-2 border-[#12ced6] bg-background shadow-[0_0_20px_rgba(18,206,214,0.8)]" />
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6 relative">
-              {industries.map((industry, idx) => (
-                <Reveal 
-                  key={industry} 
-                  delay={idx * 0.05} 
-                  className="relative w-full"
-                  style={{ zIndex: 50 - idx }}
-                >
-                  <div className="relative group flex flex-col items-center pt-8">
-                    
-                    {/* Vertical hanging branch extending upwards */}
-                    <div className="absolute bottom-[calc(100%-31px)] left-1/2 w-px h-[2000px] -translate-x-1/2 bg-white/10 transition-colors duration-500 group-hover:bg-[#12ced6]/60 -z-10" />
-                    
-                    {/* The Node connecting the branch to the card */}
-                    <div className="absolute top-[26px] left-1/2 h-[11px] w-[11px] -translate-x-1/2 rounded-full border-2 border-white/20 bg-background transition-all duration-300 group-hover:border-[#12ced6] group-hover:bg-[#12ced6] group-hover:shadow-[0_0_15px_rgba(18,206,214,0.6)] z-20" />
-                    
-                    {/* The Card */}
-                    <div className="relative z-10 w-full rounded-[14px] bg-[#050505] border border-white/[0.05] p-3 sm:p-4 text-center transition-all duration-500 hover:bg-[#0a0a0a] hover:-translate-y-1 hover:border-[#12ced6]/40 hover:shadow-[0_10px_30px_-10px_rgba(18,206,214,0.15)] min-h-[64px] flex flex-col justify-center">
-                      <div className="pointer-events-none absolute -inset-px rounded-[14px] bg-gradient-to-br from-[#12ced6]/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                      <span className="relative z-10 text-[13px] sm:text-[15px] font-medium tracking-wide text-foreground/80 group-hover:text-white transition-colors duration-300">
-                        {industry}
-                      </span>
-                    </div>
-
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </Container>
-      </section>
     </>
   );
 }
