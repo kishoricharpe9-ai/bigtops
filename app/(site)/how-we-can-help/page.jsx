@@ -410,7 +410,7 @@ export default function HowWeCanHelpPage() {
         description="Interact with our AI Assistant, run instant website audits, or build your custom growth stack in real-time."
       />
 
-      <section className="relative z-10 pb-24">
+      <section className="relative z-10 pb-24 pt-12 sm:pt-16">
         <Container className="max-w-4xl">
           {/* Top Bar: Language & Currency Controls */}
           <div className="mb-6 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-white/10 bg-black/60 p-3.5 backdrop-blur-xl">
