@@ -48,7 +48,7 @@ export function Footer() {
           {/* Left: Social Icons */}
           <div className="flex items-center gap-6">
             <a
-              href="https://www.linkedin.com/"
+              href="https://www.linkedin.com/company/bigtopsocial/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-white/80 transition-colors"
@@ -59,7 +59,7 @@ export function Footer() {
               </svg>
             </a>
             <a
-              href="https://www.instagram.com/"
+              href="https://www.instagram.com/bigtopsocial?igsh=MXZ6eTg2amJnZDh5bA=="
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-white/80 transition-colors"
