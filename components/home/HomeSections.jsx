@@ -126,6 +126,28 @@ function Stars() {
 
 const clientLogos = Array.from({ length: 38 }, (_, i) => `/clients-logos/${i + 1}.png`);
 
+const heroLogos = [
+  '/hero-logos/wave.png',
+  '/hero-logos/swadeshi.png',
+  '/hero-logos/oceana.png',
+  '/hero-logos/infrastructures.png',
+  '/hero-logos/chromatics.png',
+  '/hero-logos/elkem.png',
+  '/hero-logos/artynex.png',
+  '/hero-logos/ntx.png',
+  '/hero-logos/nisarga.png',
+  '/hero-logos/hridayam.png',
+  '/hero-logos/ntsw.png',
+  '/hero-logos/bigtopsocial.png',
+  '/hero-logos/hoc.png',
+  '/hero-logos/katexpert.png',
+  '/hero-logos/nagpurheights.png',
+];
+
+const repeatedHeroLogos = [
+  ...heroLogos, ...heroLogos
+];
+
 const partnerLogoSizes = [
   // Phone (< sm) renders these in a 4-col grid whose rows stretch to fill the
   // viewport, so the base height is `h-full` (logo fills its row, capped by the
@@ -287,25 +309,25 @@ export function HomeSections() {
                 </div>
               </div>
 
-              <div className="mt-3 sm:mt-5 overflow-hidden py-2 [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
+              <div className="mt-6 sm:mt-8 overflow-hidden py-4 [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
                 <div
-                  className="flex items-center gap-0"
+                  className="flex items-center gap-16 sm:gap-24 md:gap-32"
                   style={{
                     width: 'max-content',
-                    animation: 'scroll-right 55s linear infinite',
+                    animation: 'scroll-right 40s linear infinite',
                   }}
                 >
-                  {[...clientLogos, ...clientLogos].map((logo, idx) => (
+                  {[...repeatedHeroLogos, ...repeatedHeroLogos].map((logo, idx) => (
                     <div
-                      key={`${logo.replace('/clients-logos/', '')}-${idx}`}
+                      key={`${logo}-${idx}`}
                       className="flex shrink-0 items-center justify-center opacity-90 transition-opacity duration-300 hover:opacity-100"
                     >
                       <img
                         src={logo}
-                        alt={logo.replace('/clients-logos/', '').replace(/[-.]/g, ' ')}
+                        alt={logo.split('/').pop()?.replace('.png', '').replace(/[-.]/g, ' ') || 'logo'}
                         loading="lazy"
                         decoding="async"
-                        className="h-28 w-auto object-contain sm:h-36 md:h-44 lg:h-52 xl:h-60"
+                        className="h-12 w-auto object-contain sm:h-14 md:h-16 lg:h-20"
                       />
                     </div>
                   ))}
