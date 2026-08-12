@@ -319,7 +319,7 @@ export function HomeSections() {
         <div className="pointer-events-none absolute bottom-0 left-0 h-48 w-full bg-gradient-to-b from-transparent to-black" />
       </section>
 
-      <section className="relative bg-background pt-4 sm:pt-6 lg:pt-8 pb-16 sm:pb-20 lg:pb-28">
+      <section className="relative bg-background pt-4 sm:pt-6 lg:pt-8 pb-8 sm:pb-12 lg:pb-16">
         {/* ✅ BLEND: reinforces the black at the very top of this section */}
         <div className="pointer-events-none absolute top-0 left-0 h-24 w-full bg-gradient-to-b from-black to-transparent" />
 
@@ -344,7 +344,7 @@ export function HomeSections() {
           </Reveal>
 
           <Reveal>
-            <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
+            <div className="grid items-center gap-4 lg:grid-cols-12 lg:gap-6">
               {/* Image */}
               <div className="order-1 lg:col-span-6 lg:order-2">
                 <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02]">
@@ -396,7 +396,7 @@ export function HomeSections() {
         </Container>
       </section>
 
-      <section className="py-16 sm:py-20 lg:py-24">
+      <section className="pt-8 pb-16 sm:pt-12 sm:pb-20 lg:pt-16 lg:pb-24">
         <Container>
           <Reveal className="mb-14 text-center flex flex-col items-center">
             <div className="mb-10 relative inline-flex overflow-hidden rounded-full border border-white/10 bg-black/70 px-6 py-2 text-xs uppercase tracking-[0.2em] text-foreground/90 backdrop-blur-md transition hover:border-white/20 hover:bg-black/80 before:absolute before:left-[12%] before:right-[12%] before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#12ced6]/60 before:to-transparent before:content-['']">

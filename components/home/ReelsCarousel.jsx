@@ -145,13 +145,53 @@ export function ReelsCarousel() {
     if (reduceMotion || !isDesktop) return;
     const interval = setInterval(next, 4000);
     return () => clearInterval(interval);
-  }, [reduceMotion, isDesktop]);
+  }, [reduceMotion, isDesktop, activeIndex]);
 
   if (!isDesktop) return null;
 
   return (
     <section className="relative z-0 overflow-hidden bg-black py-0">
       <div className="relative min-h-[600px] sm:min-h-[680px] lg:h-[760px] overflow-hidden">
+        {/* Left Arrow Button */}
+        <button
+          onClick={prev}
+          aria-label="Previous Reel"
+          className="absolute left-6 lg:left-12 top-1/2 -translate-y-1/2 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-black/60 text-white/70 backdrop-blur-md transition-all duration-300 hover:scale-110 hover:border-[#12ced6] hover:text-[#12ced6] hover:bg-black/80 active:scale-95 shadow-2xl"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
+
+        {/* Right Arrow Button */}
+        <button
+          onClick={next}
+          aria-label="Next Reel"
+          className="absolute right-6 lg:right-12 top-1/2 -translate-y-1/2 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-black/60 text-white/70 backdrop-blur-md transition-all duration-300 hover:scale-110 hover:border-[#12ced6] hover:text-[#12ced6] hover:bg-black/80 active:scale-95 shadow-2xl"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </button>
+
         {/* LEFT FADE */}
         <div
           className="
