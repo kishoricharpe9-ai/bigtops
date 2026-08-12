@@ -1,5 +1,4 @@
 import localFont from 'next/font/local';
-import { Syne } from 'next/font/google';
 import './globals.css';
 import '@/components/BorderGlow.css';
 import SmoothScroll from '@/components/layout/SmoothScroll';
@@ -9,13 +8,6 @@ const helveticaNeue = localFont({
   variable: '--font-helvetica-neue',
   display: 'swap',
   weight: '200',
-});
-
-const syne = Syne({
-  subsets: ['latin'],
-  variable: '--font-syne',
-  display: 'swap',
-  weight: ['700', '800'],
 });
 
 export const metadata = {
@@ -37,7 +29,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${helveticaNeue.variable} ${syne.variable}`}>
+    <html lang="en" className={helveticaNeue.variable}>
       <body className="min-h-screen bg-background font-sans antialiased">
         <SmoothScroll>{children}</SmoothScroll>
       </body>

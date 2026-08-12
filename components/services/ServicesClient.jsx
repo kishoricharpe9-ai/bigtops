@@ -109,7 +109,7 @@ export function ServicesClient({ services }) {
 
         {/* Pill-shaped Standalone Tabs */}
         <Reveal>
-          <div className="flex flex-row overflow-x-auto flex-nowrap justify-start items-center gap-3 py-2 w-full [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] scroll-smooth">
+          <div className="flex flex-row overflow-x-auto flex-nowrap justify-start md:justify-center items-center gap-3 py-2 w-full [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] scroll-smooth">
             {services.map((s) => {
               const isActive = s.slug === activeSlug;
 

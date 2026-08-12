@@ -272,7 +272,7 @@ export default function AboutPage() {
                   { tag: 'CTO', name: 'Sarang Thakre', image: '/Team images/Sarang Thakre.jpeg', bio: 'Architecting scalable tech solutions and leading engineering.' },
                   { tag: 'COO', name: 'Mayur FulBandhe', image: '/Team images/Mayur.jpeg', bio: 'Optimizing daily operations and ensuring seamless execution.' },
                 ].map((item, idx) => (
-                  <div key={idx} className="group relative overflow-hidden rounded-[24px] bg-white/[0.02] aspect-[4/5] sm:aspect-[3/4]">
+                  <div key={idx} className="group relative overflow-hidden rounded-[24px] bg-white/[0.02] aspect-[5/6] sm:aspect-[4/5]">
                     <Image
                       src={item.image || "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23444'%3E%3Crect width='24' height='24' fill='%23050505'/%3E%3Cpath d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/%3E%3C/svg%3E"}
                       alt={`${item.name} portrait`}
