@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Container } from '@/components/layout/Container';
 import { Reveal } from '@/components/motion/Reveal';
 import { BlurTextReveal } from '@/components/motion/BlurTextReveal';
+import { AnimatedCounter } from '@/components/motion/AnimatedCounter';
 import { Testimonial3DCard } from '@/components/about/Testimonial3DCard';
 import { aboutTeam, awards, industries, videoTestimonials } from '@/lib/content/about';
 import { stats, testimonials } from '@/lib/content/home';
@@ -205,35 +206,34 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="mt-16 max-w-4xl relative">
-              <div className="flex flex-col relative pb-10">
-                {/* Vertical line spanning the timeline */}
-                <div className="absolute left-[50px] sm:left-[80px] top-10 bottom-4 w-px bg-white/10" />
+            <div className="mt-16 w-full relative">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative pb-10">
+                {/* Horizontal line spanning the timeline on desktop */}
+                <div className="hidden lg:block absolute left-[12.5%] right-[12.5%] top-[4.5rem] h-px bg-white/10" />
 
-                {awards.map((a, idx) => (
+                {awards.slice(0, 4).map((a, idx) => (
                   <Reveal key={`${a.year}-${a.title}`} delay={idx * 0.05}>
-                    <div className="group relative flex items-start py-8 sm:py-10 transition-colors duration-500 hover:bg-white/[0.02] rounded-2xl">
+                    <div className="group relative flex flex-col items-center text-center p-6 sm:p-8 transition-colors duration-500 hover:bg-white/[0.02] rounded-2xl h-full">
                       {/* Glowing highlight on hover (background) */}
-                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-white/[0.02] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 rounded-2xl" />
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 rounded-2xl" />
 
-                      {/* Left side: Year */}
-                      <div className="w-[50px] sm:w-[80px] shrink-0 pt-[2px] text-left sm:text-right pr-4 sm:pr-8 relative z-10">
+                      {/* Top: Year */}
+                      <div className="mb-6 relative z-10">
                         <span className="text-sm sm:text-base font-medium tracking-widest text-muted/60 transition-colors duration-300 group-hover:text-[#12ced6]">
                           {a.year}
                         </span>
                       </div>
 
                       {/* Center: The Node */}
-                      <div className="absolute left-[50px] sm:left-[80px] top-[43px] sm:top-[45px] flex h-3 w-3 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white/20 bg-background transition-all duration-300 group-hover:border-[#12ced6] group-hover:bg-[#12ced6] group-hover:shadow-[0_0_15px_rgba(18,206,214,0.6)] z-20" />
+                      <div className="hidden lg:flex absolute left-1/2 top-[4.5rem] h-3 w-3 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white/20 bg-background transition-all duration-300 group-hover:border-[#12ced6] group-hover:bg-[#12ced6] group-hover:shadow-[0_0_15px_rgba(18,206,214,0.6)] z-20" />
 
-                      {/* Right side: Content */}
-                      <div className="flex-1 pl-8 sm:pl-12 relative z-10">
-                        <h3 className="text-2xl sm:text-[32px] font-medium tracking-tight text-foreground/90 transition-colors duration-300 group-hover:text-white leading-tight">
+                      {/* Bottom: Content */}
+                      <div className="mt-2 relative z-10 flex flex-col flex-1 justify-start">
+                        <h3 className="text-xl sm:text-2xl font-medium tracking-tight text-foreground/90 transition-colors duration-300 group-hover:text-white leading-tight">
                           {a.title}
                         </h3>
-                        <p className="mt-3 text-[15px] sm:text-base text-muted/70">
+                        <p className="mt-3 text-[14px] sm:text-[15px] text-muted/70 flex flex-col gap-1">
                           <span className="font-medium text-[#12ced6]/80 transition-colors duration-300 group-hover:text-[#12ced6]">{a.category}</span>
-                          <span className="mx-2 text-white/20">—</span>
                           <span className="text-muted/60">for {a.brand}</span>
                         </p>
                       </div>
