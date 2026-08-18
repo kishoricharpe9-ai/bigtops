@@ -7,6 +7,7 @@ import { BlurTextReveal } from '@/components/motion/BlurTextReveal';
 import { HowWeWorkTimeline } from '@/components/home/HowWeWorkTimeline';
 import { CreationsSection } from '@/components/home/CreationsSection';
 import { MobileTestimonials } from '@/components/home/MobileTestimonials';
+import { TeamMembers } from '@/components/home/TeamMembers';
 import { services, testimonials } from '@/lib/content/home';
 import { projectTeasers } from '@/lib/content/projects';
 
@@ -571,6 +572,8 @@ export function HomeSections() {
           </div>
         </Container>
       </section>
+
+      <TeamMembers />
 
       <section className="py-16 sm:py-20 lg:py-24">
         <Container>
