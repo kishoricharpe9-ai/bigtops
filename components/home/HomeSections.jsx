@@ -4,12 +4,14 @@ import { Container } from '@/components/layout/Container';
 import { FaqAccordion } from '@/components/faq/FaqAccordion';
 import { Reveal } from '@/components/motion/Reveal';
 import { BlurTextReveal } from '@/components/motion/BlurTextReveal';
+import { ScrollTextOpacity } from '@/components/motion/ScrollTextOpacity';
 import { HowWeWorkTimeline } from '@/components/home/HowWeWorkTimeline';
 import { CreationsSection } from '@/components/home/CreationsSection';
 import { MobileTestimonials } from '@/components/home/MobileTestimonials';
 import { TeamMembers } from '@/components/home/TeamMembers';
 import { services, testimonials } from '@/lib/content/home';
 import { projectTeasers } from '@/lib/content/projects';
+import { aboutTeam } from '@/lib/content/about';
 
 const serviceIcons = [
   // Megaphone — Digital Marketing
@@ -384,19 +386,47 @@ export function HomeSections() {
               </div>
 
               {/* Text */}
-              <div className="order-2 text-center lg:col-span-6 lg:order-1 lg:text-left">
-                <h3 className="text-2xl font-medium leading-tight tracking-tight text-foreground sm:text-3xl lg:text-[2.5rem]">
-                  Our team of creatives, strategists, and growth experts is dedicated to crafting
-                  content that not only looks stunning but also delivers{' '}
-                  <span className="bg-gradient-to-r from-sky-400 to-[#12ced6] bg-clip-text text-transparent">
-                    measurable results
-                  </span>
-                  .
-                </h3>
+              <div className="order-2 text-center lg:col-span-6 lg:order-1 lg:text-left flex flex-col items-center lg:items-start">
+                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#12ced6]">
+                  About Us
+                </span>
+
+                <ScrollTextOpacity
+                  as="h3"
+                  text="We help ambitious brands and startups build digital products that stand out and scale."
+                  highlightWords={['stand', 'out', 'and', 'scale']}
+                  className="mt-3 text-2xl font-medium leading-tight tracking-tight text-foreground sm:text-3xl lg:text-[2.35rem]"
+                  baseOpacity={0.25}
+                  offset={['start 0.85', 'start 0.35']}
+                />
+
+                <ScrollTextOpacity
+                  as="p"
+                  text="We believe in working smart, building fast, and designing with purpose. We craft digital solutions that not only look good but perform exceptionally. Our team thrives on innovation and turning bold ideas into meaningful impact."
+                  className="mt-5 text-base leading-relaxed text-muted"
+                  baseOpacity={0.25}
+                  offset={['start 0.80', 'start 0.25']}
+                />
+
+                {/* Stats Row from Framer template */}
+                <div className="mt-8 grid grid-cols-3 gap-4 w-full border-t border-white/10 pt-6">
+                  <div>
+                    <span className="text-2xl sm:text-3xl font-bold text-white">100+</span>
+                    <p className="mt-1 text-xs text-muted font-medium uppercase tracking-wider">Projects Launched</p>
+                  </div>
+                  <div>
+                    <span className="text-2xl sm:text-3xl font-bold text-white">5+</span>
+                    <p className="mt-1 text-xs text-muted font-medium uppercase tracking-wider">Years Experience</p>
+                  </div>
+                  <div>
+                    <span className="text-2xl sm:text-3xl font-bold text-white">25+</span>
+                    <p className="mt-1 text-xs text-muted font-medium uppercase tracking-wider">Happy Clients</p>
+                  </div>
+                </div>
 
                 <Link
                   href="/about"
-                  className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-foreground/90 transition hover:text-sky-400"
+                  className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-foreground transition-all duration-300 hover:border-[#12ced6]/50 hover:bg-[#12ced6]/10 hover:text-[#12ced6]"
                 >
                   Learn more about us
                   <svg
