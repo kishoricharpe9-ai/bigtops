@@ -8,6 +8,7 @@ import { ScrollTextOpacity } from '@/components/motion/ScrollTextOpacity';
 import { HowWeWorkTimeline } from '@/components/home/HowWeWorkTimeline';
 import { CreationsSection } from '@/components/home/CreationsSection';
 import { MobileTestimonials } from '@/components/home/MobileTestimonials';
+import { TeamMembers } from '@/components/home/TeamMembers';
 import { services, testimonials } from '@/lib/content/home';
 import { projectTeasers } from '@/lib/content/projects';
 import { aboutTeam } from '@/lib/content/about';
@@ -602,89 +603,7 @@ export function HomeSections() {
         </Container>
       </section>
 
-      {/* ── TEAM MEMBERS SECTION (Pixel-perfect match to screenshot) ── */}
-      <section className="relative overflow-hidden py-16 sm:py-24 border-t border-white/[0.06] bg-black">
-        {/* Subtle background dotted matrix / ambient lighting */}
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:24px_24px] opacity-60" />
-        <div className="pointer-events-none absolute top-1/2 left-1/2 h-[500px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#12ced6]/5 blur-[140px]" />
-
-        <Container className="relative z-10">
-          <Reveal className="mb-14 flex flex-col items-center text-center">
-            {/* Top Pill Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#161616] px-5 py-2 text-xs font-medium text-white/90 shadow-md">
-              <svg className="w-4 h-4 text-white/70" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                <circle cx="9" cy="7" r="4" />
-                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-              </svg>
-              <span>Team Members</span>
-            </div>
-
-            {/* Heading with Serif Italic font */}
-            <h2 className="mt-8 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white">
-              Meet Our <span className="font-serif italic font-normal text-white/90">Team Members</span>
-            </h2>
-          </Reveal>
-
-          {/* 3 Main Leadership / Feature Team Cards with Pop-Out Cutout Effect */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 max-w-6xl mx-auto pt-6">
-            {[
-              {
-                badge: 'Leadership',
-                name: 'Vedansh Mamilwar',
-                role: 'Founder & CEO',
-                image: 'https://framerusercontent.com/images/uSHHVp64IbFCGv1iRvQ4mi47kU.png?scale-down-to=1024&width=928&height=1106',
-                imgStyle: 'inset-x-0 bottom-0 -top-8 h-[calc(100%+32px)] scale-[1.04] group-hover:scale-[1.08]',
-              },
-              {
-                badge: 'Marketing Team',
-                name: 'Mayur FulBandhe',
-                role: 'COO & Co-Founder',
-                image: '/Team images/Mayur_cutout.png',
-                imgStyle: 'inset-x-0 bottom-0 -top-8 h-[calc(100%+32px)] scale-[1.08] group-hover:scale-[1.12]',
-              },
-              {
-                badge: 'Development Team',
-                name: 'Sarang Thakre',
-                role: 'CTO & Co-Founder',
-                image: '/Team images/Sarang_cutout.png',
-                imgStyle: 'inset-x-0 bottom-0 -top-8 h-[calc(100%+32px)] scale-[1.04] group-hover:scale-[1.08]',
-              },
-            ].map((item, idx) => (
-              <Reveal key={item.name} delay={idx * 0.1}>
-                <div className="group relative overflow-visible rounded-[24px] border border-white/[0.08] bg-[#161617] p-3 sm:p-4 pt-6 transition-all duration-500 hover:border-white/20 hover:shadow-2xl">
-                  {/* Photo Frame Container (overflow-visible for head pop-out) */}
-                  <div className="relative aspect-[4/5] w-full rounded-[18px] bg-[#101012] overflow-visible">
-                    {/* Top-Left Category Badge */}
-                    <div className="absolute top-4 left-4 z-20 rounded-full border border-white/10 bg-black/60 backdrop-blur-md px-4 py-1.5 text-xs font-medium text-white/90 shadow-md">
-                      {item.badge}
-                    </div>
-
-                    {/* Transparent Cutout Person Photo (Pops out of the top container) */}
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      loading="lazy"
-                      className={`absolute w-full object-cover object-bottom transition-transform duration-700 ease-out pointer-events-none z-10 ${item.imgStyle}`}
-                    />
-
-                    {/* Bottom Frosted Glass Box Overlay */}
-                    <div className="absolute bottom-3 left-3 right-3 z-20 rounded-[16px] border border-white/15 bg-white/[0.08] backdrop-blur-xl p-4 sm:p-5 shadow-2xl text-left transition-all duration-300 group-hover:bg-white/[0.12]">
-                      <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-                        {item.name}
-                      </h3>
-                      <p className="mt-1 text-xs sm:text-sm font-medium text-white/70">
-                        {item.role}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </Container>
-      </section>
+      <TeamMembers />
 
       <section className="py-16 sm:py-20 lg:py-24">
         <Container>
