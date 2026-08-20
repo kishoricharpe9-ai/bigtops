@@ -26,7 +26,7 @@ export function BlurTextReveal({
     return <Tag className={className}>{text}</Tag>;
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- framer-motion's indexed component types don't narrow cleanly to a JSX-usable element type
+  // eslint-disable-next-line
   const MotionTag = motion[as];
   const words = text.split(' ');
 
