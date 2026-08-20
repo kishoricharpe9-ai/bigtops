@@ -291,26 +291,7 @@ export function HomeSections() {
             </Reveal>
 
             <Reveal delay={0.08} className="mt-6 sm:mt-8">
-              <div className="mx-auto inline-flex items-stretch divide-x divide-white/15 px-1 py-1">
-                <div className="flex w-28 flex-col items-center px-3 sm:w-36">
-                  <span className="text-2xl font-bold tracking-tight text-white sm:text-3xl">2+</span>
-                  <span className="mt-1.5 text-[9px] tracking-[0.2em] uppercase text-white/60 sm:text-[11px]">
-                    Experience
-                  </span>
-                </div>
-                <div className="flex w-28 flex-col items-center px-3 sm:w-36">
-                  <span className="text-2xl font-bold tracking-tight text-white sm:text-3xl">50+</span>
-                  <span className="mt-1.5 text-[9px] tracking-[0.2em] uppercase text-white/60 sm:text-[11px]">
-                    Clients
-                  </span>
-                </div>
-                <div className="flex w-28 flex-col items-center px-3 sm:w-36">
-                  <span className="text-2xl font-bold tracking-tight text-white sm:text-3xl">8x</span>
-                  <span className="mt-1.5 text-[9px] tracking-[0.2em] uppercase text-white/60 sm:text-[11px]">
-                    ROI
-                  </span>
-                </div>
-              </div>
+
 
               <div className="mt-6 sm:mt-8 overflow-hidden py-4 [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
                 <div
@@ -411,16 +392,16 @@ export function HomeSections() {
                 {/* Stats Row from Framer template */}
                 <div className="mt-8 grid grid-cols-3 gap-4 w-full border-t border-white/10 pt-6">
                   <div>
-                    <span className="text-2xl sm:text-3xl font-bold text-white">100+</span>
-                    <p className="mt-1 text-xs text-muted font-medium uppercase tracking-wider">Projects Launched</p>
+                    <span className="text-2xl sm:text-3xl font-bold text-white">2+</span>
+                    <p className="mt-1 text-xs text-muted font-medium uppercase tracking-wider">Experience</p>
                   </div>
                   <div>
-                    <span className="text-2xl sm:text-3xl font-bold text-white">5+</span>
-                    <p className="mt-1 text-xs text-muted font-medium uppercase tracking-wider">Years Experience</p>
+                    <span className="text-2xl sm:text-3xl font-bold text-white">50+</span>
+                    <p className="mt-1 text-xs text-muted font-medium uppercase tracking-wider">Clients</p>
                   </div>
                   <div>
-                    <span className="text-2xl sm:text-3xl font-bold text-white">25+</span>
-                    <p className="mt-1 text-xs text-muted font-medium uppercase tracking-wider">Happy Clients</p>
+                    <span className="text-2xl sm:text-3xl font-bold text-white">8x</span>
+                    <p className="mt-1 text-xs text-muted font-medium uppercase tracking-wider">ROI</p>
                   </div>
                 </div>
 
