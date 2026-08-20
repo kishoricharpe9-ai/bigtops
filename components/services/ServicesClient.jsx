@@ -109,7 +109,7 @@ export function ServicesClient({ services }) {
 
         {/* Pill-shaped Standalone Tabs */}
         <Reveal>
-          <div className="flex flex-row overflow-x-auto flex-nowrap justify-start md:justify-center items-center gap-3 py-2 w-full [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] scroll-smooth">
+          <div className="mx-auto w-max max-w-full flex flex-row overflow-x-auto flex-nowrap items-center gap-3 py-2 px-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] scroll-smooth">
             {services.map((s) => {
               const isActive = s.slug === activeSlug;
 
@@ -120,13 +120,23 @@ export function ServicesClient({ services }) {
                   whileHover={{ scale: 1.04 }}
                   whileTap={{ scale: 0.96 }}
                   transition={{ type: 'spring', stiffness: 500, damping: 30 }}
-                  className={`relative flex items-center justify-center px-6 py-2.5 rounded-full border text-[11px] sm:text-xs font-semibold uppercase tracking-[0.16em] transition-all duration-300 outline-none whitespace-nowrap shrink-0 ${
+                  className={`relative flex items-center justify-center px-6 py-2.5 rounded-full sm:rounded-3xl border text-[11px] sm:text-[11px] font-semibold uppercase tracking-[0.16em] transition-all duration-300 outline-none shrink-0 text-center whitespace-nowrap leading-[1.4] ${
                     isActive 
                       ? 'border-[#12ced6] bg-black text-white shadow-[0_0_15px_rgba(18,206,214,0.12)]' 
                       : 'border-white/10 bg-black/40 text-white/60 hover:text-white/90 hover:border-white/30'
                   }`}
                 >
-                  {s.title}
+                  {s.slug === 'visual-branding-and-design' ? (
+                    <span>
+                      Visual Branding &amp; <br /> Design
+                    </span>
+                  ) : s.slug === 'content-creation-and-reels' ? (
+                    <span>
+                      Content Creation &amp; <br /> Reels
+                    </span>
+                  ) : (
+                    s.title
+                  )}
                 </motion.button>
               );
             })}
