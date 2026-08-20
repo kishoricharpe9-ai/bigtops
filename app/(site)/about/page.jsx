@@ -330,28 +330,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── CLIENT FEEDBACK (3D ANIMATED TESTIMONIALS) ── */}
-      <section className="relative overflow-hidden border-t border-white/[0.06] py-16 sm:py-24">
-        {/* Background ambient lighting */}
-        <div className="pointer-events-none absolute -top-40 left-1/2 h-96 w-[600px] -translate-x-1/2 rounded-full bg-[#12ced6]/10 blur-[120px]" />
-
-        <Container className="relative z-10">
-          <Reveal className="flex flex-col items-start">
-            <Badge>VIDEO STORIES</Badge>
-            <BlurTextReveal
-              as="h2"
-              text="Hear from our partners"
-              className="mt-8 text-3xl font-medium tracking-tight text-foreground sm:text-4xl lg:text-5xl"
-            />
-
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted">
-              Watch how we help forward-thinking brands scale, build premium identities, and generate
-              measurable growth through strategic video campaigns.
-            </p>
-          </Reveal>
-
-          <VideoTestimonials testimonials={videoTestimonials} />
-        </Container>
-      </section>
+      <VideoTestimonials testimonials={videoTestimonials} />
 
 
     </>
