@@ -243,7 +243,7 @@ export default function ContactPage() {
       <section className="relative min-h-[100svh] overflow-visible pb-16 pt-28 lg:hidden">
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
           <video
-            className="absolute inset-0 h-full w-full object-cover object-center"
+            className="absolute inset-0 h-full w-full object-cover object-center hero-bg-video"
             autoPlay
             muted
             loop
@@ -261,7 +261,7 @@ export default function ContactPage() {
 
         <Container className="relative z-10">
           <Reveal className="flex flex-col items-center text-center">
-            <div className="relative inline-flex overflow-hidden rounded-full border border-white/10 bg-black/70 px-5 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-foreground/90 backdrop-blur-md before:absolute before:left-[12%] before:right-[12%] before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#12ced6]/60 before:to-transparent before:content-['']">
+            <div className="relative inline-flex overflow-hidden rounded-full border border-white/10 bg-black/70 px-5 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-foreground/90 backdrop-blur-md before:absolute before:left-[12%] before:right-[12%] before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#E8441A]/60 before:to-transparent before:content-['']">
               Let&apos;s Work Together
             </div>
             <BlurTextReveal
@@ -292,7 +292,7 @@ export default function ContactPage() {
         <div className="pointer-events-none absolute bottom-0 left-0 z-10 h-48 w-full bg-gradient-to-b from-transparent to-black" />
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
           <video
-            className="absolute inset-0 h-full w-full object-cover object-center"
+            className="absolute inset-0 h-full w-full object-cover object-center hero-bg-video"
             autoPlay
             muted
             loop
@@ -309,7 +309,7 @@ export default function ContactPage() {
 
         <Container className="relative z-10 flex flex-1 flex-col items-center justify-center pb-[24vh] pt-32 text-center">
           <Reveal className="flex flex-col items-center">
-            <div className="relative inline-flex overflow-hidden rounded-full border border-white/10 bg-black/70 px-6 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-foreground/90 backdrop-blur-md before:absolute before:left-[12%] before:right-[12%] before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#12ced6]/60 before:to-transparent before:content-['']">
+            <div className="relative inline-flex overflow-hidden rounded-full border border-white/10 bg-black/70 px-6 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-foreground/90 backdrop-blur-md before:absolute before:left-[12%] before:right-[12%] before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#E8441A]/60 before:to-transparent before:content-['']">
               Let&apos;s Work Together
             </div>
             <BlurTextReveal

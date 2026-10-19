@@ -7,7 +7,7 @@
   Background: #000000
   Primary text: #FFFFFF
   Secondary/muted: ~#888888–#CCCCCC
-  Accent (stars, highlights): warm orange ~#FF8C33 / #FF8C00
+  Accent (stars, highlights): warm orange ~#E8441A / #FF8C00
   Surfaces/cards: ~#121212–#1A1A1A (elevated from pure black)
   Hero: soft radial mesh (orange/amber/yellow) with heavy blur
   Typography: geometric sans → Inter (weights 400–800)
@@ -23,8 +23,8 @@
   --surface: #1c1c1c;
   --surface-elevated: #1c1c1c;
   --border-subtle: #262626;
-  --accent: #ff8c33;
-  --accent-soft: rgba(255, 140, 51, 0.35);
+  --accent: #E8441A;
+  --accent-soft: rgba(232, 68, 26, 0.35);
 }
 
 html.lenis {
@@ -78,6 +78,11 @@ body {
   perspective: 800px;
 }
 
+/* Background video colour recolour: sepia warm-base (~35°) + hue-rotate(340°) = 15° tomato-orange ≈ #E8441A */
+.hero-bg-video {
+  filter: sepia(1) saturate(5) hue-rotate(340deg) brightness(1.0);
+}
+
 .neon-card {
   position: relative;
   overflow: hidden;
@@ -90,15 +95,15 @@ body {
 
   background: #bfb6a40d;
 
-  box-shadow: 0 0 3px rgba(0, 245, 255, 0.1), 0 0 7px rgba(0, 245, 255, 0.08),
-    0 0 12px rgba(176, 38, 255, 0.08);
+  box-shadow: 0 0 3px rgba(232, 68, 26, 0.1), 0 0 7px rgba(232, 68, 26, 0.08),
+    0 0 12px rgba(232, 68, 26, 0.08);
 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .neon-card:hover {
-  box-shadow: 0 0 4px rgba(0, 245, 255, 0.55), 0 0 7px rgba(0, 245, 255, 0.35),
-    0 0 15px rgba(176, 38, 255, 0.25);
+  box-shadow: 0 0 4px rgba(232, 68, 26, 0.55), 0 0 7px rgba(232, 68, 26, 0.35),
+    0 0 15px rgba(232, 68, 26, 0.25);
 }
 
 .neon-card::before {
@@ -112,11 +117,11 @@ body {
 
   background: linear-gradient(
     90deg,
-    rgba(0, 245, 255, 0.5),
-    rgba(176, 38, 255, 0.5),
-    rgba(1, 132, 197, 0.5),
-    rgba(106, 92, 255, 0.5),
-    rgba(0, 245, 255, 0.5)
+    rgba(232, 68, 26, 0.5),
+    rgba(255, 90, 40, 0.5),
+    rgba(200, 50, 15, 0.5),
+    rgba(232, 68, 26, 0.5),
+    rgba(232, 68, 26, 0.5)
   );
 
   background-size: 300% 300%;

@@ -176,7 +176,7 @@ function Card({ item, index, total, scrollX, active, onOpen, onJump }) {
       <div
         className={`relative h-full w-full overflow-hidden rounded-[22px] bg-[#090909] transition-all duration-500 ${
           isActiveCard
-            ? 'border-2 border-[#12ced6] shadow-[0_0_30px_rgba(18,206,214,0.45)]'
+            ? 'border-2 border-[#E8441A] shadow-[0_0_30px_rgba(232,68,26,0.45)]'
             : 'border border-white/10 shadow-xl'
         }`}
       >
@@ -188,7 +188,7 @@ function Card({ item, index, total, scrollX, active, onOpen, onJump }) {
             transition={{ duration: 0.4 }}
             className="pointer-events-none absolute inset-x-0 top-0 z-30 h-[3px]"
             style={{
-              background: 'linear-gradient(to right, transparent, #12ced6, #38bdf8, transparent)',
+              background: 'linear-gradient(to right, transparent, #E8441A, #38bdf8, transparent)',
             }}
           />
         )}
@@ -257,14 +257,14 @@ function Card({ item, index, total, scrollX, active, onOpen, onJump }) {
               {isReel ? (
                 <>
                   <span className="relative flex h-1.5 w-1.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#12ced6] opacity-75" />
-                    <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#12ced6]" />
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E8441A] opacity-75" />
+                    <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#E8441A]" />
                   </span>
                   Reel
                 </>
               ) : (
                 <>
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#12ced6]" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E8441A]" />
                   Image
                 </>
               )}
@@ -481,8 +481,8 @@ function CardStack({ items, label, autoplayOffset = 0 }) {
         {/* Animated Section Sub-Heading */}
         <div className="mb-3.5 flex items-center gap-2">
           <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 bg-[#12ced6]" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#12ced6]" />
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 bg-[#E8441A]" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#E8441A]" />
           </span>
           <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-white/80">
             {label}
@@ -506,7 +506,7 @@ function CardStack({ items, label, autoplayOffset = 0 }) {
           className="pointer-events-none absolute inset-0 z-0"
           style={{
             background:
-              'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(18,206,214,.06) 0%, transparent 100%)',
+              'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(232,68,26,.06) 0%, transparent 100%)',
           }}
         />
 
@@ -545,9 +545,9 @@ function CardStack({ items, label, autoplayOffset = 0 }) {
                 animate={{
                   width: i === activeIdx ? 22 : 6,
                   backgroundColor:
-                    i === activeIdx ? '#12ced6' : 'rgba(255,255,255,.22)',
+                    i === activeIdx ? '#E8441A' : 'rgba(255,255,255,.22)',
                   boxShadow:
-                    i === activeIdx ? '0 0 10px rgba(18,206,214,0.8)' : 'none',
+                    i === activeIdx ? '0 0 10px rgba(232,68,26,0.8)' : 'none',
                 }}
                 transition={{ duration: 0.25, ease: 'easeOut' }}
                 style={{ height: 6, borderRadius: 9999 }}

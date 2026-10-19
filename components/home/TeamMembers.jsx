@@ -32,7 +32,7 @@ export function TeamMembers() {
       <Container className="relative z-10">
         <Reveal className="mb-14 flex flex-col items-center text-center">
           {/* Badge */}
-          <div className="mb-6 relative inline-flex overflow-hidden rounded-full border border-white/10 bg-black/70 px-6 py-2 text-xs uppercase tracking-[0.2em] text-foreground/90 backdrop-blur-md transition hover:border-white/20 hover:bg-black/80 before:absolute before:left-[12%] before:right-[12%] before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#12ced6]/60 before:to-transparent before:content-['']">
+          <div className="mb-6 relative inline-flex overflow-hidden rounded-full border border-white/10 bg-black/70 px-6 py-2 text-xs uppercase tracking-[0.2em] text-foreground/90 backdrop-blur-md transition hover:border-white/20 hover:bg-black/80 before:absolute before:left-[12%] before:right-[12%] before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#E8441A]/60 before:to-transparent before:content-['']">
             <span className="flex items-center gap-1.5">
               <svg
                 width="14"
@@ -43,7 +43,7 @@ export function TeamMembers() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="text-[#12ced6]"
+                className="text-[#E8441A]"
               >
                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
                 <circle cx="9" cy="7" r="4" />
@@ -72,7 +72,7 @@ export function TeamMembers() {
               <motion.div
                 whileHover={{ y: -8 }}
                 transition={{ duration: 0.3, ease: 'easeOut' }}
-                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02] p-4 transition-all duration-300 hover:border-[#12ced6]/40 hover:bg-white/[0.04]"
+                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02] p-4 transition-all duration-300 hover:border-[#E8441A]/40 hover:bg-white/[0.04]"
               >
                 {/* Image Container with 3:4 Aspect Ratio */}
                 <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl bg-[#121212]">
@@ -90,7 +90,7 @@ export function TeamMembers() {
                   </div>
 
                   {/* Glassmorphic details panel overlaying photo bottom */}
-                  <div className="absolute bottom-4 left-4 right-4 rounded-2xl border border-white/10 bg-black/40 p-5 backdrop-blur-md transition-all duration-300 group-hover:border-[#12ced6]/30 group-hover:bg-black/50">
+                  <div className="absolute bottom-4 left-4 right-4 rounded-2xl border border-white/10 bg-black/40 p-5 backdrop-blur-md transition-all duration-300 group-hover:border-[#E8441A]/30 group-hover:bg-black/50">
                     <h3 className="text-lg font-bold text-white tracking-tight leading-none">
                       {member.name}
                     </h3>

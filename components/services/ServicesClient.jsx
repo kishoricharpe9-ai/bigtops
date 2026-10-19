@@ -62,7 +62,7 @@ export function ServicesClient({ services }) {
       <div className="relative flex min-h-[75vh] flex-col justify-center overflow-hidden pb-16 pt-28 sm:pt-32">
         <div className="pointer-events-none absolute inset-0">
           <video
-            className="absolute inset-0 h-full w-full object-cover object-center"
+            className="absolute inset-0 h-full w-full object-cover object-center hero-bg-video"
             autoPlay
             muted
             loop
@@ -80,7 +80,7 @@ export function ServicesClient({ services }) {
 
         <Container className="relative -mt-[10vh] sm:-mt-[15vh] z-10">
           <Reveal className="lg:text-center">
-            <div className="relative inline-flex overflow-hidden rounded-full border border-white/10 bg-black/70 px-6 py-2 text-xs uppercase tracking-[0.2em] text-foreground/90 backdrop-blur-md transition hover:border-white/20 hover:bg-black/80 before:absolute before:left-[12%] before:right-[12%] before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#12ced6]/60 before:to-transparent before:content-['']">
+            <div className="relative inline-flex overflow-hidden rounded-full border border-white/10 bg-black/70 px-6 py-2 text-xs uppercase tracking-[0.2em] text-foreground/90 backdrop-blur-md transition hover:border-white/20 hover:bg-black/80 before:absolute before:left-[12%] before:right-[12%] before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#E8441A]/60 before:to-transparent before:content-['']">
               Our Services
             </div>
             
@@ -102,7 +102,7 @@ export function ServicesClient({ services }) {
       {/* Tabs Container */}
       <Container className="relative z-15 -mt-[15vh] sm:-mt-[10vh] max-w-6xl">
         <Reveal>
-          <div className="text-xs sm:text-sm font-semibold uppercase tracking-[0.15em] text-[#12ced6]/80 mb-6 text-center">
+          <div className="text-xs sm:text-sm font-semibold uppercase tracking-[0.15em] text-[#E8441A]/80 mb-6 text-center">
             Select a service to explore
           </div>
         </Reveal>
@@ -122,7 +122,7 @@ export function ServicesClient({ services }) {
                   transition={{ type: 'spring', stiffness: 500, damping: 30 }}
                   className={`relative flex items-center justify-center px-6 py-2.5 rounded-full sm:rounded-3xl border text-[11px] sm:text-[11px] font-semibold uppercase tracking-[0.16em] transition-all duration-300 outline-none shrink-0 text-center whitespace-nowrap leading-[1.4] ${
                     isActive 
-                      ? 'border-[#12ced6] bg-black text-white shadow-[0_0_15px_rgba(18,206,214,0.12)]' 
+                      ? 'border-[#E8441A] bg-black text-white shadow-[0_0_15px_rgba(232,68,26,0.12)]' 
                       : 'border-white/10 bg-black/40 text-white/60 hover:text-white/90 hover:border-white/30'
                   }`}
                 >
@@ -158,7 +158,7 @@ export function ServicesClient({ services }) {
             {/* 1. Main Info: Title, Tagline, Badges & Hero Image */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               <div className="lg:col-span-7 space-y-6">
-                <div className="inline-flex rounded-full border border-[#12ced6]/20 bg-[#12ced6]/5 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#12ced6]">
+                <div className="inline-flex rounded-full border border-[#E8441A]/20 bg-[#E8441A]/5 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#E8441A]">
                   Service Details
                 </div>
                 
@@ -201,7 +201,7 @@ export function ServicesClient({ services }) {
             {/* 2. Process Section */}
             <div className="border-t border-white/[0.06] pt-12">
               <div className="max-w-2xl">
-                <span className="text-xs uppercase tracking-[0.2em] text-[#12ced6]/80 font-semibold">Our Methodology</span>
+                <span className="text-xs uppercase tracking-[0.2em] text-[#E8441A]/80 font-semibold">Our Methodology</span>
                 <h3 className="text-2xl sm:text-3xl font-semibold text-white mt-1">
                   How we execute it
                 </h3>
@@ -214,9 +214,9 @@ export function ServicesClient({ services }) {
                     className="h-full rounded-[20px] bg-white/[0.02] border border-white/[0.06] hover:bg-white/[0.04] hover:border-white/[0.1] transition-all duration-300 flex flex-col justify-between p-6 sm:p-7 relative overflow-hidden group"
                   >
                     {/* Background hover light effect */}
-                    <div className="absolute -right-12 -top-12 h-24 w-24 rounded-full bg-[#12ced6]/5 blur-2xl group-hover:bg-[#12ced6]/10 transition-colors duration-500" />
+                    <div className="absolute -right-12 -top-12 h-24 w-24 rounded-full bg-[#E8441A]/5 blur-2xl group-hover:bg-[#E8441A]/10 transition-colors duration-500" />
                     
-                    <span className="text-lg font-bold text-[#12ced6]/40 group-hover:text-[#12ced6]/80 transition-colors duration-300">
+                    <span className="text-lg font-bold text-[#E8441A]/40 group-hover:text-[#E8441A]/80 transition-colors duration-300">
                       {String(idx + 1).padStart(2, '0')}
                     </span>
                     
@@ -242,7 +242,7 @@ export function ServicesClient({ services }) {
                   </p>
                 ))}
                 
-                <div className="bg-[#12ced6]/5 border border-[#12ced6]/10 rounded-2xl p-5 mt-4">
+                <div className="bg-[#E8441A]/5 border border-[#E8441A]/10 rounded-2xl p-5 mt-4">
                   <p className="text-sm sm:text-base leading-relaxed text-foreground/90">
                     <span className="font-semibold text-white">Who it&apos;s for: </span>
                     {activeService.whoFor}
@@ -279,7 +279,7 @@ export function ServicesClient({ services }) {
                         key={ind}
                         className="flex items-center gap-2.5 text-sm leading-relaxed text-muted"
                       >
-                        <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#12ced6]/10 text-[#12ced6]">
+                        <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#E8441A]/10 text-[#E8441A]">
                           <svg
                             width="12"
                             height="12"
@@ -303,9 +303,9 @@ export function ServicesClient({ services }) {
             </div>
 
             {/* 4. Results + CTA Block */}
-            <div className="rounded-3xl border border-white/[0.08] bg-[#0e0f11] relative overflow-hidden p-8 sm:p-12 text-center before:absolute before:left-0 before:right-0 before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#12ced6]/30 before:to-transparent">
+            <div className="rounded-3xl border border-white/[0.08] bg-[#0e0f11] relative overflow-hidden p-8 sm:p-12 text-center before:absolute before:left-0 before:right-0 before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#E8441A]/30 before:to-transparent">
               {/* Background gradient orb */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#12ced6]/5 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#E8441A]/5 to-transparent pointer-events-none" />
               
               <h3 className="text-xl sm:text-2xl font-bold text-white relative z-10">
                 Ready to scale your brand with {activeService.title}?

@@ -10,7 +10,7 @@ export function BlogArticleView({ post }) {
       <section className="relative flex min-h-screen flex-col justify-center overflow-hidden border-b border-white/[0.06] pb-16 pt-28 sm:pt-32">
         <div className="pointer-events-none absolute inset-0">
           <video
-            className="absolute inset-0 h-full w-full object-cover object-center"
+            className="absolute inset-0 h-full w-full object-cover object-center hero-bg-video"
             autoPlay
             muted
             loop

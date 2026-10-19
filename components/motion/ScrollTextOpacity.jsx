@@ -10,7 +10,7 @@ function Word({ children, progress, range, baseOpacity, isHighlighted }) {
     <span className="inline-block mr-[0.25em] relative">
       <motion.span
         style={{ opacity }}
-        className={isHighlighted ? "bg-gradient-to-r from-sky-400 to-[#12ced6] bg-clip-text text-transparent" : undefined}
+        className={isHighlighted ? "bg-gradient-to-r from-[#E8441A] to-[#ff6a38] bg-clip-text text-transparent" : undefined}
       >
         {children}
       </motion.span>

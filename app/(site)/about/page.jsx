@@ -16,7 +16,7 @@ export const metadata = {
 
 function Badge({ children }) {
   return (
-    <div className="relative inline-flex overflow-hidden rounded-full border border-white/10 bg-black/70 px-6 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-foreground/90 backdrop-blur-md before:absolute before:left-[12%] before:right-[12%] before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#12ced6]/60 before:to-transparent before:content-['']">
+    <div className="relative inline-flex overflow-hidden rounded-full border border-white/10 bg-black/70 px-6 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-foreground/90 backdrop-blur-md before:absolute before:left-[12%] before:right-[12%] before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#E8441A]/60 before:to-transparent before:content-['']">
       {children}
     </div>
   );
@@ -29,7 +29,7 @@ export default function AboutPage() {
       <section className="relative overflow-hidden pb-16 pt-44 sm:pb-20 sm:pt-52">
         <div className="pointer-events-none absolute inset-0">
           <video
-            className="absolute inset-0 h-full w-full object-cover object-center"
+            className="absolute inset-0 h-full w-full object-cover object-center hero-bg-video"
             autoPlay
             muted
             loop
@@ -74,7 +74,7 @@ export default function AboutPage() {
           {/* ── WHO WE ARE ── */}
           <div className="mt-8 sm:mt-12 relative mx-auto w-full">
             {/* Subtle ambient lighting for the background */}
-            <div className="pointer-events-none absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 h-[500px] w-[500px] rounded-full bg-[#12ced6]/5 blur-[120px]" />
+            <div className="pointer-events-none absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 h-[500px] w-[500px] rounded-full bg-[#E8441A]/5 blur-[120px]" />
             
             <div className="flex flex-col items-center text-center relative z-10 w-full max-w-4xl mx-auto">
               <Reveal>
@@ -87,19 +87,19 @@ export default function AboutPage() {
                   performance. We craft campaigns that look great, connect deeply, and drive real
                   growth.
                 </p>
-                <div className="mx-auto mt-10 h-px w-48 bg-gradient-to-r from-transparent via-[#12ced6]/60 to-transparent" />
+                <div className="mx-auto mt-10 h-px w-48 bg-gradient-to-r from-transparent via-[#E8441A]/60 to-transparent" />
               </Reveal>
             </div>
 
             <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 relative z-10 w-full max-w-7xl mx-auto">
               {stats.map((s, idx) => (
                 <Reveal key={s.numeral} delay={0.3 + idx * 0.1}>
-                  <div className="group relative flex h-full min-h-[160px] flex-col justify-between overflow-hidden rounded-[16px] bg-[#050505] border border-white/[0.05] p-6 sm:p-7 transition-all duration-500 hover:bg-[#0a0a0a] hover:-translate-y-1 hover:border-white/[0.1] hover:shadow-[0_10px_40px_-10px_rgba(18,206,214,0.15)]">
-                    <div className="pointer-events-none absolute -inset-px rounded-[16px] bg-gradient-to-br from-[#12ced6]/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                  <div className="group relative flex h-full min-h-[160px] flex-col justify-between overflow-hidden rounded-[16px] bg-[#050505] border border-white/[0.05] p-6 sm:p-7 transition-all duration-500 hover:bg-[#0a0a0a] hover:-translate-y-1 hover:border-white/[0.1] hover:shadow-[0_10px_40px_-10px_rgba(232,68,26,0.15)]">
+                    <div className="pointer-events-none absolute -inset-px rounded-[16px] bg-gradient-to-br from-[#E8441A]/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                     
                     {/* Top Row: Icon Only */}
                     <div className="relative z-10 flex items-start">
-                      <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/[0.03] border border-white/[0.05] text-[13px] font-bold text-[#12ced6]">
+                      <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/[0.03] border border-white/[0.05] text-[13px] font-bold text-[#E8441A]">
                         {s.numeral}
                       </span>
                     </div>
@@ -135,7 +135,7 @@ export default function AboutPage() {
               {/* Team Group Photo (Right on Desktop) */}
               <div className="relative group/photo overflow-hidden rounded-[24px] border border-white/[0.08] bg-[#050505] min-h-[300px] sm:min-h-[400px] lg:min-h-full shadow-2xl lg:order-2">
                 {/* Subtle ambient lighting on hover */}
-                <div className="pointer-events-none absolute -inset-px rounded-[24px] bg-gradient-to-br from-[#12ced6]/10 to-transparent opacity-0 transition-opacity duration-500 group-hover/photo:opacity-100" />
+                <div className="pointer-events-none absolute -inset-px rounded-[24px] bg-gradient-to-br from-[#E8441A]/10 to-transparent opacity-0 transition-opacity duration-500 group-hover/photo:opacity-100" />
                 <Image
                   src="/team-group.jpg"
                   alt="BigTopSocial Creative Team"
@@ -149,14 +149,14 @@ export default function AboutPage() {
               {/* Vision and Mission cards stacked (Left on Desktop) */}
               <div className="flex flex-col gap-6 lg:gap-8 justify-between lg:order-1">
                 {/* Vision */}
-                <div className="group relative flex-1 overflow-hidden rounded-[24px] bg-white/[0.02] border border-white/[0.05] p-8 sm:p-10 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-[#12ced6]/60 hover:bg-[#0a0a0a]/95 hover:shadow-[0_12px_30px_rgba(18,206,214,0.18)]">
+                <div className="group relative flex-1 overflow-hidden rounded-[24px] bg-white/[0.02] border border-white/[0.05] p-8 sm:p-10 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-[#E8441A]/60 hover:bg-[#0a0a0a]/95 hover:shadow-[0_12px_30px_rgba(232,68,26,0.18)]">
                   {/* Glowing top border accent on hover */}
-                  <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#12ced6] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                  <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#E8441A] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                   
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#12ced6]/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#E8441A]/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                   <div className="relative z-10 flex flex-col items-start">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/[0.05] border border-white/10 mb-6 transition-all duration-300 group-hover:scale-110 group-hover:border-[#12ced6]/40 group-hover:bg-[#12ced6]/15 group-hover:shadow-[0_0_15px_rgba(18,206,214,0.3)]">
-                      <svg className="h-7 w-7 text-foreground transition-colors duration-300 group-hover:text-[#12ced6]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/[0.05] border border-white/10 mb-6 transition-all duration-300 group-hover:scale-110 group-hover:border-[#E8441A]/40 group-hover:bg-[#E8441A]/15 group-hover:shadow-[0_0_15px_rgba(232,68,26,0.3)]">
+                      <svg className="h-7 w-7 text-foreground transition-colors duration-300 group-hover:text-[#E8441A]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                       </svg>
@@ -169,14 +169,14 @@ export default function AboutPage() {
                 </div>
 
                 {/* Mission */}
-                <div className="group relative flex-1 overflow-hidden rounded-[24px] bg-white/[0.02] border border-white/[0.05] p-8 sm:p-10 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-[#12ced6]/60 hover:bg-[#0a0a0a]/95 hover:shadow-[0_12px_30px_rgba(18,206,214,0.18)]">
+                <div className="group relative flex-1 overflow-hidden rounded-[24px] bg-white/[0.02] border border-white/[0.05] p-8 sm:p-10 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-[#E8441A]/60 hover:bg-[#0a0a0a]/95 hover:shadow-[0_12px_30px_rgba(232,68,26,0.18)]">
                   {/* Glowing top border accent on hover */}
-                  <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#12ced6] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                  <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#E8441A] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                   
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#12ced6]/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#E8441A]/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                   <div className="relative z-10 flex flex-col items-start">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/[0.05] border border-white/10 mb-6 transition-all duration-300 group-hover:scale-110 group-hover:border-[#12ced6]/40 group-hover:bg-[#12ced6]/15 group-hover:shadow-[0_0_15px_rgba(18,206,214,0.3)]">
-                      <svg className="h-7 w-7 text-foreground transition-colors duration-300 group-hover:text-[#12ced6]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/[0.05] border border-white/10 mb-6 transition-all duration-300 group-hover:scale-110 group-hover:border-[#E8441A]/40 group-hover:bg-[#E8441A]/15 group-hover:shadow-[0_0_15px_rgba(232,68,26,0.3)]">
+                      <svg className="h-7 w-7 text-foreground transition-colors duration-300 group-hover:text-[#E8441A]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
                       </svg>
                     </div>
@@ -219,13 +219,13 @@ export default function AboutPage() {
 
                       {/* Top: Year */}
                       <div className="mb-6 relative z-10">
-                        <span className="text-sm sm:text-base font-medium tracking-widest text-muted/60 transition-colors duration-300 group-hover:text-[#12ced6]">
+                        <span className="text-sm sm:text-base font-medium tracking-widest text-muted/60 transition-colors duration-300 group-hover:text-[#E8441A]">
                           {a.year}
                         </span>
                       </div>
 
                       {/* Center: The Node */}
-                      <div className="hidden lg:flex absolute left-1/2 top-[4.5rem] h-3 w-3 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white/20 bg-background transition-all duration-300 group-hover:border-[#12ced6] group-hover:bg-[#12ced6] group-hover:shadow-[0_0_15px_rgba(18,206,214,0.6)] z-20" />
+                      <div className="hidden lg:flex absolute left-1/2 top-[4.5rem] h-3 w-3 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white/20 bg-background transition-all duration-300 group-hover:border-[#E8441A] group-hover:bg-[#E8441A] group-hover:shadow-[0_0_15px_rgba(232,68,26,0.6)] z-20" />
 
                       {/* Bottom: Content */}
                       <div className="mt-2 relative z-10 flex flex-col flex-1 justify-start">
@@ -233,7 +233,7 @@ export default function AboutPage() {
                           {a.title}
                         </h3>
                         <p className="mt-3 text-[14px] sm:text-[15px] text-muted/70 flex flex-col gap-1">
-                          <span className="font-medium text-[#12ced6]/80 transition-colors duration-300 group-hover:text-[#12ced6]">{a.category}</span>
+                          <span className="font-medium text-[#E8441A]/80 transition-colors duration-300 group-hover:text-[#E8441A]">{a.category}</span>
                           <span className="text-muted/60">for {a.brand}</span>
                         </p>
                       </div>
@@ -298,7 +298,7 @@ export default function AboutPage() {
                 {Array.from({ length: 10 }).map((_, idx) => {
                   const m = aboutTeam.slice(3)[idx] || { name: 'Join Our Team', role: 'Open Position', image: null };
                   return (
-                  <div key={idx} className="group relative overflow-hidden rounded-[20px] bg-white/[0.02] aspect-[4/5] transition-all duration-500 hover:-translate-y-2 hover:bg-white/[0.04] hover:shadow-[0_10px_40px_-10px_rgba(18,206,214,0.15)] flex items-center justify-center">
+                  <div key={idx} className="group relative overflow-hidden rounded-[20px] bg-white/[0.02] aspect-[4/5] transition-all duration-500 hover:-translate-y-2 hover:bg-white/[0.04] hover:shadow-[0_10px_40px_-10px_rgba(232,68,26,0.15)] flex items-center justify-center">
                     
                     {/* Image Background */}
                     <Image
@@ -310,7 +310,7 @@ export default function AboutPage() {
                     />
 
                     {/* Hover subtle cyan gradient overlay */}
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-[#12ced6]/20 via-[#12ced6]/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 mix-blend-screen z-10" />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-[#E8441A]/20 via-[#E8441A]/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 mix-blend-screen z-10" />
                     
                     {/* Heavy dark gradient for text readability at the bottom */}
                     <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent z-10" />
@@ -318,7 +318,7 @@ export default function AboutPage() {
                     {/* Text Overlay (Bottom Left) */}
                     <div className="absolute bottom-0 left-0 p-5 flex flex-col items-start w-full z-20 text-left">
                       <span className="text-base sm:text-lg font-semibold text-foreground group-hover:text-white transition-colors duration-300 leading-tight">{m.name}</span>
-                      <span className="mt-1.5 text-[10px] sm:text-[11px] font-medium text-[#12ced6] uppercase tracking-[0.1em] sm:tracking-[0.15em]">{m.role}</span>
+                      <span className="mt-1.5 text-[10px] sm:text-[11px] font-medium text-[#E8441A] uppercase tracking-[0.1em] sm:tracking-[0.15em]">{m.role}</span>
                     </div>
                   </div>
                 )})}

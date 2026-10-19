@@ -16,7 +16,7 @@ const stepImages = [
 ];
 
 function CardIcon({ index }) {
-  const cls = 'h-6 w-6 text-sky-400';
+  const cls = 'h-6 w-6 text-accent';
   switch (index) {
     case 0:
       return (
@@ -164,8 +164,8 @@ export function HowWeWorkTimeline() {
                 <div className="absolute bottom-4 inset-x-4 z-30 overflow-hidden rounded-[18px] border border-white/15 bg-black/80 px-6 py-3.5 backdrop-blur-xl flex items-center justify-between">
                   <div>
                     <div className="flex items-center gap-2">
-                      <span className="inline-block h-2 w-2 rounded-full bg-[#12ced6] animate-pulse" />
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#12ced6]">
+                      <span className="inline-block h-2 w-2 rounded-full bg-[#E8441A] animate-pulse" />
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#E8441A]">
                         Stage 0{processSteps[activeIndex].step}
                       </p>
                     </div>
@@ -180,7 +180,7 @@ export function HowWeWorkTimeline() {
                       <div
                         key={i}
                         className={`h-2 transition-all duration-500 rounded-full ${
-                          activeIndex === i ? 'w-6 bg-[#12ced6]' : 'w-2 bg-white/20'
+                          activeIndex === i ? 'w-6 bg-[#E8441A]' : 'w-2 bg-white/20'
                         }`}
                       />
                     ))}
@@ -193,7 +193,7 @@ export function HowWeWorkTimeline() {
           {/* RIGHT SIDE — Header, Subtitle, and Process Cards (Text part) */}
           <div className="lg:order-2">
             {/* Pill */}
-            <div className="relative mx-auto mb-10 flex w-fit overflow-hidden rounded-full border border-white/10 bg-black/70 px-6 py-2 text-xs uppercase tracking-[0.2em] text-foreground/90 backdrop-blur-md transition hover:border-white/20 hover:bg-black/80 before:absolute before:left-[12%] before:right-[12%] before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#12ced6]/60 before:to-transparent before:content-[''] lg:mx-0 lg:inline-flex">
+            <div className="relative mx-auto mb-10 flex w-fit overflow-hidden rounded-full border border-white/10 bg-black/70 px-6 py-2 text-xs uppercase tracking-[0.2em] text-foreground/90 backdrop-blur-md transition hover:border-white/20 hover:bg-black/80 before:absolute before:left-[12%] before:right-[12%] before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#E8441A]/60 before:to-transparent before:content-[''] lg:mx-0 lg:inline-flex">
               How We Work?
             </div>
 
@@ -219,7 +219,7 @@ export function HowWeWorkTimeline() {
                       cardRefs.current[index] = el;
                     }}
                     data-index={index}
-                    className={`sticky group relative flex min-h-[280px] flex-col justify-between overflow-hidden rounded-[20px] border p-6 transition-all duration-500 sm:min-h-[320px] sm:p-8 backdrop-blur-xl hover:border-[#12ced6]/60 hover:shadow-[0_12px_30px_rgba(18,206,214,0.18)] ${
+                    className={`sticky group relative flex min-h-[280px] flex-col justify-between overflow-hidden rounded-[20px] border p-6 transition-all duration-500 sm:min-h-[320px] sm:p-8 backdrop-blur-xl hover:border-[#E8441A]/60 hover:shadow-[0_12px_30px_rgba(232,68,26,0.18)] ${
                       isActive
                         ? 'border-white/20 bg-[#0a0a0a]/95 shadow-xl'
                         : 'border-white/[0.08] bg-black/95 shadow-[0_-5px_20px_rgba(0,0,0,0.5)]'
@@ -232,7 +232,7 @@ export function HowWeWorkTimeline() {
                   >
                     {/* Glowing top border on active */}
                     <div
-                      className={`absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#12ced6] to-transparent transition-opacity duration-500 ${
+                      className={`absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#E8441A] to-transparent transition-opacity duration-500 ${
                         isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
                       }`}
                     />
@@ -249,7 +249,7 @@ export function HowWeWorkTimeline() {
                       </div>
                       <span
                         className={`font-mono text-xs font-semibold uppercase tracking-[0.2em] ${
-                          isActive ? 'text-[#12ced6]' : 'text-muted'
+                          isActive ? 'text-[#E8441A]' : 'text-muted'
                         }`}
                       >
                         0{index + 1} / 04
@@ -316,8 +316,8 @@ export function HowWeWorkTimeline() {
                 {/* HUD Bottom Info Bar */}
                 <div className="absolute bottom-4 inset-x-4 z-10 overflow-hidden rounded-[16px] border border-white/10 bg-black/60 px-4 py-3 backdrop-blur-md">
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#12ced6] animate-pulse" />
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#12ced6]">
+                    <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#E8441A] animate-pulse" />
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#E8441A]">
                       Stage 0{processSteps[activeIndex].step}
                     </p>
                   </div>
@@ -338,7 +338,7 @@ export function HowWeWorkTimeline() {
                         cardRefs.current[processSteps.length + index] = el;
                       }}
                       data-index={index}
-                      className={`sticky group relative flex min-h-[220px] flex-col justify-between overflow-hidden rounded-[20px] border p-6 transition-all duration-500 backdrop-blur-xl sm:p-8 hover:border-[#12ced6]/60 hover:shadow-[0_12px_30px_rgba(18,206,214,0.18)] ${
+                      className={`sticky group relative flex min-h-[220px] flex-col justify-between overflow-hidden rounded-[20px] border p-6 transition-all duration-500 backdrop-blur-xl sm:p-8 hover:border-[#E8441A]/60 hover:shadow-[0_12px_30px_rgba(232,68,26,0.18)] ${
                         isActive
                           ? 'border-white/20 bg-[#0a0a0a]/95 shadow-xl'
                           : 'border-white/[0.08] bg-black/95 shadow-[0_-5px_20px_rgba(0,0,0,0.5)]'
@@ -351,7 +351,7 @@ export function HowWeWorkTimeline() {
                     >
                       {/* Glowing top border on active */}
                       <div
-                        className={`absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#12ced6] to-transparent transition-opacity duration-500 ${
+                        className={`absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#E8441A] to-transparent transition-opacity duration-500 ${
                           isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
                         }`}
                       />
@@ -368,7 +368,7 @@ export function HowWeWorkTimeline() {
                         </div>
                         <span
                           className={`font-mono text-xs font-semibold uppercase tracking-[0.2em] ${
-                            isActive ? 'text-[#12ced6]' : 'text-muted'
+                            isActive ? 'text-[#E8441A]' : 'text-muted'
                           }`}
                         >
                           0{index + 1} / 04

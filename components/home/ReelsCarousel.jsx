@@ -156,7 +156,7 @@ export function ReelsCarousel() {
         <button
           onClick={prev}
           aria-label="Previous Reel"
-          className="absolute left-6 lg:left-12 top-1/2 -translate-y-1/2 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-black/60 text-white/70 backdrop-blur-md transition-all duration-300 hover:scale-110 hover:border-[#12ced6] hover:text-[#12ced6] hover:bg-black/80 active:scale-95 shadow-2xl"
+          className="absolute left-6 lg:left-12 top-1/2 -translate-y-1/2 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-black/60 text-white/70 backdrop-blur-md transition-all duration-300 hover:scale-110 hover:border-[#E8441A] hover:text-[#E8441A] hover:bg-black/80 active:scale-95 shadow-2xl"
         >
           <svg
             width="20"
@@ -176,7 +176,7 @@ export function ReelsCarousel() {
         <button
           onClick={next}
           aria-label="Next Reel"
-          className="absolute right-6 lg:right-12 top-1/2 -translate-y-1/2 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-black/60 text-white/70 backdrop-blur-md transition-all duration-300 hover:scale-110 hover:border-[#12ced6] hover:text-[#12ced6] hover:bg-black/80 active:scale-95 shadow-2xl"
+          className="absolute right-6 lg:right-12 top-1/2 -translate-y-1/2 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-black/60 text-white/70 backdrop-blur-md transition-all duration-300 hover:scale-110 hover:border-[#E8441A] hover:text-[#E8441A] hover:bg-black/80 active:scale-95 shadow-2xl"
         >
           <svg
             width="20"

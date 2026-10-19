@@ -50,9 +50,9 @@ export function Testimonial3DCard({ testimonial, index, isFeatured }) {
         onMouseLeave={() => setIsHovered(false)}
         className={`group relative flex h-full min-h-[300px] flex-col justify-between overflow-hidden rounded-[24px] border p-7 backdrop-blur-2xl transition-all duration-500 transform-gpu ${
           isHovered
-            ? '-translate-y-2 border-[#12ced6]/60 shadow-[0_15px_40px_rgba(18,206,214,0.25),0_0_20px_rgba(18,206,214,0.3)]'
+            ? '-translate-y-2 border-[#E8441A]/60 shadow-[0_15px_40px_rgba(232,68,26,0.25),0_0_20px_rgba(232,68,26,0.3)]'
             : isFeatured
-            ? 'border-[#12ced6]/30 shadow-[0_10px_30px_rgba(18,206,214,0.15)] bg-card/90'
+            ? 'border-[#E8441A]/30 shadow-[0_10px_30px_rgba(232,68,26,0.15)] bg-card/90'
             : 'border-white/10 shadow-lg bg-card/90'
         }`}
       >
@@ -63,7 +63,7 @@ export function Testimonial3DCard({ testimonial, index, isFeatured }) {
           }`}
         >
           <video
-            className="absolute inset-0 h-full w-full object-cover object-center scale-105 transition-transform duration-700 group-hover:scale-110"
+            className="absolute inset-0 h-full w-full object-cover object-center scale-105 transition-transform duration-700 group-hover:scale-110 hero-bg-video"
             autoPlay
             muted
             loop
@@ -84,7 +84,7 @@ export function Testimonial3DCard({ testimonial, index, isFeatured }) {
         <div
           className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-10"
           style={{
-            background: `radial-gradient(400px circle at ${mousePos.x}% ${mousePos.y}%, rgba(18, 206, 214, 0.25), transparent 60%)`,
+            background: `radial-gradient(400px circle at ${mousePos.x}% ${mousePos.y}%, rgba(232, 68, 26, 0.25), transparent 60%)`,
           }}
         />
 
@@ -102,11 +102,11 @@ export function Testimonial3DCard({ testimonial, index, isFeatured }) {
 
         {/* Author Avatar & Meta */}
         <div className="relative z-20 flex items-center gap-3.5 border-t border-white/10 pt-4">
-          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#12ced6] to-[#0a8e94] text-sm font-bold text-black shadow-md shadow-[#12ced6]/30 border border-white/30">
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#E8441A] to-[#b8330f] text-sm font-bold text-black shadow-md shadow-[#E8441A]/30 border border-white/30">
             {testimonial.name.charAt(0)}
           </div>
           <div className="text-sm">
-            <div className="font-semibold text-white group-hover:text-[#12ced6] transition-colors">
+            <div className="font-semibold text-white group-hover:text-[#E8441A] transition-colors">
               {testimonial.name}
             </div>
             <div className="text-xs text-white/60">{testimonial.role}</div>
@@ -115,7 +115,7 @@ export function Testimonial3DCard({ testimonial, index, isFeatured }) {
 
         {/* Animated Corner Cyan Glow Accent */}
         <div
-          className={`pointer-events-none absolute -bottom-10 -right-10 h-36 w-36 rounded-full bg-[#12ced6]/30 blur-2xl transition-opacity duration-500 ${
+          className={`pointer-events-none absolute -bottom-10 -right-10 h-36 w-36 rounded-full bg-[#E8441A]/30 blur-2xl transition-opacity duration-500 ${
             isHovered ? 'opacity-100 scale-125' : 'opacity-0 scale-75'
           }`}
         />

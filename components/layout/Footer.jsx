@@ -8,7 +8,7 @@ export function Footer() {
       {/* VIDEO BACKGROUND (Same as Hero Section) */}
       <div className="pointer-events-none absolute inset-0 z-0">
         <video
-          className="absolute inset-0 h-full w-full object-cover object-center"
+          className="absolute inset-0 h-full w-full object-cover object-center hero-bg-video"
           autoPlay
           muted
           loop
