@@ -87,7 +87,7 @@ export function PortfolioGlimpse() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none" />
               <div className="absolute bottom-6 left-6 sm:bottom-10 sm:left-10 z-20">
-                <span className="inline-block px-3 py-1 mb-3 text-[10px] font-bold tracking-[0.15em] text-white bg-[#12ced6]/20 border border-[#12ced6]/50 rounded-full uppercase backdrop-blur-md">
+                <span className="inline-block px-3 py-1 mb-3 text-[10px] font-bold tracking-[0.15em] text-white bg-[#E8441A]/20 border border-[#E8441A]/50 rounded-full uppercase backdrop-blur-md">
                   Featured Work
                 </span>
                 <h3 className="text-xl sm:text-3xl font-bold text-white tracking-tight">{images[imageIndex].title}</h3>
@@ -97,7 +97,7 @@ export function PortfolioGlimpse() {
 
           {/* Navigation Buttons */}
           <button
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-30 flex h-12 w-12 items-center justify-center rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white transition-all hover:scale-110 hover:bg-[#12ced6]/20 hover:border-[#12ced6]/50 opacity-0 group-hover:opacity-100"
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-30 flex h-12 w-12 items-center justify-center rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white transition-all hover:scale-110 hover:bg-[#E8441A]/20 hover:border-[#E8441A]/50 opacity-0 group-hover:opacity-100"
             onClick={() => paginate(-1)}
           >
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -105,7 +105,7 @@ export function PortfolioGlimpse() {
             </svg>
           </button>
           <button
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-30 flex h-12 w-12 items-center justify-center rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white transition-all hover:scale-110 hover:bg-[#12ced6]/20 hover:border-[#12ced6]/50 opacity-0 group-hover:opacity-100"
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-30 flex h-12 w-12 items-center justify-center rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white transition-all hover:scale-110 hover:bg-[#E8441A]/20 hover:border-[#E8441A]/50 opacity-0 group-hover:opacity-100"
             onClick={() => paginate(1)}
           >
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

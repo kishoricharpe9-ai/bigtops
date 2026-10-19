@@ -25,7 +25,7 @@ const serviceIcons = [
     strokeWidth="1.6"
     strokeLinecap="round"
     strokeLinejoin="round"
-    className="text-sky-400"
+    className="text-accent"
   >
     <path d="m3 11 18-5v12L3 14v-3z" />
     <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6" />
@@ -41,7 +41,7 @@ const serviceIcons = [
     strokeWidth="1.6"
     strokeLinecap="round"
     strokeLinejoin="round"
-    className="text-sky-400"
+    className="text-accent"
   >
     <circle cx="12" cy="12" r="10" />
     <circle cx="12" cy="12" r="6" />
@@ -58,7 +58,7 @@ const serviceIcons = [
     strokeWidth="1.6"
     strokeLinecap="round"
     strokeLinejoin="round"
-    className="text-sky-400"
+    className="text-accent"
   >
     <circle cx="11" cy="11" r="8" />
     <path d="m21 21-4.3-4.3" />
@@ -74,7 +74,7 @@ const serviceIcons = [
     strokeWidth="1.6"
     strokeLinecap="round"
     strokeLinejoin="round"
-    className="text-sky-400"
+    className="text-accent"
   >
     <polyline points="16 18 22 12 16 6" />
     <polyline points="8 6 2 12 8 18" />
@@ -90,7 +90,7 @@ const serviceIcons = [
     strokeWidth="1.6"
     strokeLinecap="round"
     strokeLinejoin="round"
-    className="text-sky-400"
+    className="text-accent"
   >
     <path d="m12 2 10 6.5-10 6.5L2 8.5z" />
     <path d="m2 15.5 10 6.5 10-6.5" />
@@ -107,7 +107,7 @@ const serviceIcons = [
     strokeWidth="1.6"
     strokeLinecap="round"
     strokeLinejoin="round"
-    className="text-sky-400"
+    className="text-accent"
   >
     <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
     <circle cx="9" cy="7" r="4" />
@@ -240,7 +240,7 @@ export function HomeSections() {
       <section className="relative flex min-h-[90svh] flex-col overflow-hidden pt-[120px] sm:pt-[130px] lg:pt-[140px]">
         <div className="pointer-events-none absolute inset-0">
           <video
-            className="absolute inset-0 h-full w-full object-cover object-center"
+            className="absolute inset-0 h-full w-full object-cover object-center hero-bg-video"
             autoPlay
             muted
             loop
@@ -333,7 +333,7 @@ export function HomeSections() {
           <Reveal className="mb-12 flex flex-col items-center text-center sm:mb-16">
             <Link
               href="/about"
-              className="relative inline-flex overflow-hidden rounded-full border border-white/10 bg-[#0a0a0a] px-6 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-foreground/90 backdrop-blur-md transition hover:border-white/20 before:absolute before:left-[12%] before:right-[12%] before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-sky-400 before:to-transparent before:shadow-[0_0_12px_1px_rgba(56,189,248,0.9)] before:content-['']"
+              className="relative inline-flex overflow-hidden rounded-full border border-white/10 bg-[#0a0a0a] px-6 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-foreground/90 backdrop-blur-md transition hover:border-white/20 before:absolute before:left-[12%] before:right-[12%] before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-accent before:to-transparent before:shadow-[0_0_12px_1px_rgba(232,68,26,0.9)] before:content-['']"
             >
               About
             </Link>
@@ -368,7 +368,7 @@ export function HomeSections() {
 
               {/* Text */}
               <div className="order-2 text-center lg:col-span-6 lg:order-1 lg:text-left flex flex-col items-center lg:items-start">
-                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#12ced6]">
+                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#E8441A]">
                   About Us
                 </span>
 
@@ -407,7 +407,7 @@ export function HomeSections() {
 
                 <Link
                   href="/about"
-                  className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-foreground transition-all duration-300 hover:border-[#12ced6]/50 hover:bg-[#12ced6]/10 hover:text-[#12ced6]"
+                  className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-foreground transition-all duration-300 hover:border-[#E8441A]/50 hover:bg-[#E8441A]/10 hover:text-[#E8441A]"
                 >
                   Learn more about us
                   <svg
@@ -433,7 +433,7 @@ export function HomeSections() {
       <section className="pt-8 pb-16 sm:pt-12 sm:pb-20 lg:pt-16 lg:pb-24">
         <Container>
           <Reveal className="mb-14 text-center flex flex-col items-center">
-            <div className="mb-10 relative inline-flex overflow-hidden rounded-full border border-white/10 bg-black/70 px-6 py-2 text-xs uppercase tracking-[0.2em] text-foreground/90 backdrop-blur-md transition hover:border-white/20 hover:bg-black/80 before:absolute before:left-[12%] before:right-[12%] before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#12ced6]/60 before:to-transparent before:content-['']">
+            <div className="mb-10 relative inline-flex overflow-hidden rounded-full border border-white/10 bg-black/70 px-6 py-2 text-xs uppercase tracking-[0.2em] text-foreground/90 backdrop-blur-md transition hover:border-white/20 hover:bg-black/80 before:absolute before:left-[12%] before:right-[12%] before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#E8441A]/60 before:to-transparent before:content-['']">
               Our Services
             </div>
             <BlurTextReveal
@@ -451,11 +451,11 @@ export function HomeSections() {
           <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((svc, idx) => (
               <Reveal key={svc.title} delay={idx * 0.04}>
-                <div className="group relative flex min-h-[290px] flex-col justify-between overflow-hidden rounded-[20px] border border-white/[0.08] bg-black/95 shadow-[0_-5px_20px_rgba(0,0,0,0.5)] p-6 sm:p-8 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-[#12ced6]/60 hover:bg-[#0a0a0a]/95 hover:shadow-[0_12px_30px_rgba(18,206,214,0.18)]">
+                <div className="group relative flex min-h-[290px] flex-col justify-between overflow-hidden rounded-[20px] border border-white/[0.08] bg-black/95 shadow-[0_-5px_20px_rgba(0,0,0,0.5)] p-6 sm:p-8 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-[#E8441A]/60 hover:bg-[#0a0a0a]/95 hover:shadow-[0_12px_30px_rgba(232,68,26,0.18)]">
                   {/* Glowing top border accent on hover */}
-                  <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#12ced6] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                  <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#E8441A] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-                  <div className="flex h-12 w-12 items-center justify-center rounded-[12px] border border-white/10 bg-white/[0.06] transition-all duration-300 group-hover:scale-110 group-hover:border-[#12ced6]/40 group-hover:bg-[#12ced6]/15 group-hover:shadow-[0_0_15px_rgba(18,206,214,0.3)]">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-[12px] border border-white/10 bg-white/[0.06] transition-all duration-300 group-hover:scale-110 group-hover:border-[#E8441A]/40 group-hover:bg-[#E8441A]/15 group-hover:shadow-[0_0_15px_rgba(232,68,26,0.3)]">
                     {serviceIcons[idx]}
                   </div>
                   <div>
@@ -467,7 +467,7 @@ export function HomeSections() {
                     </p>
                     <Link
                       href={`/services/${svc.slug}`}
-                      className="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-foreground/80 transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#12ced6]"
+                      className="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-foreground/80 transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#E8441A]"
                     >
                       Learn more
                       <svg
@@ -524,7 +524,7 @@ export function HomeSections() {
             {projectTeasers.slice(0, 3).map((p, idx) => (
               <article
                 key={p.slug}
-                className="sticky group relative flex flex-col lg:flex-row min-h-[280px] overflow-hidden rounded-[24px] sm:rounded-[32px] border border-white/[0.08] bg-black/95 shadow-[0_-5px_20px_rgba(0,0,0,0.5)] p-5 sm:p-6 lg:p-8 transition-all duration-500 backdrop-blur-xl hover:border-[#12ced6]/60 hover:shadow-[0_12px_30px_rgba(18,206,214,0.18)] gap-5 lg:gap-8 w-full"
+                className="sticky group relative flex flex-col lg:flex-row min-h-[280px] overflow-hidden rounded-[24px] sm:rounded-[32px] border border-white/[0.08] bg-black/95 shadow-[0_-5px_20px_rgba(0,0,0,0.5)] p-5 sm:p-6 lg:p-8 transition-all duration-500 backdrop-blur-xl hover:border-[#E8441A]/60 hover:shadow-[0_12px_30px_rgba(232,68,26,0.18)] gap-5 lg:gap-8 w-full"
                 style={{
                   top: `calc(15vh + ${idx * 20}px)`,
                   marginTop: idx === 0 ? '0' : '50vh',
@@ -532,13 +532,13 @@ export function HomeSections() {
                 }}
               >
                 {/* Glowing top border */}
-                <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#12ced6] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#E8441A] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
                 {/* Left Side: Content */}
                 <div className="flex-1 flex flex-col justify-center">
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="inline-block h-2 w-2 rounded-full bg-[#12ced6] animate-pulse" />
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#12ced6]">
+                    <span className="inline-block h-2 w-2 rounded-full bg-[#E8441A] animate-pulse" />
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#E8441A]">
                       {p.category || p.year || '2025'}
                     </p>
                   </div>
@@ -560,7 +560,7 @@ export function HomeSections() {
                   <div>
                     <Link
                       href={`/project/${p.slug}`}
-                      className="inline-flex items-center gap-2 rounded-full bg-white/10 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#12ced6] hover:text-black"
+                      className="inline-flex items-center gap-2 rounded-full bg-white/10 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#E8441A] hover:text-black"
                     >
                       View Case Study
                       <span>→</span>
@@ -590,7 +590,7 @@ export function HomeSections() {
         <Container>
           <Reveal className="mb-14 flex flex-col items-center text-center">
             {/* Badge */}
-            <div className="mb-10 relative inline-flex overflow-hidden rounded-full border border-white/10 bg-black/70 px-6 py-2 text-xs uppercase tracking-[0.2em] text-foreground/90 backdrop-blur-md transition hover:border-white/20 hover:bg-black/80 before:absolute before:left-[12%] before:right-[12%] before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#12ced6]/60 before:to-transparent before:content-['']">
+            <div className="mb-10 relative inline-flex overflow-hidden rounded-full border border-white/10 bg-black/70 px-6 py-2 text-xs uppercase tracking-[0.2em] text-foreground/90 backdrop-blur-md transition hover:border-white/20 hover:bg-black/80 before:absolute before:left-[12%] before:right-[12%] before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#E8441A]/60 before:to-transparent before:content-['']">
               Testimonials
             </div>
 
@@ -735,7 +735,7 @@ export function HomeSections() {
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.46)_72%,rgba(0,0,0,0.82)_100%)]" />
         <Container className="relative z-10 flex w-[90%] flex-1 flex-col sm:block sm:flex-none">
           <Reveal className="mb-6 text-center flex flex-col items-center sm:mb-14">
-            <div className="mb-4 relative inline-flex overflow-hidden rounded-full border border-white/10 bg-black/70 px-6 py-2 text-xs uppercase tracking-[0.2em] text-foreground/90 backdrop-blur-md transition hover:border-white/20 hover:bg-black/80 before:absolute before:left-[12%] before:right-[12%] before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#12ced6]/60 before:to-transparent before:content-[''] sm:mb-8">
+            <div className="mb-4 relative inline-flex overflow-hidden rounded-full border border-white/10 bg-black/70 px-6 py-2 text-xs uppercase tracking-[0.2em] text-foreground/90 backdrop-blur-md transition hover:border-white/20 hover:bg-black/80 before:absolute before:left-[12%] before:right-[12%] before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#E8441A]/60 before:to-transparent before:content-[''] sm:mb-8">
               Partners
             </div>
             <BlurTextReveal
@@ -785,7 +785,7 @@ export function HomeSections() {
           <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
             {/* Left: heading & FAQ */}
             <Reveal className="flex flex-col items-start w-full">
-              <div className="relative inline-flex overflow-hidden rounded-full border border-white/10 bg-black/70 px-5 py-1.5 text-xs uppercase tracking-[0.2em] text-foreground/90 backdrop-blur-md before:absolute before:left-[12%] before:right-[12%] before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#12ced6]/60 before:to-transparent before:content-[‘’]">
+              <div className="relative inline-flex overflow-hidden rounded-full border border-white/10 bg-black/70 px-5 py-1.5 text-xs uppercase tracking-[0.2em] text-foreground/90 backdrop-blur-md before:absolute before:left-[12%] before:right-[12%] before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#E8441A]/60 before:to-transparent before:content-[‘’]">
                 FAQ
               </div>
               <BlurTextReveal
@@ -817,22 +817,22 @@ export function HomeSections() {
                 
                 <div className="flex flex-col gap-1.5">
                   <label className="text-xs text-foreground/70" htmlFor="name">Name *</label>
-                  <input type="text" id="name" required className="w-full rounded-lg border border-white/10 bg-black/50 px-4 py-2.5 text-sm text-foreground placeholder-white/20 transition-colors focus:border-[#12ced6]/60 focus:outline-none" placeholder="Your Name" />
+                  <input type="text" id="name" required className="w-full rounded-lg border border-white/10 bg-black/50 px-4 py-2.5 text-sm text-foreground placeholder-white/20 transition-colors focus:border-[#E8441A]/60 focus:outline-none" placeholder="Your Name" />
                 </div>
 
                 <div className="flex flex-col gap-1.5">
                   <label className="text-xs text-foreground/70" htmlFor="email">Email *</label>
-                  <input type="email" id="email" required className="w-full rounded-lg border border-white/10 bg-black/50 px-4 py-2.5 text-sm text-foreground placeholder-white/20 transition-colors focus:border-[#12ced6]/60 focus:outline-none" placeholder="you@example.com" />
+                  <input type="email" id="email" required className="w-full rounded-lg border border-white/10 bg-black/50 px-4 py-2.5 text-sm text-foreground placeholder-white/20 transition-colors focus:border-[#E8441A]/60 focus:outline-none" placeholder="you@example.com" />
                 </div>
 
                 <div className="flex flex-col gap-1.5">
                   <label className="text-xs text-foreground/70" htmlFor="phone">Phone no *</label>
-                  <input type="tel" id="phone" required className="w-full rounded-lg border border-white/10 bg-black/50 px-4 py-2.5 text-sm text-foreground placeholder-white/20 transition-colors focus:border-[#12ced6]/60 focus:outline-none" placeholder="+91 98765 43210" />
+                  <input type="tel" id="phone" required className="w-full rounded-lg border border-white/10 bg-black/50 px-4 py-2.5 text-sm text-foreground placeholder-white/20 transition-colors focus:border-[#E8441A]/60 focus:outline-none" placeholder="+91 98765 43210" />
                 </div>
 
                 <div className="flex flex-col gap-1.5">
                   <label className="text-xs text-foreground/70" htmlFor="category">What's the type of your company? *</label>
-                  <select id="category" required className="w-full rounded-lg border border-white/10 bg-black/50 px-4 py-2.5 text-sm text-foreground transition-colors focus:border-[#12ced6]/60 focus:outline-none [&>option]:bg-[#0e0e11]">
+                  <select id="category" required className="w-full rounded-lg border border-white/10 bg-black/50 px-4 py-2.5 text-sm text-foreground transition-colors focus:border-[#E8441A]/60 focus:outline-none [&>option]:bg-[#0e0e11]">
                     <option value="">Select a category</option>
                     <option value="ecommerce">E-commerce</option>
                     <option value="service">Service Business</option>
@@ -844,7 +844,7 @@ export function HomeSections() {
 
                 <div className="flex flex-col gap-1.5">
                   <label className="text-xs text-foreground/70" htmlFor="social">Clients Social Links *</label>
-                  <select id="social" required className="w-full rounded-lg border border-white/10 bg-black/50 px-4 py-2.5 text-sm text-foreground transition-colors focus:border-[#12ced6]/60 focus:outline-none [&>option]:bg-[#0e0e11]">
+                  <select id="social" required className="w-full rounded-lg border border-white/10 bg-black/50 px-4 py-2.5 text-sm text-foreground transition-colors focus:border-[#E8441A]/60 focus:outline-none [&>option]:bg-[#0e0e11]">
                     <option value="">Select primary platform</option>
                     <option value="instagram">Instagram</option>
                     <option value="facebook">Facebook</option>
@@ -858,12 +858,12 @@ export function HomeSections() {
 
                 <div className="flex flex-col gap-1.5">
                   <label className="text-xs text-foreground/70" htmlFor="phone">Enter link of above selected social media platform *</label>
-                  <input type="tel" id="phone" required className="w-full rounded-lg border border-white/10 bg-black/50 px-4 py-2.5 text-sm text-foreground placeholder-white/20 transition-colors focus:border-[#12ced6]/60 focus:outline-none" placeholder="+91 98765 43210" />
+                  <input type="tel" id="phone" required className="w-full rounded-lg border border-white/10 bg-black/50 px-4 py-2.5 text-sm text-foreground placeholder-white/20 transition-colors focus:border-[#E8441A]/60 focus:outline-none" placeholder="+91 98765 43210" />
                 </div>
 
                 <div className="flex flex-col gap-1.5">
                   <label className="text-xs text-foreground/70" htmlFor="comments">Comments</label>
-                  <textarea id="comments" rows="3" className="w-full resize-none rounded-lg border border-white/10 bg-black/50 px-4 py-2.5 text-sm text-foreground placeholder-white/20 transition-colors focus:border-[#12ced6]/60 focus:outline-none" placeholder="Tell us more about your needs..."></textarea>
+                  <textarea id="comments" rows="3" className="w-full resize-none rounded-lg border border-white/10 bg-black/50 px-4 py-2.5 text-sm text-foreground placeholder-white/20 transition-colors focus:border-[#E8441A]/60 focus:outline-none" placeholder="Tell us more about your needs..."></textarea>
                 </div>
 
                 <button type="submit" className="mt-2 w-full rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition-colors hover:bg-white/90">

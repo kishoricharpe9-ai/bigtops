@@ -22,7 +22,7 @@ export function PageHero({
       {videoSrc && (
         <div className="pointer-events-none absolute inset-0">
           <video
-            className="absolute inset-0 h-full w-full object-cover object-center"
+            className="absolute inset-0 h-full w-full object-cover object-center hero-bg-video"
             autoPlay
             muted
             loop

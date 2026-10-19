@@ -32,10 +32,10 @@ export function ServicesList({ services }) {
               <motion.div
                 layoutId={`card-container-${s.slug}`}
                 onClick={() => setActiveService(s)}
-                className="group relative block h-full overflow-hidden rounded-card border border-white/[0.08] bg-[#0a0a0a]/95 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-[#12ced6]/60 hover:shadow-[0_12px_30px_rgba(18,206,214,0.15)] cursor-pointer"
+                className="group relative block h-full overflow-hidden rounded-card border border-white/[0.08] bg-[#0a0a0a]/95 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-[#E8441A]/60 hover:shadow-[0_12px_30px_rgba(232,68,26,0.15)] cursor-pointer"
               >
                 {/* Glowing top border accent on hover */}
-                <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#12ced6] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 z-10" />
+                <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#E8441A] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 z-10" />
 
                 <div className="relative aspect-[16/11] overflow-hidden">
                   <Image
@@ -56,7 +56,7 @@ export function ServicesList({ services }) {
                   <p className="text-sm leading-relaxed text-muted transition-colors group-hover:text-foreground/80">
                     {s.body}
                   </p>
-                  <span className="mt-2 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-[#12ced6] transition-colors duration-300">
+                  <span className="mt-2 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-[#E8441A] transition-colors duration-300">
                     Learn more
                     <span className="transition-transform duration-300 group-hover:translate-x-1">
                       →
@@ -90,7 +90,7 @@ export function ServicesList({ services }) {
               transition={{ type: 'spring', damping: 25, stiffness: 180 }}
             >
               {/* Top accent glow line */}
-              <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#12ced6] to-transparent z-20" />
+              <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#E8441A] to-transparent z-20" />
 
               {/* Close Button */}
               <button
@@ -133,7 +133,7 @@ export function ServicesList({ services }) {
                 className="px-6 py-6 sm:px-10 sm:py-8"
               >
                 {/* Badge */}
-                <div className="relative inline-flex overflow-hidden rounded-full border border-white/10 bg-black/70 px-4 py-1.5 text-xs uppercase tracking-[0.2em] text-[#12ced6] before:absolute before:left-[12%] before:right-[12%] before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#12ced6]/60 before:to-transparent before:content-['']">
+                <div className="relative inline-flex overflow-hidden rounded-full border border-white/10 bg-black/70 px-4 py-1.5 text-xs uppercase tracking-[0.2em] text-[#E8441A] before:absolute before:left-[12%] before:right-[12%] before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#E8441A]/60 before:to-transparent before:content-['']">
                   Our Services
                 </div>
 
@@ -208,7 +208,7 @@ export function ServicesList({ services }) {
                               strokeWidth="2.5"
                               strokeLinecap="round"
                               strokeLinejoin="round"
-                              className="shrink-0 text-[#12ced6]"
+                              className="shrink-0 text-[#E8441A]"
                               aria-hidden
                             >
                               <path d="M20 6 9 17l-5-5" />
@@ -262,7 +262,7 @@ export function ServicesList({ services }) {
                     <Link
                       href={`/contact?service=${activeService.slug}`}
                       onClick={() => setActiveService(null)}
-                      className="inline-flex h-10 items-center justify-center rounded-full bg-[#12ced6] px-6 text-xs sm:text-sm font-semibold text-black transition-opacity hover:opacity-90"
+                      className="inline-flex h-10 items-center justify-center rounded-full bg-[#E8441A] px-6 text-xs sm:text-sm font-semibold text-black transition-opacity hover:opacity-90"
                     >
                       Get a Quote for this Service
                     </Link>

@@ -23,8 +23,8 @@ export function ServiceTabbedView({ services }) {
               onClick={() => setActiveSlug(s.slug)}
               className={`rounded-full border px-6 py-2.5 text-sm font-medium transition-all duration-300 ${
                 activeSlug === s.slug
-                  ? 'border-[#12ced6] bg-[#12ced6]/10 text-white shadow-[0_0_15px_rgba(18,206,214,0.3)]'
-                  : 'border-white/10 bg-black/60 text-white/80 hover:border-[#12ced6]/50 hover:bg-[#12ced6]/10 hover:text-white hover:shadow-[0_0_15px_rgba(18,206,214,0.3)]'
+                  ? 'border-[#E8441A] bg-[#E8441A]/10 text-white shadow-[0_0_15px_rgba(232,68,26,0.3)]'
+                  : 'border-white/10 bg-black/60 text-white/80 hover:border-[#E8441A]/50 hover:bg-[#E8441A]/10 hover:text-white hover:shadow-[0_0_15px_rgba(232,68,26,0.3)]'
               } backdrop-blur-md`}
             >
               {s.title}
@@ -79,7 +79,7 @@ export function ServiceTabbedView({ services }) {
                 <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
                   {activeService.process.map((step, idx) => (
                     <Reveal key={step.title} delay={idx * 0.05} className="h-full">
-                      <div className="group relative h-full transform-gpu overflow-hidden rounded-[24px] border border-white/10 transition-all duration-500 ease-out motion-safe:hover:-translate-y-2 hover:border-white/20 hover:shadow-[0_10px_40px_-10px_rgba(18,206,214,0.15)]">
+                      <div className="group relative h-full transform-gpu overflow-hidden rounded-[24px] border border-white/10 transition-all duration-500 ease-out motion-safe:hover:-translate-y-2 hover:border-white/20 hover:shadow-[0_10px_40px_-10px_rgba(232,68,26,0.15)]">
                         <div className="absolute inset-0 z-0">
                           <Image
                             src={`/process/step-${idx + 1}.jpg`}
@@ -92,7 +92,7 @@ export function ServiceTabbedView({ services }) {
                         </div>
 
                         <div className="relative z-10 flex min-h-[280px] flex-col justify-between p-6 sm:p-8">
-                          <span className="text-xl font-bold text-white/30 transition-colors duration-500 group-hover:text-[#12ced6]/60">
+                          <span className="text-xl font-bold text-white/30 transition-colors duration-500 group-hover:text-[#E8441A]/60">
                             {String(idx + 1).padStart(2, '0')}
                           </span>
                           <div>
@@ -124,9 +124,9 @@ export function ServiceTabbedView({ services }) {
                         ))}
                       </div>
                       
-                      <div className="mt-10 rounded-2xl bg-gradient-to-br from-[#12ced6]/10 to-transparent p-6 sm:p-8 border border-[#12ced6]/20 relative overflow-hidden shadow-[0_0_30px_rgba(18,206,214,0.05)]">
-                        <div className="absolute top-0 left-0 w-1 h-full bg-[#12ced6] shadow-[0_0_15px_rgba(18,206,214,1)]" />
-                        <h4 className="text-[11px] font-bold tracking-[0.2em] text-[#12ced6] uppercase mb-3">Who it's for</h4>
+                      <div className="mt-10 rounded-2xl bg-gradient-to-br from-[#E8441A]/10 to-transparent p-6 sm:p-8 border border-[#E8441A]/20 relative overflow-hidden shadow-[0_0_30px_rgba(232,68,26,0.05)]">
+                        <div className="absolute top-0 left-0 w-1 h-full bg-[#E8441A] shadow-[0_0_15px_rgba(232,68,26,1)]" />
+                        <h4 className="text-[11px] font-bold tracking-[0.2em] text-[#E8441A] uppercase mb-3">Who it's for</h4>
                         <p className="text-base font-medium text-white/90 leading-relaxed">
                           {activeService.whoFor}
                         </p>
@@ -147,7 +147,7 @@ export function ServiceTabbedView({ services }) {
                         {activeService.tools.map((t) => (
                           <span
                             key={t}
-                            className="inline-flex items-center justify-center rounded-full bg-white/5 border border-white/10 px-4 py-2.5 text-xs font-semibold text-white/80 transition-all hover:bg-[#12ced6]/10 hover:border-[#12ced6]/40 hover:text-white"
+                            className="inline-flex items-center justify-center rounded-full bg-white/5 border border-white/10 px-4 py-2.5 text-xs font-semibold text-white/80 transition-all hover:bg-[#E8441A]/10 hover:border-[#E8441A]/40 hover:text-white"
                           >
                             {t}
                           </span>
@@ -166,9 +166,9 @@ export function ServiceTabbedView({ services }) {
                         {activeService.industries.map((ind) => (
                           <li
                             key={ind}
-                            className="flex items-center gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/5 hover:border-[#12ced6]/30 transition-all hover:bg-white/[0.04] group"
+                            className="flex items-center gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/5 hover:border-[#E8441A]/30 transition-all hover:bg-white/[0.04] group"
                           >
-                            <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/10 text-white/50 group-hover:bg-[#12ced6]/20 group-hover:text-[#12ced6] transition-colors">
+                            <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/10 text-white/50 group-hover:bg-[#E8441A]/20 group-hover:text-[#E8441A] transition-colors">
                               <svg
                                 width="12"
                                 height="12"
@@ -194,14 +194,14 @@ export function ServiceTabbedView({ services }) {
 
                 {/* Results + CTA */}
                 <Reveal delay={0.2}>
-                  <div className="mt-14 relative overflow-hidden rounded-[24px] border border-[#12ced6]/20 bg-black p-10 sm:p-14 text-center shadow-[0_0_40px_rgba(18,206,214,0.1)] group">
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#12ced6]/10 via-transparent to-[#12ced6]/5 opacity-50 transition-opacity duration-500 group-hover:opacity-100" />
-                    <div className="absolute -top-24 -left-24 h-48 w-48 rounded-full bg-[#12ced6]/20 blur-[80px] pointer-events-none" />
-                    <div className="absolute -bottom-24 -right-24 h-48 w-48 rounded-full bg-[#12ced6]/20 blur-[80px] pointer-events-none" />
+                  <div className="mt-14 relative overflow-hidden rounded-[24px] border border-[#E8441A]/20 bg-black p-10 sm:p-14 text-center shadow-[0_0_40px_rgba(232,68,26,0.1)] group">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#E8441A]/10 via-transparent to-[#E8441A]/5 opacity-50 transition-opacity duration-500 group-hover:opacity-100" />
+                    <div className="absolute -top-24 -left-24 h-48 w-48 rounded-full bg-[#E8441A]/20 blur-[80px] pointer-events-none" />
+                    <div className="absolute -bottom-24 -right-24 h-48 w-48 rounded-full bg-[#E8441A]/20 blur-[80px] pointer-events-none" />
                     
                     <div className="relative z-10">
                       <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
-                        Ready to elevate your <span className="text-[#12ced6]">{activeService.title}</span>?
+                        Ready to elevate your <span className="text-[#E8441A]">{activeService.title}</span>?
                       </h3>
                       <p className="mt-3 text-base sm:text-lg text-white/70 max-w-xl mx-auto">
                         Partner with us to build strategies that drive measurable growth and long-lasting impact.
@@ -215,7 +215,7 @@ export function ServiceTabbedView({ services }) {
                         </Link>
                         <Link
                           href={`/contact?service=${activeService.slug}`}
-                          className="inline-flex h-12 items-center justify-center rounded-full bg-[#12ced6] px-8 text-sm font-bold text-black transition-all hover:bg-[#25e9f3] hover:scale-105 shadow-[0_0_20px_rgba(18,206,214,0.4)]"
+                          className="inline-flex h-12 items-center justify-center rounded-full bg-[#E8441A] px-8 text-sm font-bold text-black transition-all hover:bg-[#25e9f3] hover:scale-105 shadow-[0_0_20px_rgba(232,68,26,0.4)]"
                         >
                           Get a Quote
                         </Link>

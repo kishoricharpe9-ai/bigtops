@@ -423,8 +423,8 @@ export default function HowWeCanHelpPage() {
                   onClick={() => handleSelectArchetype(arch)}
                   className={`flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold transition ${
                     answers.industry === arch.id
-                      ? 'bg-[#12ced6] text-black shadow-md'
-                      : 'border border-white/10 bg-white/[0.05] text-gray-300 hover:border-[#12ced6]/50 hover:text-white'
+                      ? 'bg-[#E8441A] text-black shadow-md'
+                      : 'border border-white/10 bg-white/[0.05] text-gray-300 hover:border-[#E8441A]/50 hover:text-white'
                   }`}
                 >
                   <span>{arch.icon}</span> {arch.label}
@@ -439,7 +439,7 @@ export default function HowWeCanHelpPage() {
                 <button
                   onClick={() => setLanguage('English')}
                   className={`rounded-full px-2.5 py-0.5 text-xs font-bold transition ${
-                    language === 'English' ? 'bg-[#12ced6] text-black' : 'text-gray-400 hover:text-white'
+                    language === 'English' ? 'bg-[#E8441A] text-black' : 'text-gray-400 hover:text-white'
                   }`}
                 >
                   🇺🇸 EN
@@ -447,7 +447,7 @@ export default function HowWeCanHelpPage() {
                 <button
                   onClick={() => setLanguage('Hinglish')}
                   className={`rounded-full px-2.5 py-0.5 text-xs font-bold transition ${
-                    language === 'Hinglish' ? 'bg-[#12ced6] text-black' : 'text-gray-400 hover:text-white'
+                    language === 'Hinglish' ? 'bg-[#E8441A] text-black' : 'text-gray-400 hover:text-white'
                   }`}
                 >
                   🇮🇳 Hinglish
@@ -459,7 +459,7 @@ export default function HowWeCanHelpPage() {
                 <button
                   onClick={() => setCurrency('USD')}
                   className={`rounded-full px-2.5 py-0.5 text-xs font-bold transition ${
-                    currency === 'USD' ? 'bg-[#12ced6] text-black' : 'text-gray-400 hover:text-white'
+                    currency === 'USD' ? 'bg-[#E8441A] text-black' : 'text-gray-400 hover:text-white'
                   }`}
                 >
                   USD ($)
@@ -467,7 +467,7 @@ export default function HowWeCanHelpPage() {
                 <button
                   onClick={() => setCurrency('INR')}
                   className={`rounded-full px-2.5 py-0.5 text-xs font-bold transition ${
-                    currency === 'INR' ? 'bg-[#12ced6] text-black' : 'text-gray-400 hover:text-white'
+                    currency === 'INR' ? 'bg-[#E8441A] text-black' : 'text-gray-400 hover:text-white'
                   }`}
                 >
                   INR (₹)
@@ -483,7 +483,7 @@ export default function HowWeCanHelpPage() {
                 onClick={() => setMode('guided')}
                 className={`flex items-center gap-1.5 rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-wider transition ${
                   mode === 'guided'
-                    ? 'bg-gradient-to-r from-[#12ced6] to-[#0a8e94] text-black shadow-lg shadow-[#12ced6]/20'
+                    ? 'bg-gradient-to-r from-[#E8441A] to-[#b8330f] text-black shadow-lg shadow-[#E8441A]/20'
                     : 'text-muted hover:text-foreground'
                 }`}
               >
@@ -493,7 +493,7 @@ export default function HowWeCanHelpPage() {
                 onClick={() => setMode('freeform')}
                 className={`flex items-center gap-1.5 rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-wider transition ${
                   mode === 'freeform'
-                    ? 'bg-gradient-to-r from-[#12ced6] to-[#0a8e94] text-black shadow-lg shadow-[#12ced6]/20'
+                    ? 'bg-gradient-to-r from-[#E8441A] to-[#b8330f] text-black shadow-lg shadow-[#E8441A]/20'
                     : 'text-muted hover:text-foreground'
                 }`}
               >
@@ -503,7 +503,7 @@ export default function HowWeCanHelpPage() {
                 onClick={() => setMode('audit')}
                 className={`flex items-center gap-1.5 rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-wider transition ${
                   mode === 'audit'
-                    ? 'bg-gradient-to-r from-[#12ced6] to-[#0a8e94] text-black shadow-lg shadow-[#12ced6]/20'
+                    ? 'bg-gradient-to-r from-[#E8441A] to-[#b8330f] text-black shadow-lg shadow-[#E8441A]/20'
                     : 'text-muted hover:text-foreground'
                 }`}
               >
@@ -513,7 +513,7 @@ export default function HowWeCanHelpPage() {
                 onClick={() => setMode('stack')}
                 className={`flex items-center gap-1.5 rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-wider transition ${
                   mode === 'stack'
-                    ? 'bg-gradient-to-r from-[#12ced6] to-[#0a8e94] text-black shadow-lg shadow-[#12ced6]/20'
+                    ? 'bg-gradient-to-r from-[#E8441A] to-[#b8330f] text-black shadow-lg shadow-[#E8441A]/20'
                     : 'text-muted hover:text-foreground'
                 }`}
               >
@@ -527,7 +527,7 @@ export default function HowWeCanHelpPage() {
             {mode === 'guided' && (
               <div className="h-1.5 w-full bg-white/[0.06]">
                 <motion.div
-                  className="h-full bg-gradient-to-r from-[#12ced6] via-cyan-300 to-white/90"
+                  className="h-full bg-gradient-to-r from-[#E8441A] via-orange-300 to-white/90"
                   initial={false}
                   animate={{
                     width: `${((finished ? steps.length : stepIndex) / steps.length) * 100}%`,
@@ -624,12 +624,12 @@ export default function HowWeCanHelpPage() {
                         value={auditDomain}
                         onChange={e => setAuditDomain(e.target.value)}
                         placeholder="e.g. mycompany.com or brandname.in"
-                        className="flex-1 rounded-full border border-white/15 bg-black/60 px-5 py-3.5 text-sm text-white placeholder-gray-500 focus:border-[#12ced6] focus:outline-none"
+                        className="flex-1 rounded-full border border-white/15 bg-black/60 px-5 py-3.5 text-sm text-white placeholder-gray-500 focus:border-[#E8441A] focus:outline-none"
                       />
                       <button
                         type="submit"
                         disabled={!auditDomain.trim() || auditLoading}
-                        className="rounded-full bg-gradient-to-r from-[#12ced6] to-[#0a8e94] px-7 py-3.5 text-sm font-bold text-black transition hover:brightness-110 disabled:opacity-50"
+                        className="rounded-full bg-gradient-to-r from-[#E8441A] to-[#b8330f] px-7 py-3.5 text-sm font-bold text-black transition hover:brightness-110 disabled:opacity-50"
                       >
                         {auditLoading ? 'Analyzing...' : 'Run Audit ⚡'}
                       </button>
@@ -641,13 +641,13 @@ export default function HowWeCanHelpPage() {
                     <motion.div
                       initial={{ opacity: 0, y: 15 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="rounded-2xl border border-[#12ced6]/40 bg-gradient-to-br from-[#12ced6]/[0.08] to-transparent p-6 shadow-xl space-y-5"
+                      className="rounded-2xl border border-[#E8441A]/40 bg-gradient-to-br from-[#E8441A]/[0.08] to-transparent p-6 shadow-xl space-y-5"
                     >
                       <div className="flex items-center justify-between border-b border-white/10 pb-3">
                         <h4 className="text-lg font-bold text-white">
-                          Audit Report for <span className="text-[#12ced6]">{auditResultData.domain}</span>
+                          Audit Report for <span className="text-[#E8441A]">{auditResultData.domain}</span>
                         </h4>
-                        <span className="rounded-full bg-[#12ced6]/20 px-3 py-1 text-xs font-bold text-[#12ced6]">
+                        <span className="rounded-full bg-[#E8441A]/20 px-3 py-1 text-xs font-bold text-[#E8441A]">
                           {auditResultData.confidence}
                         </span>
                       </div>
@@ -683,11 +683,11 @@ export default function HowWeCanHelpPage() {
 
                       {/* Recommended Fixes */}
                       <div>
-                        <p className="text-xs font-bold uppercase tracking-wider text-[#12ced6]">Recommended AI Action Plan:</p>
+                        <p className="text-xs font-bold uppercase tracking-wider text-[#E8441A]">Recommended AI Action Plan:</p>
                         <ul className="mt-2 space-y-1.5 text-xs text-gray-200">
                           {auditResultData.aiFixes.map((fix, i) => (
                             <li key={i} className="flex items-start gap-2">
-                              <span className="text-[#12ced6]">✅</span>
+                              <span className="text-[#E8441A]">✅</span>
                               {fix}
                             </li>
                           ))}
@@ -696,7 +696,7 @@ export default function HowWeCanHelpPage() {
 
                       <button
                         onClick={() => goToQuote(auditResultData)}
-                        className="w-full rounded-full bg-gradient-to-r from-[#12ced6] to-[#0a8e94] py-3.5 text-sm font-bold text-black transition hover:brightness-110 shadow-lg shadow-[#12ced6]/25"
+                        className="w-full rounded-full bg-gradient-to-r from-[#E8441A] to-[#b8330f] py-3.5 text-sm font-bold text-black transition hover:brightness-110 shadow-lg shadow-[#E8441A]/25"
                       >
                         Fix Growth Gaps & Get Quote →
                       </button>
@@ -730,7 +730,7 @@ export default function HowWeCanHelpPage() {
                             onClick={() => toggleStackService(srv.id)}
                             className={`cursor-pointer rounded-xl border p-3.5 transition flex items-center justify-between ${
                               isSelected
-                                ? 'border-[#12ced6] bg-[#12ced6]/[0.1] text-white'
+                                ? 'border-[#E8441A] bg-[#E8441A]/[0.1] text-white'
                                 : 'border-white/10 bg-black/40 text-gray-400 hover:border-white/20'
                             }`}
                           >
@@ -738,7 +738,7 @@ export default function HowWeCanHelpPage() {
                               <span className="text-xl">{srv.icon}</span>
                               <div>
                                 <p className="text-xs font-bold text-white">{srv.name}</p>
-                                <p className="text-[11px] text-[#12ced6]">{srv.impact}</p>
+                                <p className="text-[11px] text-[#E8441A]">{srv.impact}</p>
                               </div>
                             </div>
                             <span className="text-lg">{isSelected ? '✅' : '➕'}</span>
@@ -753,7 +753,7 @@ export default function HowWeCanHelpPage() {
                       <div>
                         <div className="flex justify-between text-xs font-semibold text-gray-300">
                           <span>Target Monthly Budget ({currency}):</span>
-                          <span className="text-[#12ced6] font-bold text-sm">
+                          <span className="text-[#E8441A] font-bold text-sm">
                             {currency === 'INR'
                               ? `₹${(sliderBudgetVal * 80).toLocaleString('en-IN')}`
                               : `$${sliderBudgetVal.toLocaleString()} / mo`}
@@ -766,7 +766,7 @@ export default function HowWeCanHelpPage() {
                           step="500"
                           value={sliderBudgetVal}
                           onChange={e => setSliderBudgetVal(Number(e.target.value))}
-                          className="mt-2 h-2 w-full accent-[#12ced6] cursor-pointer"
+                          className="mt-2 h-2 w-full accent-[#E8441A] cursor-pointer"
                         />
                       </div>
 
@@ -774,7 +774,7 @@ export default function HowWeCanHelpPage() {
                       <div>
                         <div className="flex justify-between text-xs font-semibold text-gray-300">
                           <span>Target Launch Speed:</span>
-                          <span className="text-[#12ced6] font-bold text-sm">{sliderTimelineVal} Days</span>
+                          <span className="text-[#E8441A] font-bold text-sm">{sliderTimelineVal} Days</span>
                         </div>
                         <input
                           type="range"
@@ -783,15 +783,15 @@ export default function HowWeCanHelpPage() {
                           step="7"
                           value={sliderTimelineVal}
                           onChange={e => setSliderTimelineVal(Number(e.target.value))}
-                          className="mt-2 h-2 w-full accent-[#12ced6] cursor-pointer"
+                          className="mt-2 h-2 w-full accent-[#E8441A] cursor-pointer"
                         />
                       </div>
                     </div>
 
                     {/* Live Stack Calculation Summary */}
-                    <div className="rounded-xl border border-[#12ced6]/40 bg-[#12ced6]/[0.06] p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div className="rounded-xl border border-[#E8441A]/40 bg-[#E8441A]/[0.06] p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
                       <div>
-                        <p className="text-xs font-bold uppercase tracking-wider text-[#12ced6]">Calculated Stack Score</p>
+                        <p className="text-xs font-bold uppercase tracking-wider text-[#E8441A]">Calculated Stack Score</p>
                         <p className="text-lg font-extrabold text-white">
                           {selectedStackServices.length * 18 + 15}% High-Growth Alignment
                         </p>
@@ -802,7 +802,7 @@ export default function HowWeCanHelpPage() {
 
                       <button
                         onClick={() => goToQuote({ headline: 'Custom Growth Stack', services: selectedStackServices })}
-                        className="w-full sm:w-auto rounded-full bg-gradient-to-r from-[#12ced6] to-[#0a8e94] px-6 py-3 text-xs font-bold text-black transition hover:brightness-110 shadow-lg shadow-[#12ced6]/25"
+                        className="w-full sm:w-auto rounded-full bg-gradient-to-r from-[#E8441A] to-[#b8330f] px-6 py-3 text-xs font-bold text-black transition hover:brightness-110 shadow-lg shadow-[#E8441A]/25"
                       >
                         Deploy This Stack →
                       </button>
@@ -846,7 +846,7 @@ export default function HowWeCanHelpPage() {
                                 <button
                                   key={opt.value}
                                   onClick={() => handleSelect(opt.value)}
-                                  className="rounded-full border border-white/15 bg-white/[0.06] px-4 py-2.5 text-sm font-medium text-foreground transition hover:border-[#12ced6]/60 hover:bg-[#12ced6]/10 hover:text-white"
+                                  className="rounded-full border border-white/15 bg-white/[0.06] px-4 py-2.5 text-sm font-medium text-foreground transition hover:border-[#E8441A]/60 hover:bg-[#E8441A]/10 hover:text-white"
                                 >
                                   {opt.label}
                                 </button>
@@ -860,7 +860,7 @@ export default function HowWeCanHelpPage() {
                     <div className="flex flex-col gap-3 sm:flex-row">
                       <button
                         onClick={() => goToQuote(rec)}
-                        className="flex-1 rounded-full bg-gradient-to-r from-[#12ced6] to-[#0a8e94] py-3.5 text-sm font-semibold text-black transition hover:brightness-110 shadow-lg shadow-[#12ced6]/25"
+                        className="flex-1 rounded-full bg-gradient-to-r from-[#E8441A] to-[#b8330f] py-3.5 text-sm font-semibold text-black transition hover:brightness-110 shadow-lg shadow-[#E8441A]/25"
                       >
                         Get My Custom Quote →
                       </button>
@@ -881,7 +881,7 @@ export default function HowWeCanHelpPage() {
                         <button
                           key={i}
                           onClick={() => handleSendFreeform(qp)}
-                          className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs text-muted transition hover:border-[#12ced6]/40 hover:bg-white/[0.08] hover:text-foreground"
+                          className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs text-muted transition hover:border-[#E8441A]/40 hover:bg-white/[0.08] hover:text-foreground"
                         >
                           {qp}
                         </button>
@@ -904,12 +904,12 @@ export default function HowWeCanHelpPage() {
                             ? 'Poochhiye BigTop AI se kuch bhi apne business ya growth goals ke baare me...'
                             : 'Ask BigTop AI anything about your business or goals...'
                         }
-                        className="flex-1 rounded-full border border-white/15 bg-white/[0.06] px-5 py-3 text-sm text-foreground placeholder-white/40 focus:border-[#12ced6] focus:outline-none"
+                        className="flex-1 rounded-full border border-white/15 bg-white/[0.06] px-5 py-3 text-sm text-foreground placeholder-white/40 focus:border-[#E8441A] focus:outline-none"
                       />
                       <button
                         type="submit"
                         disabled={!inputQuery.trim() || typing}
-                        className="rounded-full bg-gradient-to-r from-[#12ced6] to-[#0a8e94] px-6 py-3 text-sm font-semibold text-black transition hover:brightness-110 disabled:opacity-50"
+                        className="rounded-full bg-gradient-to-r from-[#E8441A] to-[#b8330f] px-6 py-3 text-sm font-semibold text-black transition hover:brightness-110 disabled:opacity-50"
                       >
                         Send ✨
                       </button>
@@ -928,7 +928,7 @@ export default function HowWeCanHelpPage() {
 function BotBubble({ children, ...motionProps }) {
   return (
     <motion.div {...motionProps} className="flex items-start gap-3">
-      <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#12ced6] via-[#0a8e94] to-[#05484b] text-xs font-bold text-black shadow-md shadow-[#12ced6]/30 border border-white/20">
+      <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#E8441A] via-[#b8330f] to-[#05484b] text-xs font-bold text-black shadow-md shadow-[#E8441A]/30 border border-white/20">
         ✨ BT
       </div>
       <div className="max-w-[85%] space-y-2 rounded-2xl rounded-tl-xs border border-white/10 bg-white/[0.07] px-4 py-3.5 text-sm leading-relaxed text-foreground shadow-lg backdrop-blur-md">
@@ -956,14 +956,14 @@ function UserBubble({ children, reduce }) {
 function TypingBubble() {
   return (
     <div className="flex items-start gap-3">
-      <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#12ced6] to-[#0a8e94] text-xs font-bold text-black shadow-md shadow-[#12ced6]/30">
+      <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#E8441A] to-[#b8330f] text-xs font-bold text-black shadow-md shadow-[#E8441A]/30">
         ✨ BT
       </div>
       <div className="flex items-center gap-1.5 rounded-2xl rounded-tl-xs border border-white/10 bg-white/[0.07] px-5 py-4">
         {[0, 1, 2].map(i => (
           <motion.span
             key={i}
-            className="h-2 w-2 rounded-full bg-[#12ced6]"
+            className="h-2 w-2 rounded-full bg-[#E8441A]"
             animate={{ opacity: [0.3, 1, 0.3], y: [0, -4, 0] }}
             transition={{
               duration: 0.8,
@@ -980,9 +980,9 @@ function TypingBubble() {
 function RecommendationCard({ rec, onQuote, currency, language }) {
   if (!rec) return null;
   return (
-    <div className="mt-3 rounded-2xl border border-[#12ced6]/40 bg-gradient-to-br from-[#12ced6]/[0.08] to-transparent p-5 shadow-xl space-y-4">
+    <div className="mt-3 rounded-2xl border border-[#E8441A]/40 bg-gradient-to-br from-[#E8441A]/[0.08] to-transparent p-5 shadow-xl space-y-4">
       <div className="flex items-center justify-between">
-        <span className="rounded-full bg-[#12ced6]/20 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-[#12ced6] border border-[#12ced6]/30">
+        <span className="rounded-full bg-[#E8441A]/20 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-[#E8441A] border border-[#E8441A]/30">
           AI Recommendation Match • {rec.confidence || '98% Fit'}
         </span>
         <span className="text-xs font-semibold text-gray-400">
@@ -1034,13 +1034,13 @@ function RecommendationCard({ rec, onQuote, currency, language }) {
 
       {rec.keyLevers && (
         <div className="border-t border-white/10 pt-3">
-          <p className="text-xs font-semibold uppercase tracking-wider text-[#12ced6]">
+          <p className="text-xs font-semibold uppercase tracking-wider text-[#E8441A]">
             Key AI Strategy Levers:
           </p>
           <ul className="mt-2 space-y-1 text-xs text-gray-300">
             {rec.keyLevers.map((lever, i) => (
               <li key={i} className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#12ced6]" />
+                <span className="h-1.5 w-1.5 rounded-full bg-[#E8441A]" />
                 {lever}
               </li>
             ))}
@@ -1050,7 +1050,7 @@ function RecommendationCard({ rec, onQuote, currency, language }) {
 
       <button
         onClick={onQuote}
-        className="w-full rounded-full bg-gradient-to-r from-[#12ced6] to-[#0a8e94] py-3 text-sm font-bold text-black transition hover:brightness-110 shadow-lg shadow-[#12ced6]/20"
+        className="w-full rounded-full bg-gradient-to-r from-[#E8441A] to-[#b8330f] py-3 text-sm font-bold text-black transition hover:brightness-110 shadow-lg shadow-[#E8441A]/20"
       >
         Lock In Strategy & Get Quote →
       </button>

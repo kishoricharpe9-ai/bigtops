@@ -24,7 +24,7 @@ const config = {
         pill: '9999px',
       },
       boxShadow: {
-        glow: '0 0 120px 40px rgba(255, 120, 40, 0.25)',
+        glow: '0 0 120px 40px rgba(232, 68, 26, 0.25)',
       },
       transitionTimingFunction: {
         out: 'cubic-bezier(0.16, 1, 0.3, 1)',

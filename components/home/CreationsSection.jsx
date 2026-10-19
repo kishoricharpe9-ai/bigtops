@@ -464,16 +464,16 @@ function CreationCard({ item, onSelect, heightClass = 'h-[380px]' }) {
       className={`group relative w-full ${heightClass} overflow-hidden rounded-[20px] sm:rounded-[24px] bg-[#141416] border border-white/10 shadow-lg cursor-pointer transition-all duration-500`}
       style={{
         boxShadow: isHovered
-          ? '0 16px 40px -10px rgba(18, 206, 214, 0.35), 0 0 20px rgba(18, 206, 214, 0.2)'
+          ? '0 16px 40px -10px rgba(232, 68, 26, 0.35), 0 0 20px rgba(232, 68, 26, 0.2)'
           : 'none',
-        borderColor: isHovered ? '#12ced6' : 'rgba(255, 255, 255, 0.1)',
+        borderColor: isHovered ? '#E8441A' : 'rgba(255, 255, 255, 0.1)',
       }}
     >
       {/* Top Glowing Blue Border Bar on Hover */}
       <div
         className="pointer-events-none absolute inset-x-0 top-0 z-30 h-[3px] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         style={{
-          background: 'linear-gradient(to right, transparent, #12ced6, #38bdf8, transparent)',
+          background: 'linear-gradient(to right, transparent, #E8441A, #38bdf8, transparent)',
         }}
       />
 
@@ -535,17 +535,17 @@ function CreationCard({ item, onSelect, heightClass = 'h-[380px]' }) {
           {isReel ? (
             <>
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#12ced6] opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#12ced6]" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E8441A] opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#E8441A]" />
               </span>
-              <svg className="h-3 w-3 fill-current text-[#12ced6]" viewBox="0 0 24 24">
+              <svg className="h-3 w-3 fill-current text-[#E8441A]" viewBox="0 0 24 24">
                 <path d="M8 5v14l11-7z" />
               </svg>
               Reel
             </>
           ) : (
             <>
-              <svg className="h-3 w-3 text-[#12ced6]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+              <svg className="h-3 w-3 text-[#E8441A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                 <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
                 <circle cx="8.5" cy="8.5" r="1.5" />
                 <polyline points="21 15 16 10 5 21" />
@@ -585,7 +585,7 @@ export function CreationsSection() {
         {/* Section Centered Header */}
         <header className="mb-10 sm:mb-14 flex flex-col items-center text-center">
           {/* Signature Website Badge Style */}
-          <div className="mb-6 relative inline-flex overflow-hidden rounded-full border border-white/10 bg-black/70 px-6 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#7dd3fc] backdrop-blur-md transition hover:border-[#12ced6]/50 hover:bg-black/80 before:absolute before:left-[12%] before:right-[12%] before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#12ced6]/80 before:to-transparent before:content-['']">
+          <div className="mb-6 relative inline-flex overflow-hidden rounded-full border border-white/10 bg-black/70 px-6 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#E8441A] backdrop-blur-md transition hover:border-[#E8441A]/50 hover:bg-black/80 before:absolute before:left-[12%] before:right-[12%] before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#E8441A]/80 before:to-transparent before:content-['']">
             Creations Gallery
           </div>
 
@@ -605,12 +605,12 @@ export function CreationsSection() {
         {/* DESKTOP VIEW: 5-Column Grid (hidden on mobile, visible lg:block) */}
         <div className="hidden lg:block relative mx-auto max-w-7xl rounded-[36px] border border-white/10 bg-[#0c0c0e] p-8 lg:p-10 shadow-2xl backdrop-blur-xl overflow-hidden">
           {/* Ambient Blue Glow Background Accents */}
-          <div className="pointer-events-none absolute -top-40 left-1/4 h-96 w-96 rounded-full bg-[#12ced6]/15 blur-[130px]" />
+          <div className="pointer-events-none absolute -top-40 left-1/4 h-96 w-96 rounded-full bg-[#E8441A]/15 blur-[130px]" />
           <div className="pointer-events-none absolute -bottom-40 right-1/4 h-96 w-96 rounded-full bg-[#38bdf8]/15 blur-[130px]" />
 
           {/* Header Label at Top Left */}
           <div className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-8 flex items-center gap-2">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#12ced6]" />
+            <span className="h-1.5 w-1.5 rounded-full bg-[#E8441A]" />
             Featured Showcase
           </div>
 
@@ -652,7 +652,7 @@ export function CreationsSection() {
             <button
               onClick={() => setShowAllModal(true)}
               aria-label="Explore All Creations Gallery"
-              className="group relative inline-flex items-center justify-center gap-3 rounded-full border border-white/15 bg-black/80 px-8 py-3.5 text-sm font-semibold text-white backdrop-blur-md transition-all duration-300 before:absolute before:left-[12%] before:right-[12%] before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#12ced6]/80 before:to-transparent before:content-[''] hover:border-[#12ced6] hover:bg-[#12ced6] hover:text-black hover:shadow-[0_0_30px_rgba(18,206,214,0.45)]"
+              className="group relative inline-flex items-center justify-center gap-3 rounded-full border border-white/15 bg-black/80 px-8 py-3.5 text-sm font-semibold text-white backdrop-blur-md transition-all duration-300 before:absolute before:left-[12%] before:right-[12%] before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#E8441A]/80 before:to-transparent before:content-[''] hover:border-[#E8441A] hover:bg-[#E8441A] hover:text-black hover:shadow-[0_0_30px_rgba(232,68,26,0.45)]"
             >
               <span>Explore All Creations ({ALL_CREATIONS.length})</span>
               <svg
@@ -678,7 +678,7 @@ export function CreationsSection() {
           <button
             onClick={() => setShowAllModal(true)}
             aria-label="Explore All Creations Mobile Gallery"
-            className="w-full max-w-sm group relative inline-flex items-center justify-center gap-3 rounded-full border border-white/15 bg-black/80 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-md transition-all duration-300 before:absolute before:left-[12%] before:right-[12%] before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#12ced6]/80 before:to-transparent before:content-[''] hover:border-[#12ced6] hover:bg-[#12ced6] hover:text-black hover:shadow-[0_0_30px_rgba(18,206,214,0.45)]"
+            className="w-full max-w-sm group relative inline-flex items-center justify-center gap-3 rounded-full border border-white/15 bg-black/80 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-md transition-all duration-300 before:absolute before:left-[12%] before:right-[12%] before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#E8441A]/80 before:to-transparent before:content-[''] hover:border-[#E8441A] hover:bg-[#E8441A] hover:text-black hover:shadow-[0_0_30px_rgba(232,68,26,0.45)]"
           >
             <span>Explore All Creations ({ALL_CREATIONS.length})</span>
             <svg
@@ -719,7 +719,7 @@ export function CreationsSection() {
               <div className="sticky top-0 z-40 bg-[#0e0e11]/95 backdrop-blur-md pb-4 pt-2 -mx-4 px-4 sm:-mx-8 sm:px-8 border-b border-white/10 mb-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <span className="inline-block px-3 py-1 rounded-full text-[10px] sm:text-xs font-semibold uppercase tracking-[0.18em] text-[#7dd3fc] bg-[#12ced6]/20 border border-[#12ced6]/40">
+                    <span className="inline-block px-3 py-1 rounded-full text-[10px] sm:text-xs font-semibold uppercase tracking-[0.18em] text-[#E8441A] bg-[#E8441A]/20 border border-[#E8441A]/40">
                       Creations Archive ({ALL_CREATIONS.length})
                     </span>
                     <h2 className="text-xl sm:text-3xl font-extrabold text-white tracking-tight mt-1">
@@ -742,7 +742,7 @@ export function CreationsSection() {
                   <button
                     onClick={() => setFilter('all')}
                     className={`px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition ${filter === 'all'
-                      ? 'bg-[#12ced6] text-black shadow-md'
+                      ? 'bg-[#E8441A] text-black shadow-md'
                       : 'bg-white/10 text-white/70 hover:bg-white/20 hover:text-white'
                       }`}
                   >
@@ -751,7 +751,7 @@ export function CreationsSection() {
                   <button
                     onClick={() => setFilter('reel')}
                     className={`px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition ${filter === 'reel'
-                      ? 'bg-[#12ced6] text-black shadow-md'
+                      ? 'bg-[#E8441A] text-black shadow-md'
                       : 'bg-white/10 text-white/70 hover:bg-white/20 hover:text-white'
                       }`}
                   >
@@ -760,7 +760,7 @@ export function CreationsSection() {
                   <button
                     onClick={() => setFilter('image')}
                     className={`px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition ${filter === 'image'
-                      ? 'bg-[#12ced6] text-black shadow-md'
+                      ? 'bg-[#E8441A] text-black shadow-md'
                       : 'bg-white/10 text-white/70 hover:bg-white/20 hover:text-white'
                       }`}
                   >
@@ -837,7 +837,7 @@ export function CreationsSection() {
 
                 {/* Details info */}
                 <div className="w-full lg:w-1/3 flex flex-col justify-center text-left">
-                  <span className="inline-block px-3 py-1 rounded-full text-[10px] sm:text-xs font-semibold uppercase tracking-wider w-fit mb-2 border bg-[#12ced6]/20 border-[#12ced6]/40 text-[#7dd3fc]">
+                  <span className="inline-block px-3 py-1 rounded-full text-[10px] sm:text-xs font-semibold uppercase tracking-wider w-fit mb-2 border bg-[#E8441A]/20 border-[#E8441A]/40 text-[#E8441A]">
                     {selectedItem.category}
                   </span>
                   <h3 className="text-xl sm:text-2xl font-bold text-white mb-1.5">{selectedItem.title}</h3>

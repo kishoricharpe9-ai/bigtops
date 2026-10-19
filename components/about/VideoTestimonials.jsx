@@ -60,7 +60,7 @@ function VideoLightbox({ testimonial, onClose }) {
         <div className="w-full md:w-[320px] shrink-0 p-6 md:p-8 flex flex-col justify-between border-t border-white/10 md:border-t-0 md:border-l border-white/[0.08] bg-[#0d0d0f]/80 backdrop-blur-md">
           <div className="flex flex-col h-full justify-center">
             {/* Stars */}
-            <div className="flex gap-1 text-[#12ced6]">
+            <div className="flex gap-1 text-[#E8441A]">
               {Array.from({ length: 5 }).map((_, i) => (
                 <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
@@ -75,7 +75,7 @@ function VideoLightbox({ testimonial, onClose }) {
 
             {/* Client Metadata */}
             <div className="mt-8 flex items-center gap-3">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#12ced6]/10 border border-[#12ced6]/20 text-sm font-semibold text-[#12ced6]">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#E8441A]/10 border border-[#E8441A]/20 text-sm font-semibold text-[#E8441A]">
                 {testimonial.name.charAt(0)}
               </div>
               <div>
@@ -147,9 +147,9 @@ function TestimonialCard({
       onMouseLeave={onMouseLeave}
       className={`group relative flex flex-col justify-end aspect-[4/5] w-full overflow-hidden rounded-[20px] bg-card border transition-all duration-500 cursor-pointer shadow-xl ${
         isActive
-          ? 'border-[#12ced6]/40 shadow-[0_0_20px_rgba(18,206,214,0.06)]'
+          ? 'border-[#E8441A]/40 shadow-[0_0_20px_rgba(232,68,26,0.06)]'
           : 'border-white/[0.06]'
-      } hover:border-[#12ced6]/50 hover:shadow-[0_0_30px_rgba(18,206,214,0.12)]`}
+      } hover:border-[#E8441A]/50 hover:shadow-[0_0_30px_rgba(232,68,26,0.12)]`}
     >
       {/* Autoplay Progress Bar */}
       {isAutoplayActive && (
@@ -159,7 +159,7 @@ function TestimonialCard({
           animate={{ scaleX: 1 }}
           transition={{ duration: 4, ease: 'linear' }}
           style={{ originX: 0 }}
-          className="absolute top-0 left-0 right-0 h-[3px] bg-[#12ced6] z-20"
+          className="absolute top-0 left-0 right-0 h-[3px] bg-[#E8441A] z-20"
         />
       )}
 
@@ -183,13 +183,13 @@ function TestimonialCard({
         <div
           className={`relative flex h-14 w-14 items-center justify-center rounded-full bg-black/60 border border-white/20 text-white backdrop-blur-md shadow-xl transition-all duration-500 ${
             isActive
-              ? 'scale-105 bg-[#12ced6] border-[#12ced6] text-black'
-              : 'group-hover:scale-110 group-hover:bg-[#12ced6] group-hover:border-[#12ced6] group-hover:text-black'
+              ? 'scale-105 bg-[#E8441A] border-[#E8441A] text-black'
+              : 'group-hover:scale-110 group-hover:bg-[#E8441A] group-hover:border-[#E8441A] group-hover:text-black'
           }`}
         >
           {/* Pulse ring */}
           <span
-            className={`absolute -inset-2 rounded-full border border-[#12ced6]/30 animate-ping ${
+            className={`absolute -inset-2 rounded-full border border-[#E8441A]/30 animate-ping ${
               isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
             } transition-opacity duration-500`}
           />
@@ -202,7 +202,7 @@ function TestimonialCard({
 
       {/* Text details */}
       <div className="relative z-10 p-6 md:p-7 flex flex-col gap-3">
-        <p className="text-xs uppercase tracking-[0.2em] font-bold text-[#12ced6]">Video Review</p>
+        <p className="text-xs uppercase tracking-[0.2em] font-bold text-[#E8441A]">Video Review</p>
         <p className="text-sm text-foreground/90 font-medium leading-relaxed line-clamp-2">
           &ldquo;{testimonial.quote}&rdquo;
         </p>
@@ -223,7 +223,7 @@ function TestimonialCard({
 
       {/* Top micro-glow accent */}
       <div
-        className={`absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#12ced6]/50 to-transparent transition-transform duration-500 origin-center ${
+        className={`absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#E8441A]/50 to-transparent transition-transform duration-500 origin-center ${
           isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
         }`}
       />
@@ -298,8 +298,8 @@ export function VideoTestimonials({ testimonials }) {
   return (
     <section className="relative border-t border-white/[0.06] py-16 sm:py-24 bg-black/40 overflow-hidden">
       {/* Background Accent */}
-      <div className="absolute -left-1/4 top-1/4 -z-10 h-96 w-96 rounded-full bg-[#12ced6]/5 blur-[120px] pointer-events-none" />
-      <div className="absolute -right-1/4 bottom-1/4 -z-10 h-96 w-96 rounded-full bg-[#12ced6]/5 blur-[120px] pointer-events-none" />
+      <div className="absolute -left-1/4 top-1/4 -z-10 h-96 w-96 rounded-full bg-[#E8441A]/5 blur-[120px] pointer-events-none" />
+      <div className="absolute -right-1/4 bottom-1/4 -z-10 h-96 w-96 rounded-full bg-[#E8441A]/5 blur-[120px] pointer-events-none" />
 
       <Container>
         <Reveal className="flex flex-col items-start">
@@ -324,7 +324,7 @@ export function VideoTestimonials({ testimonials }) {
               <button
                 onClick={prev}
                 aria-label="Previous Testimonial"
-                className="absolute left-2 sm:-left-16 md:-left-20 top-1/2 -translate-y-1/2 z-30 flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-black/60 text-white/75 backdrop-blur-md transition-all duration-300 hover:scale-110 hover:border-[#12ced6] hover:text-[#12ced6] hover:bg-black/80 active:scale-95 shadow-lg"
+                className="absolute left-2 sm:-left-16 md:-left-20 top-1/2 -translate-y-1/2 z-30 flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-black/60 text-white/75 backdrop-blur-md transition-all duration-300 hover:scale-110 hover:border-[#E8441A] hover:text-[#E8441A] hover:bg-black/80 active:scale-95 shadow-lg"
               >
                 <svg
                   width="18"
@@ -344,7 +344,7 @@ export function VideoTestimonials({ testimonials }) {
               <button
                 onClick={next}
                 aria-label="Next Testimonial"
-                className="absolute right-2 sm:-right-16 md:-right-20 top-1/2 -translate-y-1/2 z-30 flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-black/60 text-white/75 backdrop-blur-md transition-all duration-300 hover:scale-110 hover:border-[#12ced6] hover:text-[#12ced6] hover:bg-black/80 active:scale-95 shadow-lg"
+                className="absolute right-2 sm:-right-16 md:-right-20 top-1/2 -translate-y-1/2 z-30 flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-black/60 text-white/75 backdrop-blur-md transition-all duration-300 hover:scale-110 hover:border-[#E8441A] hover:text-[#E8441A] hover:bg-black/80 active:scale-95 shadow-lg"
               >
                 <svg
                   width="18"

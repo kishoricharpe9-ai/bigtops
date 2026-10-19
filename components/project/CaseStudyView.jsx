@@ -50,7 +50,7 @@ export function CaseStudyView({ project }) {
       <section className="relative flex min-h-screen flex-col justify-center overflow-hidden pb-16 pt-28 sm:pt-32">
         <div className="pointer-events-none absolute inset-0">
           <video
-            className="absolute inset-0 h-full w-full object-cover object-center"
+            className="absolute inset-0 h-full w-full object-cover object-center hero-bg-video"
             autoPlay
             muted
             loop
@@ -67,7 +67,7 @@ export function CaseStudyView({ project }) {
 
         <Container className="relative z-10 -translate-y-[8vh] sm:-translate-y-[10vh]">
           <Reveal className="lg:text-center">
-            <div className="relative inline-flex overflow-hidden rounded-full border border-white/10 bg-black/70 px-6 py-2 text-xs uppercase tracking-[0.2em] text-foreground/90 backdrop-blur-md transition hover:border-white/20 hover:bg-black/80 before:absolute before:left-[12%] before:right-[12%] before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#12ced6]/60 before:to-transparent before:content-['']">
+            <div className="relative inline-flex overflow-hidden rounded-full border border-white/10 bg-black/70 px-6 py-2 text-xs uppercase tracking-[0.2em] text-foreground/90 backdrop-blur-md transition hover:border-white/20 hover:bg-black/80 before:absolute before:left-[12%] before:right-[12%] before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#E8441A]/60 before:to-transparent before:content-['']">
               Case Study · {project.date}
             </div>
             <BlurTextReveal
@@ -143,7 +143,7 @@ export function CaseStudyView({ project }) {
               href={project.liveHref}
               target="_blank"
               rel="noreferrer"
-              className="mt-8 inline-flex h-11 items-center justify-center rounded-full border border-white/15 px-8 text-sm font-semibold text-foreground transition hover:border-[#12ced6]/50 hover:bg-white/[0.04]"
+              className="mt-8 inline-flex h-11 items-center justify-center rounded-full border border-white/15 px-8 text-sm font-semibold text-foreground transition hover:border-[#E8441A]/50 hover:bg-white/[0.04]"
             >
               View Live Website →
             </a>
